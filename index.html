@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>特定技能2号 建築・土木 問題集</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="特定技能2号（建設分野）の建築・土木の4択問題集。全340問・ふりがな付き。まちがえた問題の復習つき。">
+<meta property="og:title" content="特定技能2号 建築・土木 問題集">
+<meta property="og:description" content="特定技能2号（建設分野）の建築・土木の4択問題集。全340問・ふりがな付き。まちがえた問題の復習つき。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E3E2DE; --surface:#F4F3F0; --ink:#1A1D21; --muted:#5B6068; --line:#B9B7B1;
+  --yellow:#F2B705; --ok:#1F7A4D; --ok-bg:#DDEFE4; --ng:#B3261E; --ng-bg:#F6DEDB;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1B1D20; --surface:#25282C; --ink:#ECEAE5; --muted:#A3A7AD; --line:#3E4248;
+    --yellow:#F2B705; --ok:#6BCB95; --ok-bg:#1E3328; --ng:#F08C84; --ng-bg:#3A2321;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1B1D20; --surface:#25282C; --ink:#ECEAE5; --muted:#A3A7AD; --line:#3E4248;
+  --yellow:#F2B705; --ok:#6BCB95; --ok-bg:#1E3328; --ng:#F08C84; --ng-bg:#3A2321;
+}
+*,*::before,*::after{box-sizing:inherit;min-width:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:clip;
+  font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+  font-size:17px;line-height:1.75;-webkit-text-size-adjust:100%}
+main{max-width:680px;margin:0 auto;padding:20px max(18px,env(safe-area-inset-right,0px)) 48px max(18px,env(safe-area-inset-left,0px))}
+h1{font-family:"Dela Gothic One","BIZ UDPGothic",sans-serif;font-weight:400;
+  font-size:clamp(28px,7.4vw,42px);line-height:1.25;margin:28px 0 8px;letter-spacing:.02em}
+.tape{height:14px;border-radius:2px;
+  background:repeating-linear-gradient(-45deg,var(--yellow) 0 12px,#1A1D21 12px 24px)}
+.sub{color:var(--muted);margin:0 0 24px}
+fieldset{border:0;padding:0;margin:0 0 24px}
+legend{font-weight:700;margin-bottom:10px;padding:0}
+.grp{margin:14px 0 0}
+.grp h2{font-size:15px;font-weight:700;color:var(--muted);margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.grp h2::after{content:"";flex:1;border-top:1px solid var(--line)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0}
+.opts span{display:block;padding:9px 14px;border:2px solid var(--line);border-radius:6px;
+  background:var(--surface);cursor:pointer;font-weight:700}
+.opts span em{font-style:normal;font-weight:400;color:var(--muted);font-size:14px;margin-left:2px}
+.opts input:checked+span{border-color:var(--ink);background:var(--ink);color:var(--surface)}
+.opts input:checked+span em,.opts input:checked+span rt{color:inherit}
+.opts input:focus-visible+span{outline:3px solid var(--yellow);outline-offset:2px}
+.opts input:disabled+span{opacity:.4;cursor:not-allowed}
+.btn{display:inline-block;width:100%;padding:16px;border:0;border-radius:6px;font:inherit;
+  font-weight:700;font-size:18px;background:var(--ink);color:var(--surface);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);margin-top:10px}
+.btn:focus-visible,.choice:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.stats{color:var(--muted);font-size:15px;margin-top:20px}
+
+/* quiz */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 0 14px;z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.barrow{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;color:var(--muted);margin-bottom:6px}
+.barrow b{color:var(--ink);font-size:17px}
+.track{height:14px;background:var(--surface);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;transition:width .3s ease;
+  background:repeating-linear-gradient(-45deg,var(--yellow) 0 12px,#1A1D21 12px 24px)}
+.cat{display:inline-block;font-size:14px;font-weight:700;padding:2px 10px;border-radius:3px;
+  background:var(--surface);border:1px solid var(--line);margin:8px 0 6px}
+.cat b{display:inline-block;margin-right:6px;padding:0 6px;border-radius:2px;background:var(--ink);color:var(--surface)}
+.cat b rt{color:var(--surface)}
+.q{font-size:20px;font-weight:700;margin:4px 0 20px}
+.choices{display:grid;gap:10px}
+.choice{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;padding:14px 16px;
+  border:2px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);
+  font:inherit;cursor:pointer}
+.choice .n{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--line);
+  display:grid;place-items:center;font-weight:700;font-size:15px;line-height:1}
+.choice:hover:not(:disabled){border-color:var(--ink)}
+.choice:disabled{cursor:default}
+.choice.ok{border-color:var(--ok);background:var(--ok-bg)}
+.choice.ok .n{border-color:var(--ok);background:var(--ok);color:var(--surface)}
+.choice.ng{border-color:var(--ng);background:var(--ng-bg)}
+.choice.ng .n{border-color:var(--ng);background:var(--ng);color:var(--surface)}
+.exp{margin:20px 0;padding:16px;border-left:6px solid var(--ok);background:var(--surface);border-radius:0 6px 6px 0}
+.exp.wrong{border-left-color:var(--ng)}
+.exp h3{margin:0 0 6px;font-size:18px}
+.exp p{margin:0}
+.big{font-family:"Dela Gothic One","BIZ UDPGothic",sans-serif;font-size:72px;line-height:1;margin:24px 0 4px}
+.big small{font-size:28px}
+
+/* result breakdown */
+.bd{margin:20px 0 8px;padding:0;list-style:none}
+.bd li{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr) max-content;gap:10px;align-items:center;padding:6px 0;font-size:15px}
+.bd .bt{height:12px;background:var(--surface);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.bd .bf{height:100%;background:var(--ok)}
+.bd .bf.low{background:var(--ng)}
+.bd .bn{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+.review{margin:28px 0;padding:0;list-style:none}
+.review li{padding:14px 0;border-top:1px solid var(--line)}
+.review .rq{font-weight:700}
+.review .ra{color:var(--ok);font-weight:700}
+.rhead{font-size:18px;margin:28px 0 0}
+
+/* list view */
+.lhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:24px 0 8px}
+.lhead h2{margin:0;font-size:22px}
+.lhead span{color:var(--muted);font-size:15px}
+.list{margin:0 0 20px;padding:0;list-style:none}
+.list li{border-top:1px solid var(--line)}
+.list details{padding:12px 0}
+.list summary{cursor:pointer;font-weight:700;list-style:none;display:flex;gap:10px}
+.list summary::-webkit-details-marker{display:none}
+.list summary .no{flex:none;color:var(--muted);font-variant-numeric:tabular-nums;min-width:2.4em}
+.list .tag{font-size:13px;color:var(--muted);font-weight:400;display:block}
+.list .body{margin:8px 0 0 calc(2.4em + 10px);padding:10px 14px;background:var(--surface);border-left:6px solid var(--ok);border-radius:0 6px 6px 0}
+.list .body p{margin:0}
+.list .ans{color:var(--ok);font-weight:700}
+.list .ds{color:var(--muted);font-size:15px}
+
+ruby{ruby-position:over}
+rt{font-size:.5em;font-weight:400;letter-spacing:0;color:var(--muted)}
+.choice.ok rt,.choice.ng rt{color:inherit}
+html.nofuri rt{display:none}
+.q,.choice,.exp p,.review li,.sub,.list li{line-height:2.1}
+.furi{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;margin:0 0 24px;
+  border:2px solid var(--line);border-radius:6px;background:var(--surface);font-weight:700;cursor:pointer}
+.furi input{width:22px;height:22px;accent-color:var(--ink)}
+[hidden]{display:none!important}
+@media (max-width:420px){.bd li{grid-template-columns:minmax(0,7.5em) minmax(0,1fr) max-content;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <section id="start">
+    <div class="tape" aria-hidden="true"></div>
+    <h1><span class="rb">特定技能《とくていぎのう》2号《ごう》</span><br><span class="rb">建築《けんちく》・土木《どぼく》 問題集《もんだいしゅう》</span></h1>
+    <p class="sub" id="sub"></p>
+
+    <label class="furi"><span class="rb">ふりがなを表示《ひょうじ》する</span><input type="checkbox" id="furi" checked></label>
+
+    <fieldset>
+      <legend class="rb">分野《ぶんや》をえらぶ</legend>
+      <div id="cats"></div>
+    </fieldset>
+    <fieldset>
+      <legend class="rb">問題《もんだい》の数《かず》</legend>
+      <div class="opts">
+        <label><input type="radio" name="num" value="10" checked><span class="rb">10問《もん》</span></label>
+        <label><input type="radio" name="num" value="20"><span class="rb">20問《もん》</span></label>
+        <label><input type="radio" name="num" value="40"><span class="rb">40問《もん》</span></label>
+        <label><input type="radio" name="num" value="9999"><span>ぜんぶ</span></label>
+      </div>
+    </fieldset>
+    <button class="btn" id="go">はじめる</button>
+    <button class="btn ghost rb" id="showlist">問題《もんだい》と答《こた》えの一覧《いちらん》を見《み》る</button>
+    <p class="stats" id="stats"></p>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="bar">
+      <div class="barrow"><span><b id="qnum">1</b> / <span id="qtotal">10</span> <span class="rb">問《もん》</span></span><span><span class="rb">正解《せいかい》</span> <b id="qscore">0</b></span></div>
+      <div class="track"><div class="fill" id="fill"></div></div>
+    </div>
+    <span class="cat" id="qcat"></span>
+    <p class="q" id="qtext"></p>
+    <div class="choices" id="choices"></div>
+    <div class="exp" id="exp" hidden><h3 id="exph"></h3><p id="expt"></p></div>
+    <button class="btn" id="next" hidden>つぎへ</button>
+    <button class="btn ghost" id="quit">やめる</button>
+  </section>
+
+  <section id="result" hidden>
+    <div class="tape" aria-hidden="true"></div>
+    <p class="big" id="rscore"></p>
+    <p class="sub" id="rmsg"></p>
+    <ul class="bd" id="bd"></ul>
+    <button class="btn rb" id="again">もう一度《いちど》</button>
+    <button class="btn ghost rb" id="home">分野《ぶんや》をえらびなおす</button>
+    <h2 class="rhead rb" id="rhead">まちがえた問題《もんだい》</h2>
+    <ul class="review" id="review"></ul>
+  </section>
+
+  <section id="listv" hidden>
+    <div class="tape" aria-hidden="true"></div>
+    <div class="lhead"><h2 id="ltitle"></h2><span id="lcount"></span></div>
+    <p class="sub rb">問題《もんだい》をタップすると、正解《せいかい》と解説《かいせつ》が出《で》ます。</p>
+    <ul class="list" id="list"></ul>
+    <button class="btn" id="lback">もどる</button>
+  </section>
+</main>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function rb(s){return esc(s).replace(/([一-鿿々]+)《([^》]+)》/g,"<ruby>$1<rt>$2</rt></ruby>")}
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+function applyFuri(on){document.documentElement.classList.toggle("nofuri",!on);store.set("tk2_furi",on)}
+const furiOn=store.get("tk2_furi",true);$("furi").checked=furiOn;applyFuri(furiOn);
+$("furi").onchange=e=>applyFuri(e.target.checked);
+document.querySelectorAll(".rb").forEach(el=>el.innerHTML=rb(el.textContent));
+$("sub").innerHTML=rb("問題《もんだい》を読《よ》みこんでいます…");
+$("go").disabled=true;$("showlist").disabled=true;
+
+function boot(Q){
+const GROUPS=[
+  {g:"共通",label:"共通《きょうつう》",cats:["安全管理","施工管理","法規・環境"]},
+  {g:"建築",label:"建築《けんちく》",cats:["構造・材料","仕上げ・作業"]},
+  {g:"土木",label:"土木《どぼく》",cats:["土工・基礎","コンクリート・構造物","舗装・測量・機械"]}
+];
+const CATLABEL={"安全管理":"安全管理《あんぜんかんり》","施工管理":"施工管理《せこうかんり》","法規・環境":"法規《ほうき》・環境《かんきょう》",
+  "構造・材料":"構造《こうぞう》・材料《ざいりょう》","仕上げ・作業":"仕上《しあ》げ・作業《さぎょう》",
+  "土工・基礎":"土工《どこう》・基礎《きそ》","コンクリート・構造物":"コンクリート・構造物《こうぞうぶつ》","舗装・測量・機械":"舗装《ほそう》・測量《そくりょう》・機械《きかい》"};
+const GROUP_OF={};GROUPS.forEach(G=>G.cats.forEach(c=>GROUP_OF[c]=G));
+const ORDER=GROUPS.flatMap(G=>G.cats);
+const TOP=[
+  {v:"all",label:"すべて",f:()=>true},
+  {v:"c:建築",label:"建築《けんちく》コース",f:q=>GROUP_OF[q.c].g!=="土木"},
+  {v:"c:土木",label:"土木《どぼく》コース",f:q=>GROUP_OF[q.c].g!=="建築"},
+  {v:"wrong",label:"まちがえた問題《もんだい》",f:q=>wrongIds.has(q.id)}
+];
+
+let wrongIds=new Set(store.get("tk2_wrong",[]).filter(id=>Q.some(q=>q.id===id)));
+let deck=[],idx=0,score=0,missed=[],per={},lastSel=store.get("tk2_sel","all"),lastNum=10;
+$("go").disabled=false;$("showlist").disabled=false;
+
+const nB=Q.filter(q=>GROUP_OF[q.c].g==="建築").length, nD=Q.filter(q=>GROUP_OF[q.c].g==="土木").length, nK=Q.length-nB-nD;
+$("sub").innerHTML=rb(`全部《ぜんぶ》で${Q.length}問《もん》の4択《たく》問題《もんだい》です（共通《きょうつう》${nK}問《もん》・建築《けんちく》${nB}問《もん》・土木《どぼく》${nD}問《もん》）。答《こた》えると、すぐに解説《かいせつ》が出《で》ます。「建築《けんちく》コース」「土木《どぼく》コース」には共通《きょうつう》の問題《もんだい》も入《はい》ります。`);
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function filterOf(v){const t=TOP.find(x=>x.v===v);if(t)return t.f;const c=v.slice(2);return q=>q.c===c}
+function labelOf(v){const t=TOP.find(x=>x.v===v);if(t)return t.label;const c=v.slice(2);return GROUP_OF[c].label+"｜"+CATLABEL[c]}
+function chip(v,label,n){return `<label><input type="radio" name="cat" value="${esc(v)}" ${v===lastSel?"checked":""} ${n===0?"disabled":""}><span>${rb(label)}<em>${n}</em></span></label>`}
+
+function renderCats(){
+  let h=`<div class="opts">`+TOP.map(t=>chip(t.v,t.label,Q.filter(t.f).length)).join("")+`</div>`;
+  h+=GROUPS.map(G=>`<div class="grp"><h2>${rb(G.label)}</h2><div class="opts">`+
+    G.cats.map(c=>chip("k:"+c,CATLABEL[c],Q.filter(q=>q.c===c).length)).join("")+`</div></div>`).join("");
+  $("cats").innerHTML=h;
+  const cur=document.querySelector('input[name=cat]:checked');
+  if(!cur||cur.disabled)document.querySelector('input[name=cat][value=all]').checked=true;
+  const best=store.get("tk2_best",null);
+  $("stats").innerHTML=best?rb(`これまでの最高《さいこう》：${best.s} / ${best.t}問《もん》（${best.p}%）`):"";
+}
+function selected(){return document.querySelector('input[name=cat]:checked').value}
+
+function show(id){["start","quiz","result","listv"].forEach(s=>$(s).hidden=s!==id);window.scrollTo(0,0)}
+
+function start(sel,num){
+  lastSel=sel;lastNum=num;store.set("tk2_sel",sel);
+  const pool=Q.filter(filterOf(sel));
+  deck=shuffle(pool).slice(0,num);idx=0;score=0;missed=[];per={};
+  $("qtotal").textContent=deck.length;
+  show("quiz");renderQ();
+}
+
+function tagHTML(c){return `<b>${rb(GROUP_OF[c].label)}</b>${rb(CATLABEL[c])}`}
+
+function renderQ(){
+  const q=deck[idx];
+  $("qnum").textContent=idx+1;$("qscore").textContent=score;
+  $("fill").style.width=(idx/deck.length*100)+"%";
+  $("qcat").innerHTML=tagHTML(q.c);$("qtext").innerHTML=rb(q.q);
+  $("exp").hidden=true;$("next").hidden=true;
+  const box=$("choices");box.innerHTML="";
+  shuffle([q.a,...q.d]).forEach((t,i)=>{
+    const b=document.createElement("button");
+    b.className="choice";b.dataset.ok=t===q.a?"1":"0";
+    b.innerHTML=`<span class="n">${i+1}</span><span>${rb(t)}</span>`;
+    b.onclick=()=>answer(b);
+    box.appendChild(b);
+  });
+}
+
+function answer(btn){
+  const q=deck[idx];const right=btn.dataset.ok==="1";
+  document.querySelectorAll(".choice").forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.ok==="1")b.classList.add("ok");
+  });
+  per[q.c]=per[q.c]||{s:0,t:0};per[q.c].t++;
+  if(right){score++;per[q.c].s++;wrongIds.delete(q.id)}
+  else{btn.classList.add("ng");missed.push(q);wrongIds.add(q.id)}
+  store.set("tk2_wrong",[...wrongIds]);
+  $("qscore").textContent=score;
+  $("exp").className="exp"+(right?"":" wrong");
+  $("exph").innerHTML=right?rb("正解《せいかい》！"):rb("ざんねん。正解《せいかい》は「"+q.a+"」");
+  $("expt").innerHTML=rb(q.e);
+  $("exp").hidden=false;
+  $("next").innerHTML=idx===deck.length-1?rb("結果《けっか》を見《み》る"):"つぎへ";
+  $("next").hidden=false;$("next").focus({preventScroll:true});
+  $("exp").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
+}
+
+function next(){
+  idx++;
+  if(idx<deck.length){renderQ();window.scrollTo(0,0);return}
+  $("fill").style.width="100%";
+  const p=Math.round(score/deck.length*100);
+  $("rscore").innerHTML=`${score}<small> / ${deck.length}</small>`;
+  $("rmsg").innerHTML=rb(p>=80?`${p}%。よくできました。この調子《ちょうし》で続《つづ》けましょう。`:p>=60?`${p}%。あと少《すこ》しです。まちがえた問題《もんだい》を見直《みなお》しましょう。`:`${p}%。解説《かいせつ》を読《よ》んで、もう一度《いちど》ちょうせんしましょう。`);
+  const best=store.get("tk2_best",null);
+  if(deck.length>=10&&(!best||p>best.p))store.set("tk2_best",{s:score,t:deck.length,p});
+  const cats=ORDER.filter(c=>per[c]);
+  $("bd").innerHTML=cats.length>1?cats.map(c=>{const r=per[c],pc=Math.round(r.s/r.t*100);
+    return `<li><span>${rb(CATLABEL[c])}</span><span class="bt"><span class="bf${pc<60?" low":""}" style="display:block;width:${pc}%"></span></span><span class="bn">${r.s}/${r.t}</span></li>`}).join(""):"";
+  $("rhead").hidden=missed.length===0;
+  const r=$("review");r.innerHTML="";
+  missed.forEach(q=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<div class="rq">${rb(q.q)}</div><div class="ra">${rb("正解《せいかい》：「"+q.a+"」")}</div><div>${rb(q.e)}</div>`;
+    r.appendChild(li);
+  });
+  show("result");
+}
+
+function showList(sel){
+  const pool=Q.filter(filterOf(sel)).slice().sort((a,b)=>ORDER.indexOf(a.c)-ORDER.indexOf(b.c)||a.id-b.id);
+  $("ltitle").innerHTML=rb(labelOf(sel));
+  $("lcount").innerHTML=rb(`${pool.length}問《もん》`);
+  $("list").innerHTML=pool.map((q,i)=>`<li><details><summary><span class="no">${i+1}</span><span><span class="tag">${rb(GROUP_OF[q.c].label+"｜"+CATLABEL[q.c])}</span>${rb(q.q)}</span></summary>
+    <div class="body"><p class="ans">${rb("正解《せいかい》："+q.a)}</p><p class="ds">${rb("ほかの選択肢《せんたくし》："+q.d.join("／"))}</p><p>${rb(q.e)}</p></div></details></li>`).join("");
+  show("listv");
+}
+
+$("go").onclick=()=>start(selected(),+document.querySelector('input[name=num]:checked').value);
+$("showlist").onclick=()=>showList(selected());
+$("lback").onclick=()=>{renderCats();show("start")};
+$("next").onclick=next;
+$("quit").onclick=()=>{renderCats();show("start")};
+$("again").onclick=()=>{
+  const sel=lastSel==="wrong"&&wrongIds.size===0?"all":lastSel;
+  start(sel,lastNum);
+};
+$("home").onclick=()=>{renderCats();show("start")};
+document.addEventListener("keydown",e=>{
+  if($("quiz").hidden)return;
+  const n=+e.key;
+  if(n>=1&&n<=4){const b=document.querySelectorAll(".choice")[n-1];if(b&&!b.disabled)b.click()}
+});
+renderCats();
+}
+
+boot([
+{"id":1,"c":"安全管理","q":"墜落《ついらく》の危険《きけん》がある場所《ばしょ》で作業床《さぎょうゆか》を設《もう》けなければならないのは、高《たか》さ何《なん》m以上《いじょう》の場所《ばしょ》ですか。","a":"2m","d":["1.5m","3m","5m"],"e":"高《たか》さ2m以上《いじょう》で墜落《ついらく》のおそれがある場所《ばしょ》では、足場《あしば》などで作業床《さぎょうゆか》を設《もう》けます。作業床《さぎょうゆか》が作《つく》れないときは、防網《ぼうもう》を張《は》り、墜落制止用器具《ついらくせいしようきぐ》を使《つか》わせます。"},
+{"id":2,"c":"安全管理","q":"足場《あしば》の作業床《さぎょうゆか》の幅《はば》は、何《なん》cm以上《いじょう》必要《ひつよう》ですか。","a":"40cm","d":["20cm","30cm","60cm"],"e":"足場《あしば》の作業床《さぎょうゆか》の幅《はば》は40cm以上《いじょう》、床材《ゆかざい》のすき間《ま》は3cm以下《いか》にします。"},
+{"id":3,"c":"安全管理","q":"「酸素欠乏《さんそけつぼう》」とは、空気中《くうきちゅう》の酸素《さんそ》の濃度《のうど》が何《なん》%未満《みまん》の状態《じょうたい》ですか。","a":"18%","d":["21%","16%","10%"],"e":"酸素濃度《さんそのうど》18%未満《みまん》が酸素欠乏《さんそけつぼう》です。ふつうの空気《くうき》の酸素《さんそ》は約《やく》21%です。マンホールや地下《ちか》の作業《さぎょう》では、入《はい》る前《まえ》に酸素濃度《さんそのうど》を測《はか》ります。"},
+{"id":4,"c":"安全管理","q":"移動《いどう》はしごを使《つか》うとき、はしごの上《うえ》の端《はし》は、上《うえ》の床《ゆか》から何《なん》cm以上《いじょう》出《だ》しますか。","a":"60cm","d":["30cm","45cm","100cm"],"e":"上《うえ》の端《はし》を60cm以上《いじょう》出《だ》すと、のぼりおりのときにつかまる所《ところ》ができて安全《あんぜん》です。はしごの下《した》は滑《すべ》り止《ど》めをして固定《こてい》します。"},
+{"id":5,"c":"安全管理","q":"つり上《あ》げ荷重《かじゅう》1t以上《いじょう》の移動式《いどうしき》クレーンで玉掛《たまか》けをするのに必要《ひつよう》な資格《しかく》はどれですか。","a":"玉掛《たまか》け技能講習《ぎのうこうしゅう》の修了《しゅうりょう》","d":["玉掛《たまか》けの特別教育《とくべつきょういく》","職長教育《しょくちょうきょういく》","資格《しかく》はいらない"],"e":"つり上《あ》げ荷重《かじゅう》1t以上《いじょう》は「玉掛《たまか》け技能講習《ぎのうこうしゅう》」が必要《ひつよう》です。1t未満《みまん》なら「特別教育《とくべつきょういく》」で作業《さぎょう》できます。"},
+{"id":6,"c":"安全管理","q":"「足場《あしば》の組立《くみた》て等《とう》作業主任者《さぎょうしゅにんしゃ》」を選《えら》ばなければならないのは、高《たか》さ何《なん》m以上《いじょう》の足場《あしば》ですか。","a":"5m以上《いじょう》","d":["2m以上《いじょう》","3m以上《いじょう》","10m以上《いじょう》"],"e":"高《たか》さ5m以上《いじょう》の足場《あしば》の組立《くみた》て・解体《かいたい》・変更《へんこう》では、作業主任者《さぎょうしゅにんしゃ》を選《えら》び、その人《ひと》の指揮《しき》で作業《さぎょう》します。"},
+{"id":7,"c":"安全管理","q":"ハインリッヒの法則《ほうそく》「1:29:300」で、300は何《なに》を表《あらわ》していますか。","a":"けがにならなかったヒヤリ・ハット","d":["死亡事故《しぼうじこ》","軽《かる》いけがの事故《じこ》","重《おも》いけがの事故《じこ》"],"e":"1件《けん》の重《おも》い事故《じこ》の後《うし》ろには、29件《けん》の軽《かる》い事故《じこ》と、300件《けん》のヒヤリ・ハットがあるという考《かんが》え方《かた》です。ヒヤリ・ハットを集《あつ》めて対策《たいさく》することが大切《たいせつ》です。"},
+{"id":8,"c":"安全管理","q":"KY活動《かつどう》（危険予知活動《きけんよちかつどう》）の目的《もくてき》として、正《ただ》しいものはどれですか。","a":"作業《さぎょう》の前《まえ》に危険《きけん》を見《み》つけ、対策《たいさく》をみんなで決《き》める","d":["事故《じこ》のあとに原因《げんいん》を調《しら》べる","作業《さぎょう》の速《はや》さを競《きそ》う","作業員《さぎょういん》の技能《ぎのう》をテストする"],"e":"KYは「危険予知《きけんよち》」の略《りゃく》です。作業《さぎょう》の前《まえ》に、どこにどんな危険《きけん》があるかを話《はな》し合《あ》い、対策《たいさく》と行動目標《こうどうもくひょう》を決《き》めます。"},
+{"id":9,"c":"安全管理","q":"墜落制止用器具《ついらくせいしようきぐ》（安全帯《あんぜんたい》）のフックは、どこに掛《か》けるのが正《ただ》しいですか。","a":"腰《こし》より高《たか》い、じょうぶな所《ところ》","d":["足《あし》もとの手《て》すり","腰《こし》より低《ひく》い所《ところ》","自分《じぶん》の体《からだ》のベルト"],"e":"フックを高《たか》い位置《いち》に掛《か》けると、落《お》ちる距離《きょり》が短《みじか》くなり、衝撃《しょうげき》も小《ちい》さくなります。"},
+{"id":10,"c":"安全管理","q":"熱中症《ねっちゅうしょう》の危険《きけん》の大《おお》きさを知《し》るために使《つか》う指数《しすう》はどれですか。","a":"WBGT（暑《あつ》さ指数《しすう》）","d":["スランプ値《ち》","水《みず》セメント比《ひ》","騒音《そうおん》レベル"],"e":"WBGTは気温《きおん》・湿度《しつど》・日射《にっしゃ》などから計算《けいさん》します。値《あたい》が高《たか》い日《ひ》は、休《やす》けいと水分《すいぶん》・塩分《えんぶん》の補給《ほきゅう》を増《ふ》やします。"},
+{"id":11,"c":"安全管理","q":"脚立《きゃたつ》を使《つか》うとき、脚《あし》と床《ゆか》（水平面《すいへいめん》）との角度《かくど》は何度《なんど》以下《いか》にしますか。","a":"75度《ど》以下《いか》","d":["45度《ど》以下《いか》","60度《ど》以下《いか》","90度《ど》以下《いか》"],"e":"角度《かくど》は75度《ど》以下《いか》にし、開《ひら》き止《ど》めを必《かなら》ずかけます。天板《てんいた》の上《うえ》に立《た》って作業《さぎょう》してはいけません。"},
+{"id":12,"c":"安全管理","q":"電動工具《でんどうこうぐ》を使《つか》うとき、感電《かんでん》を防《ふせ》ぐために回路《かいろ》に付《つ》けるものはどれですか。","a":"漏電遮断器《ろうでんしゃだんき》","d":["墜落制止用器具《ついらくせいしようきぐ》","親綱《おやづな》","防音《ぼうおん》シート"],"e":"漏電遮断器《ろうでんしゃだんき》は、電気《でんき》がもれたときにすぐ電気《でんき》を止《と》めて感電《かんでん》を防《ふせ》ぎます。アース（接地《せっち》）も一緒《いっしょ》に行《おこな》います。"},
+{"id":13,"c":"安全管理","q":"4S活動《かつどう》で「いるものといらないものを分《わ》けて、いらないものを捨《す》てる」ことを何《なん》といいますか。","a":"整理《せいり》","d":["整頓《せいとん》","清掃《せいそう》","清潔《せいけつ》"],"e":"整理《せいり》＝いらないものを捨《す》てる、整頓《せいとん》＝決《き》めた場所《ばしょ》に置《お》く、清掃《せいそう》＝そうじする、清潔《せいけつ》＝きれいな状態《じょうたい》を保《たも》つ、です。"},
+{"id":14,"c":"安全管理","q":"クレーンでつり荷《に》を動《うご》かしているとき、正《ただ》しい行動《こうどう》はどれですか。","a":"つり荷《に》の下《した》には入《はい》らない","d":["急《いそ》ぐときはつり荷《に》の下《した》を通《とお》ってよい","手《て》でつり荷《に》を押《お》して早《はや》く動《うご》かす","合図《あいず》は何人《なんにん》でしてもよい"],"e":"つり荷《に》の下《した》は立入禁止《たちいりきんし》です。合図《あいず》は決《き》められた1人《ひとり》が、決《き》められた方法《ほうほう》で行《おこな》います。"},
+{"id":15,"c":"安全管理","q":"地山《じやま》の掘削作業主任者《くっさくさぎょうしゅにんしゃ》を選《えら》ばなければならないのは、掘《ほ》る面《めん》の高《たか》さが何《なん》m以上《いじょう》のときですか。","a":"2m以上《いじょう》","d":["1m以上《いじょう》","3m以上《いじょう》","5m以上《いじょう》"],"e":"掘削面《くっさくめん》の高《たか》さが2m以上《いじょう》の地山《じやま》の掘削《くっさく》では、作業主任者《さぎょうしゅにんしゃ》を選《えら》びます。土《つち》が崩《くず》れないよう、土止《どど》め支保工《しほこう》なども使《つか》います。"},
+{"id":16,"c":"施工管理","q":"縦《たて》に作業《さぎょう》の名前《なまえ》、横《よこ》に日付《ひづけ》（工期《こうき》）を書《か》き、作業《さぎょう》の期間《きかん》を横《よこ》の棒《ぼう》で表《あらわ》す工程表《こうていひょう》はどれですか。","a":"バーチャート","d":["ネットワーク工程表《こうていひょう》","ガントチャート","特性要因図《とくせいよういんず》"],"e":"バーチャートは見《み》やすく、いつ何《なに》をするかがすぐわかります。ただし作業《さぎょう》どうしの関係《かんけい》はわかりにくいです。ガントチャートは横軸《よこじく》が達成率《たっせいりつ》（%）です。"},
+{"id":17,"c":"施工管理","q":"ネットワーク工程表《こうていひょう》の「クリティカルパス」の説明《せつめい》として正《ただ》しいものはどれですか。","a":"いちばん時間《じかん》がかかる経路《けいろ》で、遅《おく》れると全体《ぜんたい》の工期《こうき》が遅《おく》れる","d":["いちばん時間《じかん》が短《みじか》い経路《けいろ》","お金《かね》がいちばんかかる作業《さぎょう》","安全上《あんぜんじょう》いちばん危険《きけん》な作業《さぎょう》"],"e":"クリティカルパス上《じょう》の作業《さぎょう》には余裕《よゆう》がありません。ここが遅《おく》れると工期《こうき》全体《ぜんたい》が遅《おく》れるので、重点的《じゅうてんてき》に管理《かんり》します。"},
+{"id":18,"c":"施工管理","q":"PDCAサイクルの「C」は何《なに》を意味《いみ》しますか。","a":"確認《かくにん》・評価《ひょうか》（Check）","d":["計画《けいかく》（Plan）","実施《じっし》（Do）","改善《かいぜん》の処置《しょち》（Act）"],"e":"P＝計画《けいかく》、D＝実施《じっし》、C＝確認《かくにん》・評価《ひょうか》、A＝処置《しょち》・改善《かいぜん》。このくり返《かえ》しで品質《ひんしつ》や安全《あんぜん》を良《よ》くしていきます。"},
+{"id":19,"c":"施工管理","q":"不良《ふりょう》の数《かず》を種類《しゅるい》ごとに多《おお》い順《じゅん》に並《なら》べた棒《ぼう》グラフと、累積《るいせき》の折《お》れ線《せん》で表《あらわ》す図《ず》はどれですか。","a":"パレート図《ず》","d":["ヒストグラム","特性要因図《とくせいよういんず》","散布図《さんぷず》"],"e":"パレート図《ず》を見《み》ると、どの不良《ふりょう》を先《さき》に直《なお》せば効果《こうか》が大《おお》きいかがわかります。"},
+{"id":20,"c":"施工管理","q":"結果《けっか》と原因《げんいん》の関係《かんけい》を「魚《さかな》の骨《ほね》」のような形《かたち》で整理《せいり》した図《ず》はどれですか。","a":"特性要因図《とくせいよういんず》","d":["パレート図《ず》","管理図《かんりず》","バーチャート"],"e":"特性要因図《とくせいよういんず》は、問題《もんだい》（特性《とくせい》）に対《たい》して、人《ひと》・材料《ざいりょう》・方法《ほうほう》・機械《きかい》などの原因《げんいん》（要因《よういん》）を整理《せいり》するときに使《つか》います。"},
+{"id":21,"c":"施工管理","q":"職長《しょくちょう》の仕事《しごと》として、正《ただ》しくないものはどれですか。","a":"建物《たてもの》の設計《せっけい》を自分《じぶん》の判断《はんだん》で変《か》える","d":["作業《さぎょう》の手順《てじゅん》を決《き》める","作業員《さぎょういん》を配置《はいち》する","作業員《さぎょういん》を指導《しどう》・監督《かんとく》する"],"e":"職長《しょくちょう》は、作業手順《さぎょうてじゅん》を決《き》め、人《ひと》を配置《はいち》し、指導《しどう》・監督《かんとく》し、安全《あんぜん》を守《まも》るリーダーです。設計《せっけい》の変更《へんこう》は設計者《せっけいしゃ》や元請《もとうけ》の判断《はんだん》で行《おこな》います。"},
+{"id":22,"c":"施工管理","q":"施工管理《せこうかんり》の「QCDS」で、「C」は何《なに》を表《あらわ》していますか。","a":"原価《げんか》（コスト）","d":["品質《ひんしつ》","工程《こうてい》（工期《こうき》）","安全《あんぜん》"],"e":"Q＝品質《ひんしつ》、C＝原価《げんか》、D＝工程《こうてい》（納期《のうき》）、S＝安全《あんぜん》です。この4つのバランスをとって工事《こうじ》を進《すす》めます。"},
+{"id":23,"c":"施工管理","q":"作業《さぎょう》を始《はじ》める前《まえ》に、職長《しょくちょう》と作業員《さぎょういん》が短《みじか》い時間《じかん》で作業内容《さぎょうないよう》や危険《きけん》について話《はな》し合《あ》うことを何《なん》といいますか。","a":"TBM（ツールボックスミーティング）","d":["竣工検査《しゅんこうけんさ》","工程会議《こうていかいぎ》","OJT"],"e":"TBMは作業前《さぎょうまえ》の短《みじか》い打合《うちあわ》せです。KY活動《かつどう》と一緒《いっしょ》に「TBM-KY」として行《おこな》うことが多《おお》いです。"},
+{"id":24,"c":"構造・材料","q":"コンクリートの水《みず》セメント比《ひ》を大《おお》きくすると、どうなりますか。","a":"強度《きょうど》が低《ひく》くなる","d":["強度《きょうど》が高《たか》くなる","ひび割《わ》れしにくくなる","重《おも》さが2倍《ばい》になる"],"e":"水《みず》が多《おお》いと打《う》ちやすくなりますが、強度《きょうど》や耐久性《たいきゅうせい》が下《さ》がり、ひび割《わ》れもしやすくなります。現場《げんば》で勝手《かって》に水《みず》を加《くわ》えてはいけません。"},
+{"id":25,"c":"構造・材料","q":"スランプ試験《しけん》でわかることはどれですか。","a":"まだ固《かた》まっていないコンクリートの軟《やわ》らかさ","d":["固《かた》まったコンクリートの強《つよ》さ","鉄筋《てっきん》の太《ふと》さ","木材《もくざい》の水分《すいぶん》"],"e":"スランプコーンに詰《つ》めて引《ひ》き上《あ》げ、下《さ》がった高《たか》さ（cm）を測《はか》ります。値《あたい》が大《おお》きいほど軟《やわ》らかいです。"},
+{"id":26,"c":"構造・材料","q":"鉄筋《てっきん》の「かぶり厚《あつ》さ」とは何《なん》ですか。","a":"コンクリートの表面《ひょうめん》から、いちばん外側《そとがわ》の鉄筋《てっきん》の表面《ひょうめん》までの最短《さいたん》の距離《きょり》","d":["鉄筋《てっきん》の直径《ちょっけい》","鉄筋《てっきん》と鉄筋《てっきん》の間《あいだ》の距離《きょり》","型枠《かたわく》の板《いた》の厚《あつ》さ"],"e":"かぶり厚《あつ》さが足《た》りないと、鉄筋《てっきん》がさびやすくなり、火事《かじ》にも弱《よわ》くなります。スペーサーで厚《あつ》さを確保《かくほ》します。"},
+{"id":27,"c":"構造・材料","q":"鉄筋《てっきん》コンクリート造《ぞう》で、主《おも》に引張《ひっぱ》りの力《ちから》を受《う》け持《も》つ材料《ざいりょう》はどれですか。","a":"鉄筋《てっきん》","d":["コンクリート","型枠《かたわく》","砂《すな》"],"e":"コンクリートは押《お》す力《ちから》（圧縮《あっしゅく》）に強《つよ》く、引《ひ》っ張《ぱ》る力《ちから》（引張《ひっぱ》り）に弱《よわ》いです。それを鉄筋《てっきん》がおぎないます。"},
+{"id":28,"c":"構造・材料","q":"木造住宅《もくぞうじゅうたく》で、地震《じしん》や風《かぜ》による横《よこ》からの力《ちから》に抵抗《ていこう》するために、柱《はしら》と柱《はしら》の間《あいだ》に斜《なな》めに入《い》れる材《ざい》はどれですか。","a":"筋《すじ》かい","d":["根太《ねだ》","垂木《たるき》","胴縁《どうぶち》"],"e":"筋《すじ》かいや構造用合板《こうぞうようごうはん》の耐力壁《たいりょくへき》が、横《よこ》からの力《ちから》に抵抗《ていこう》します。"},
+{"id":29,"c":"構造・材料","q":"木造住宅《もくぞうじゅうたく》で、土台《どだい》を基礎《きそ》にしっかり固定《こてい》するために使《つか》う金物《かなもの》はどれですか。","a":"アンカーボルト","d":["かすがい","ホールダウン金物《かなもの》","羽子板《はごいた》ボルト"],"e":"アンカーボルトは基礎《きそ》のコンクリートに埋《う》め込《こ》み、土台《どだい》を固定《こてい》します。ホールダウン金物《かなもの》は柱《はしら》が抜《ぬ》けないようにする金物《かなもの》です。"},
+{"id":30,"c":"構造・材料","q":"鉄骨《てっこつ》の高力《こうりょく》ボルトを締《し》めつける順番《じゅんばん》として、正《ただ》しいものはどれですか。","a":"ボルト群《ぐん》の中央《ちゅうおう》から外側《そとがわ》へ","d":["外側《そとがわ》から中央《ちゅうおう》へ","右《みぎ》から左《ひだり》へ順番《じゅんばん》に","どの順《じゅん》でもよい"],"e":"中央《ちゅうおう》から外側《そとがわ》へ締《し》めると、板《いた》がよく密着《みっちゃく》します。1次《じ》締《じ》め・マーキング・本締《ほんじ》めの順《じゅん》で行《おこな》います。"},
+{"id":31,"c":"構造・材料","q":"型枠《かたわく》で、コンクリートに直接《ちょくせつ》ふれる板《いた》を何《なん》といいますか。","a":"せき板《いた》","d":["根太《ねだ》","敷板《しきいた》","足場板《あしばいた》"],"e":"せき板《いた》の外側《そとがわ》を、端太《ばた》やフォームタイなどで押《お》さえて固定《こてい》します。"},
+{"id":32,"c":"構造・材料","q":"コンクリートを打《う》ったあとの養生《ようじょう》で、大切《たいせつ》なことはどれですか。","a":"湿《しめ》った状態《じょうたい》を保《たも》ち、急《きゅう》な乾燥《かんそう》や寒《さむ》さを避《さ》ける","d":["すぐに強《つよ》い日光《にっこう》で乾《かわ》かす","上《うえ》に重《おも》い材料《ざいりょう》をすぐ置《お》く","水《みず》をかけてはいけない"],"e":"固《かた》まり始《はじ》めのコンクリートは、乾燥《かんそう》・低温《ていおん》・振動《しんどう》に弱《よわ》いです。散水《さんすい》やシートで湿潤《しつじゅん》に保《たも》ちます。"},
+{"id":33,"c":"構造・材料","q":"墨出《すみだ》しで、基準《きじゅん》の墨《すみ》から一定《いってい》の距離《きょり》をはなして出《だ》す墨《すみ》を何《なん》といいますか。","a":"逃《に》げ墨《ずみ》","d":["陸墨《ろくずみ》","心墨《しんずみ》","地墨《じずみ》"],"e":"柱《はしら》の中心《ちゅうしん》など、直接《ちょくせつ》墨《すみ》を出《だ》せない所《ところ》では、決《き》まった距離《きょり》をはなした「逃《に》げ墨《ずみ》」を出《だ》します。陸墨《ろくずみ》は高《たか》さの基準《きじゅん》になる水平《すいへい》の墨《すみ》です。"},
+{"id":34,"c":"構造・材料","q":"鉄筋《てっきん》の端《はし》と端《はし》を突《つ》き合《あ》わせて、加熱《かねつ》しながら圧力《あつりょく》をかけてつなぐ方法《ほうほう》はどれですか。","a":"ガス圧接《あっせつ》","d":["重《かさ》ね継手《つぎて》","ボルト接合《せつごう》","溶接金網《ようせつかなあみ》"],"e":"ガス圧接《あっせつ》は太《ふと》い鉄筋《てっきん》の継手《つぎて》でよく使《つか》われます。圧接《あっせつ》の部分《ぶぶん》はふくらみの直径《ちょっけい》や長《なが》さを検査《けんさ》します。"},
+{"id":35,"c":"構造・材料","q":"「SRC造《ぞう》」とは、どの構造《こうぞう》のことですか。","a":"鉄骨鉄筋《てっこつてっきん》コンクリート造《ぞう》","d":["鉄骨造《てっこつぞう》","鉄筋《てっきん》コンクリート造《ぞう》","木造《もくぞう》"],"e":"S造《ぞう》＝鉄骨造《てっこつぞう》、RC造《ぞう》＝鉄筋《てっきん》コンクリート造《ぞう》、SRC造《ぞう》＝鉄骨《てっこつ》の周《まわ》りに鉄筋《てっきん》を組《く》んでコンクリートを打《う》つ構造《こうぞう》です。"},
+{"id":36,"c":"安全管理","q":"初《はじ》めてその現場《げんば》に入《はい》る作業員《さぎょういん》に、現場《げんば》のルールや危険《きけん》な場所《ばしょ》を教《おし》える教育《きょういく》を何《なん》といいますか。","a":"新規入場者教育《しんきにゅうじょうしゃきょういく》","d":["職長教育《しょくちょうきょういく》","竣工検査《しゅんこうけんさ》","工程会議《こうていかいぎ》"],"e":"新規入場者教育《しんきにゅうじょうしゃきょういく》では、現場《げんば》の決《き》まり、危険《きけん》な場所《ばしょ》、避難《ひなん》のしかたなどを教《おし》えます。"},
+{"id":37,"c":"安全管理","q":"保護帽《ほごぼう》（ヘルメット）の正《ただ》しい使《つか》い方《かた》はどれですか。","a":"あごひもをしっかり締《し》めてかぶる","d":["あごひもは外《はず》しておく","後《うし》ろ向《む》きにかぶる","暑《あつ》い日《ひ》は脱《ぬ》いで作業《さぎょう》してよい"],"e":"あごひもを締《し》めないと、落《お》ちたり転《ころ》んだりしたときにヘルメットが外《はず》れて、頭《あたま》を守《まも》れません。"},
+{"id":38,"c":"安全管理","q":"足場《あしば》の墜落防止《ついらくぼうし》のための手《て》すりの高《たか》さは、何《なん》cm以上《いじょう》ですか。","a":"85cm","d":["50cm","65cm","70cm"],"e":"手《て》すりは85cm以上《いじょう》にし、その下《した》に中《なか》さんなどを付《つ》けて、すき間《ま》から落《お》ちないようにします。"},
+{"id":39,"c":"安全管理","q":"大雨《おおあめ》や強風《きょうふう》のあと、足場《あしば》の上《うえ》で作業《さぎょう》を始《はじ》める前《まえ》にしなければならないことはどれですか。","a":"足場《あしば》を点検《てんけん》する","d":["すぐに作業《さぎょう》を始《はじ》める","手《て》すりを外《はず》す","足場板《あしばいた》を濡《ぬ》らしておく"],"e":"強風《きょうふう》・大雨《おおあめ》・大雪《おおゆき》・大《おお》きな地震《じしん》のあとは、作業《さぎょう》を始《はじ》める前《まえ》に足場《あしば》を点検《てんけん》し、悪《わる》い所《ところ》を直《なお》します。"},
+{"id":40,"c":"安全管理","q":"クレーン作業《さぎょう》などを中止《ちゅうし》する「強風《きょうふう》」とは、10分間《ぷんかん》の平均風速《へいきんふうそく》が何《なん》m/s以上《いじょう》のときですか。","a":"10m/s","d":["3m/s","5m/s","20m/s"],"e":"10分間《ぷんかん》の平均風速《へいきんふうそく》が10m/s以上《いじょう》を強風《きょうふう》といい、高《たか》い所《ところ》の作業《さぎょう》やクレーン作業《さぎょう》を中止《ちゅうし》します。"},
+{"id":41,"c":"安全管理","q":"シンナーなどの有機溶剤《ゆうきようざい》を室内《しつない》で使《つか》うとき、正《ただ》しいものはどれですか。","a":"換気《かんき》をよくし、防毒《ぼうどく》マスクを使《つか》う","d":["窓《まど》を閉《し》めて作業《さぎょう》する","近《ちか》くでたばこを吸《す》ってよい","マスクはしなくてよい"],"e":"有機溶剤《ゆうきようざい》の蒸気《じょうき》を吸《す》うと中毒《ちゅうどく》になります。また、燃《も》えやすいので火気《かき》は厳禁《げんきん》です。"},
+{"id":42,"c":"安全管理","q":"溶接《ようせつ》や溶断《ようだん》の作業《さぎょう》をするときに、まずすることはどれですか。","a":"燃《も》えやすいものを片付《かたづ》け、消火器《しょうかき》を近《ちか》くに置《お》く","d":["周《まわ》りに段《だん》ボールを敷《し》く","火花《ひばな》が出《で》ても気《き》にしない","消火器《しょうかき》は事務所《じむしょ》に置《お》いておく"],"e":"火花《ひばな》で火事《かじ》が起《お》きることがあります。周《まわ》りを片付《かたづ》け、防炎《ぼうえん》シートと消火器《しょうかき》を準備《じゅんび》します。"},
+{"id":43,"c":"安全管理","q":"「指差《ゆびさ》し呼称《こしょう》」の目的《もくてき》はどれですか。","a":"見《み》まちがいや思《おも》いこみによるミスを減《へ》らす","d":["作業《さぎょう》を早《はや》く終《お》わらせる","作業員《さぎょういん》の人数《にんずう》を数《かぞ》える","休《やす》けいの時間《じかん》を知《し》らせる"],"e":"確認《かくにん》するものを指《ゆび》でさし、声《こえ》に出《だ》して「〇〇よし！」と言《い》います。目《め》・手《て》・口《くち》・耳《みみ》を使《つか》うので、ミスが減《へ》ります。"},
+{"id":44,"c":"施工管理","q":"データのばらつき（分布《ぶんぷ》）を、柱《はしら》のような棒《ぼう》グラフで表《あらわ》す図《ず》はどれですか。","a":"ヒストグラム","d":["パレート図《ず》","特性要因図《とくせいよういんず》","ネットワーク工程表《こうていひょう》"],"e":"ヒストグラムを見《み》ると、データが規格《きかく》の中《なか》にあるか、ばらつきが大《おお》きくないかがわかります。"},
+{"id":45,"c":"施工管理","q":"毎日《まいにち》の安全施工《あんぜんせこう》サイクルで、朝《あさ》いちばんに行《おこな》うことはどれですか。","a":"安全朝礼《あんぜんちょうれい》","d":["終業時《しゅうぎょうじ》の確認《かくにん》","片付《かたづ》け","週間《しゅうかん》の打合《うちあわ》せ"],"e":"安全朝礼《あんぜんちょうれい》→TBM・KY→作業開始前《さぎょうかいしまえ》の点検《てんけん》→作業中《さぎょうちゅう》の指導《しどう》→片付《かたづ》け→終業時《しゅうぎょうじ》の確認《かくにん》、の順《じゅん》に毎日《まいにち》くり返《かえ》します。"},
+{"id":46,"c":"施工管理","q":"建物《たてもの》の工事《こうじ》の一般的《いっぱんてき》な順番《じゅんばん》として、正《ただ》しいものはどれですか。","a":"仮設工事《かせつこうじ》→基礎工事《きそこうじ》→躯体工事《くたいこうじ》→仕上工事《しあげこうじ》","d":["基礎工事《きそこうじ》→仕上工事《しあげこうじ》→躯体工事《くたいこうじ》→仮設工事《かせつこうじ》","躯体工事《くたいこうじ》→仮設工事《かせつこうじ》→基礎工事《きそこうじ》→仕上工事《しあげこうじ》","仕上工事《しあげこうじ》→躯体工事《くたいこうじ》→基礎工事《きそこうじ》→仮設工事《かせつこうじ》"],"e":"まず足場《あしば》や仮囲《かりがこ》いなどの仮設《かせつ》を作《つく》り、次《つぎ》に基礎《きそ》、骨組《ほねぐ》み（躯体《くたい》）、最後《さいご》に内装《ないそう》や外装《がいそう》の仕上《しあ》げをします。"},
+{"id":47,"c":"施工管理","q":"「躯体《くたい》」とは何《なん》ですか。","a":"柱《はしら》・梁《はり》・床《ゆか》・壁《かべ》など、建物《たてもの》の骨組《ほねぐ》みになる部分《ぶぶん》","d":["建物《たてもの》の内装《ないそう》の仕上《しあ》げ","工事用《こうじよう》の足場《あしば》","建物《たてもの》の電気《でんき》の配線《はいせん》"],"e":"躯体《くたい》は建物《たてもの》の重《おも》さや地震《じしん》の力《ちから》を支《ささ》える、いちばん大切《たいせつ》な部分《ぶぶん》です。"},
+{"id":48,"c":"施工管理","q":"原価管理《げんかかんり》で行《おこな》うことはどれですか。","a":"予算《よさん》と実際《じっさい》にかかった費用《ひよう》を比《くら》べ、むだをなくす","d":["コンクリートの強度《きょうど》を調《しら》べる","作業員《さぎょういん》の健康《けんこう》を調《しら》べる","足場《あしば》を点検《てんけん》する"],"e":"材料《ざいりょう》のむだや手戻《てもど》り（やり直《なお》し）を減《へ》らすことも、原価管理《げんかかんり》につながります。"},
+{"id":49,"c":"施工管理","q":"発注者《はっちゅうしゃ》から直接《ちょくせつ》工事《こうじ》を請《う》け負《お》う建設会社《けんせつがいしゃ》を何《なん》といいますか。","a":"元請《もとうけ》","d":["下請《したうけ》","設計者《せっけいしゃ》","施主《せしゅ》"],"e":"元請《もとうけ》は工事《こうじ》全体《ぜんたい》を管理《かんり》し、工事《こうじ》の一部《いちぶ》を下請《したうけ》の会社《かいしゃ》に頼《たの》みます。施主《せしゅ》は発注者《はっちゅうしゃ》のことです。"},
+{"id":50,"c":"施工管理","q":"管理図《かんりず》は、何《なに》を見《み》るために使《つか》いますか。","a":"作業《さぎょう》の品質《ひんしつ》が安定《あんてい》しているかどうか","d":["作業員《さぎょういん》の出勤《しゅっきん》の記録《きろく》","建物《たてもの》の平面《へいめん》の形《かたち》","材料《ざいりょう》の値段《ねだん》"],"e":"管理図《かんりず》には上《うえ》と下《した》に管理限界線《かんりげんかいせん》があり、データが線《せん》の外《そと》に出《で》たら異常《いじょう》があると考《かんが》えます。"},
+{"id":51,"c":"構造・材料","q":"鉄筋《てっきん》コンクリート造《ぞう》で、床《ゆか》になる板《いた》のような部分《ぶぶん》を何《なん》といいますか。","a":"スラブ","d":["梁《はり》","柱《はしら》","基礎《きそ》"],"e":"スラブは床《ゆか》や屋根《やね》になる板状《いたじょう》の部分《ぶぶん》で、梁《はり》が支《ささ》えます。"},
+{"id":52,"c":"構造・材料","q":"柱《はしら》と柱《はしら》の上《うえ》をつなぎ、床《ゆか》や屋根《やね》の重《おも》さを支《ささ》える横《よこ》の部材《ぶざい》はどれですか。","a":"梁《はり》","d":["スラブ","筋《すじ》かい","土台《どだい》"],"e":"梁《はり》が受《う》けた重《おも》さは柱《はしら》に伝《つた》わり、柱《はしら》から基礎《きそ》、地盤《じばん》へと伝《つた》わります。"},
+{"id":53,"c":"構造・材料","q":"コンクリートの材料《ざいりょう》で、砂利《じゃり》のことを何《なん》といいますか。","a":"粗骨材《そこつざい》","d":["細骨材《さいこつざい》","混和剤《こんわざい》","セメント"],"e":"砂《すな》は細骨材《さいこつざい》、砂利《じゃり》は粗骨材《そこつざい》といいます。コンクリートはセメント・水《みず》・細骨材《さいこつざい》・粗骨材《そこつざい》でできています。"},
+{"id":54,"c":"構造・材料","q":"外気温《がいきおん》が25℃以上《いじょう》のとき、コンクリートを練《ね》り混《ま》ぜてから打込《うちこ》み終了《しゅうりょう》までの時間《じかん》は、何分《なんぷん》以内《いない》ですか。","a":"90分《ぷん》以内《いない》","d":["30分《ぷん》以内《いない》","60分《ぷん》以内《いない》","180分《ぷん》以内《いない》"],"e":"時間《じかん》がたつとコンクリートが固《かた》まり始《はじ》めます。25℃未満《みまん》なら120分《ぷん》以内《いない》、25℃以上《いじょう》なら90分《ぷん》以内《いない》が目安《めやす》です（JASS5）。"},
+{"id":55,"c":"構造・材料","q":"コンクリートを打《う》つとき、棒形振動機《ぼうがたしんどうき》（バイブレーター）を使《つか》う目的《もくてき》はどれですか。","a":"コンクリートを締《し》め固《かた》め、すき間《ま》や空気《くうき》のあわをなくす","d":["コンクリートを早《はや》く乾《かわ》かす","コンクリートに水《みず》を加《くわ》える","鉄筋《てっきん》を曲《ま》げる"],"e":"振動機《しんどうき》はなるべく垂直《すいちょく》に入《い》れ、60cm以下《いか》の間隔《かんかく》で使《つか》います。かけすぎると材料《ざいりょう》が分離《ぶんり》するので注意《ちゅうい》します。"},
+{"id":56,"c":"構造・材料","q":"先《さき》に打《う》ったコンクリートが固《かた》まってから次《つぎ》のコンクリートを打《う》ったためにできる、一体《いったい》にならない継《つ》ぎ目《め》を何《なん》といいますか。","a":"コールドジョイント","d":["スランプ","かぶり厚《あつ》さ","エキスパンションジョイント"],"e":"コールドジョイントは水《みず》が入《はい》りやすく、強《つよ》さも弱《よわ》くなります。打《う》ち重《かさ》ねの時間《じかん》を守《まも》ることが大切《たいせつ》です。"},
+{"id":57,"c":"構造・材料","q":"鉄筋《てっきん》の「D13」の「D」は、何《なに》を表《あらわ》していますか。","a":"異形鉄筋《いけいてっきん》","d":["丸鋼《まるこう》","鉄骨《てっこつ》","溶接金網《ようせつかなあみ》"],"e":"異形鉄筋《いけいてっきん》は表面《ひょうめん》にふしがあり、コンクリートとよくくっつきます。13は太《ふと》さの呼《よ》び名《な》（約《やく》13mm）です。"},
+{"id":58,"c":"構造・材料","q":"鉄筋《てっきん》が交《まじ》わる所《ところ》を結《むす》んで固定《こてい》するのに使《つか》うものはどれですか。","a":"結束線《けっそくせん》","d":["セパレーター","アンカーボルト","シーリング材《ざい》"],"e":"結束線《けっそくせん》（なまし鉄線《てっせん》）とハッカーを使《つか》って、鉄筋《てっきん》が動《うご》かないように結《むす》びます。"},
+{"id":59,"c":"構造・材料","q":"木造《もくぞう》の床《ゆか》で、大引《おおびき》の上《うえ》に並《なら》べて床板《ゆかいた》を支《ささ》える材《ざい》はどれですか。","a":"根太《ねだ》","d":["垂木《たるき》","筋《すじ》かい","胴縁《どうぶち》"],"e":"床《ゆか》は「束《つか》→大引《おおびき》→根太《ねだ》→床板《ゆかいた》」の順《じゅん》で組《く》みます。根太《ねだ》を使《つか》わず、厚《あつ》い合板《ごうはん》を張《は》る方法《ほうほう》もあります。"},
+{"id":60,"c":"構造・材料","q":"木造《もくぞう》の屋根《やね》で、屋根《やね》の傾《かたむ》きにそって棟《むね》から軒《のき》へ並《なら》べる材《ざい》はどれですか。","a":"垂木《たるき》","d":["根太《ねだ》","大引《おおびき》","土台《どだい》"],"e":"垂木《たるき》の上《うえ》に野地板《のじいた》を張《は》り、その上《うえ》に防水《ぼうすい》シートと屋根材《やねざい》をのせます。"},
+{"id":61,"c":"仕上げ・作業","q":"型枠《かたわく》で、向《む》かい合《あ》うせき板《いた》の間隔《かんかく》（壁《かべ》の厚《あつ》さ）を保《たも》つための金物《かなもの》はどれですか。","a":"セパレーター","d":["スペーサー","アンカーボルト","結束線《けっそくせん》"],"e":"セパレーターでせき板《いた》の間隔《かんかく》を保《たも》ち、外側《そとがわ》からフォームタイで締《し》めつけます。スペーサーは鉄筋《てっきん》のかぶり厚《あつ》さを保《たも》つものです。"},
+{"id":62,"c":"仕上げ・作業","q":"型枠《かたわく》をはずしてよいのはいつですか。","a":"コンクリートが決《き》められた強度《きょうど》になってから","d":["コンクリートを打《う》った次《つぎ》の日《ひ》ならいつでも","コンクリートの表面《ひょうめん》が乾《かわ》いたらすぐ","雨《あめ》がふる前《まえ》ならいつでも"],"e":"早《はや》くはずすと、コンクリートがこわれたり、たわんだりします。特《とく》にスラブや梁《はり》の下《した》の支保工《しほこう》は、強度《きょうど》を確認《かくにん》してからはずします。"},
+{"id":63,"c":"仕上げ・作業","q":"左官工事《さかんこうじ》で使《つか》うモルタルの材料《ざいりょう》はどれですか。","a":"セメント・砂《すな》・水《みず》","d":["セメント・砂《すな》・砂利《じゃり》・水《みず》","石《せっ》こう・水《みず》","木《き》くず・のり"],"e":"モルタルはセメント・砂《すな》・水《みず》を練《ね》ったものです。砂利《じゃり》も入《い》れるとコンクリートになります。"},
+{"id":64,"c":"仕上げ・作業","q":"石《せっ》こうボードの特徴《とくちょう》として正《ただ》しいものはどれですか。","a":"火《ひ》に強《つよ》い","d":["水《みず》にとても強《つよ》い","建物《たてもの》を支《ささ》える柱《はしら》になる","熱《ねつ》でとけやすい"],"e":"石《せっ》こうボードは燃《も》えにくく、壁《かべ》や天井《てんじょう》によく使《つか》われます。水《みず》には弱《よわ》いので、水《みず》まわりには耐水用《たいすいよう》のボードを使《つか》います。"},
+{"id":65,"c":"仕上げ・作業","q":"軽量鉄骨《けいりょうてっこつ》（LGS）の壁下地《かべしたじ》で、縦《たて》に立《た》てる部材《ぶざい》はどれですか。","a":"スタッド","d":["ランナー","野縁《のぶち》","根太《ねだ》"],"e":"床《ゆか》と天井《てんじょう》にランナーを固定《こてい》し、その間《あいだ》にスタッドを立《た》てます。その上《うえ》にボードを張《は》ります。"},
+{"id":66,"c":"仕上げ・作業","q":"天井《てんじょう》のボードを張《は》るために、天井《てんじょう》の裏《うら》に組《く》む下地材《したじざい》はどれですか。","a":"野縁《のぶち》","d":["スタッド","土台《どだい》","垂木《たるき》"],"e":"天井《てんじょう》は、吊《つ》りボルト→野縁受《のぶちう》け→野縁《のぶち》の順《じゅん》に組《く》み、野縁《のぶち》にボードを張《は》ります。"},
+{"id":67,"c":"仕上げ・作業","q":"外壁《がいへき》の目地《めじ》などのすき間《ま》をふさぎ、水《みず》が入《はい》るのを防《ふせ》ぐ材料《ざいりょう》はどれですか。","a":"シーリング材《ざい》","d":["モルタル","石《せっ》こうボード","断熱材《だんねつざい》"],"e":"シーリング材《ざい》は、プライマーを塗《ぬ》ってから詰《つ》めます。目地《めじ》の底《そこ》にはバックアップ材《ざい》やボンドブレーカーを入《い》れます。"},
+{"id":68,"c":"仕上げ・作業","q":"外壁《がいへき》のタイルをテストハンマーでたたいて調《しら》べる検査《けんさ》で、わかることはどれですか。","a":"タイルの浮《う》き（はがれ）","d":["タイルの色《いろ》","タイルの値段《ねだん》","タイルの重《おも》さ"],"e":"打診検査《だしんけんさ》といいます。たたいた音《おと》が軽《かる》く響《ひび》く所《ところ》は、タイルが浮《う》いているおそれがあります。"},
+{"id":69,"c":"仕上げ・作業","q":"鉄骨《てっこつ》の建方《たてかた》で、柱《はしら》が垂直《すいちょく》になるように調整《ちょうせい》する作業《さぎょう》を何《なん》といいますか。","a":"建入《たてい》れ直《なお》し","d":["墨出《すみだ》し","養生《ようじょう》","締《し》め固《かた》め"],"e":"建入《たてい》れ直《なお》しは、ワイヤーなどで柱《はしら》の傾《かたむ》きを直《なお》す作業《さぎょう》です。そのあとで本締《ほんじ》めをします。"},
+{"id":70,"c":"仕上げ・作業","q":"高《たか》さ（水平《すいへい》）を測《はか》るのに使《つか》う測量機器《そくりょうきき》はどれですか。","a":"レベル","d":["トランシット","下《さ》げ振《ふ》り","コンベックス"],"e":"レベルで基準《きじゅん》の高《たか》さを出《だ》し、陸墨《ろくずみ》などをつけます。トランシットは角度《かくど》を測《はか》る機器《きき》です。"},
+{"id":71,"c":"仕上げ・作業","q":"柱《はしら》などが垂直《すいちょく》かどうかを確《たし》かめるために、糸《いと》の先《さき》におもりを付《つ》けた道具《どうぐ》はどれですか。","a":"下《さ》げ振《ふ》り","d":["水平器《すいへいき》","スケール","墨《すみ》つぼ"],"e":"下《さ》げ振《ふ》りは、おもりの重《おも》さで糸《いと》がまっすぐ下《した》を向《む》くことを使《つか》って、垂直《すいちょく》を確《たし》かめます。"},
+{"id":72,"c":"仕上げ・作業","q":"コンクリートポンプ車《しゃ》で圧送《あっそう》を始《はじ》める前《まえ》に、配管《はいかん》に先《さき》に流《なが》すものはどれですか。","a":"先送《さきおく》りモルタル","d":["水《みず》だけ","砂利《じゃり》だけ","油《あぶら》"],"e":"先送《さきおく》りモルタルで配管《はいかん》の内側《うちがわ》をなめらかにし、詰《つ》まりを防《ふせ》ぎます。このモルタルは型枠《かたわく》に入《い》れずに捨《す》てるのが原則《げんそく》です。"},
+{"id":101,"c":"構造・材料","q":"柱《はしら》と梁《はり》の接合部《せつごうぶ》をしっかり固《かた》めて（剛接合《ごうせつごう》）、骨組《ほねぐ》みで建物《たてもの》を支《ささ》える構造《こうぞう》はどれですか。","a":"ラーメン構造《こうぞう》","d":["壁式構造《かべしきこうぞう》","トラス構造《こうぞう》","吊《つ》り構造《こうぞう》"],"e":"ラーメン構造《こうぞう》は柱《はしら》と梁《はり》の骨組《ほねぐ》みで力《ちから》に抵抗《ていこう》するので、大《おお》きな窓《まど》や広《ひろ》い部屋《へや》を作《つく》りやすいです。壁式構造《かべしきこうぞう》は柱《はしら》や梁《はり》のかわりに、壁《かべ》と床《ゆか》で建物《たてもの》を支《ささ》えます。"},
+{"id":102,"c":"構造・材料","q":"ALC板《ばん》の特徴《とくちょう》として、正《ただ》しいものはどれですか。","a":"軽《かる》くて、断熱性《だんねつせい》と耐火性《たいかせい》がある","d":["重《おも》くて、水《みず》を全《まった》く吸《す》わない","木材《もくざい》でできていて燃《も》えやすい","鉄板《てっぱん》でできていて熱《ねつ》を伝《つた》えやすい"],"e":"ALCは「軽量気泡《けいりょうきほう》コンクリート」で、中《なか》に小《ちい》さな気泡《きほう》がたくさんあります。水《みず》を吸《す》いやすいので、外壁《がいへき》に使《つか》うときは塗装《とそう》などで防水《ぼうすい》します。"},
+{"id":103,"c":"構造・材料","q":"建物《たてもの》の下《した》全体《ぜんたい》を、鉄筋《てっきん》コンクリートの1枚《まい》の大《おお》きな板《いた》で支《ささ》える基礎《きそ》はどれですか。","a":"べた基礎《きそ》","d":["布基礎《ぬのぎそ》","独立基礎《どくりつきそ》","杭基礎《くいきそ》"],"e":"べた基礎《きそ》は建物《たてもの》の重《おも》さを広《ひろ》い面《めん》で地盤《じばん》に伝《つた》えるので、建物《たてもの》が傾《かたむ》いて沈《しず》む「不同沈下《ふどうちんか》」が起《お》きにくいです。布基礎《ぬのぎそ》は壁《かべ》の下《した》に帯《おび》のように連続《れんぞく》して作《つく》る基礎《きそ》です。"},
+{"id":104,"c":"構造・材料","q":"地盤《じばん》の表面《ひょうめん》が弱《よわ》いとき、深《ふか》い所《ところ》にある固《かた》い地盤《じばん》まで届《とど》くようにして建物《たてもの》を支《ささ》える基礎《きそ》はどれですか。","a":"杭基礎《くいきそ》","d":["べた基礎《きそ》","布基礎《ぬのぎそ》","独立基礎《どくりつきそ》"],"e":"杭《くい》には、工場《こうじょう》で作《つく》った既製杭《きせいぐい》と、現場《げんば》で穴《あな》を掘《ほ》ってコンクリートを打《う》つ場所打《ばしょう》ち杭《ぐい》があります。独立基礎《どくりつきそ》は柱《はしら》の下《した》ごとに1つずつ作《つく》る基礎《きそ》です。"},
+{"id":105,"c":"構造・材料","q":"構造材《こうぞうざい》に乾燥材《かんそうざい》を使《つか》う主《おも》な理由《りゆう》はどれですか。","a":"乾燥《かんそう》による変形《へんけい》が少《すく》ないから","d":["木材《もくざい》の重《おも》さが増《ふ》えるから","水《みず》を吸《す》って強《つよ》くなるから","色《いろ》が変《か》わりにくくなるから"],"e":"木材《もくざい》は乾燥《かんそう》すると縮《ちぢ》み、反《そ》りや割《わ》れが出《で》ます。あらかじめ乾燥《かんそう》させた材《ざい》を使《つか》うと、建《た》てた後《あと》の変形《へんけい》やすき間《ま》が少《すく》なくなります。"},
+{"id":106,"c":"構造・材料","q":"ひき板《いた》を、繊維《せんい》の方向《ほうこう》をそろえて接着剤《せっちゃくざい》で重《かさ》ね、大《おお》きな断面《だんめん》にした木材《もくざい》はどれですか。","a":"集成材《しゅうせいざい》","d":["合板《ごうはん》","無垢材《むくざい》","CLT"],"e":"集成材《しゅうせいざい》は節《ふし》や割《わ》れを取《と》り除《のぞ》いたひき板《いた》で作《つく》るので、強《つよ》さが安定《あんてい》しています。CLTはひき板《いた》を直角《ちょっかく》に交互《こうご》に重《かさ》ねた大《おお》きなパネルです。"},
+{"id":107,"c":"構造・材料","q":"板《いた》の面《めん》のうち、木《き》の外側《そとがわ》（樹皮《じゅひ》に近《ちか》い側《がわ》）の面《めん》を何《なん》といいますか。","a":"木表《きおもて》","d":["木裏《きうら》","木口《こぐち》","木端《こば》"],"e":"板《いた》は乾燥《かんそう》すると、木表《きおもて》の側《がわ》がへこむように反《そ》ります。敷居《しきい》や鴨居《かもい》では、溝《みぞ》を彫《ほ》る面《めん》を木表《きおもて》にするのが基本《きほん》です。"},
+{"id":108,"c":"構造・材料","q":"2本《ほん》の木材《もくざい》を、長《なが》さの方向《ほうこう》につないで長《なが》くする接合部《せつごうぶ》を何《なん》といいますか。","a":"継手《つぎて》","d":["仕口《しぐち》","ほぞ","大入《おおい》れ"],"e":"継手《つぎて》は材《ざい》を長《なが》くつなぐ所《ところ》、仕口《しぐち》は柱《はしら》と梁《はり》のように角度《かくど》をもって組《く》む所《ところ》です。代表的《だいひょうてき》な継手《つぎて》に「腰掛《こしか》け鎌継《かまつ》ぎ」「腰掛《こしか》け蟻継《ありつ》ぎ」があります。"},
+{"id":109,"c":"構造・材料","q":"2階建《かいだ》ての木造住宅《もくぞうじゅうたく》で、土台《どだい》から軒《のき》まで1本《ぽん》でつながっている柱《はしら》を何《なん》といいますか。","a":"通《とお》し柱《ばしら》","d":["管柱《くだばしら》","間柱《まばしら》","束《つか》"],"e":"管柱《くだばしら》は階《かい》ごとに分《わ》かれている柱《はしら》です。間柱《まばしら》は柱《はしら》と柱《はしら》の間《あいだ》に立《た》てる、壁《かべ》の下地用《したじよう》の細《ほそ》い材《ざい》です。"},
+{"id":110,"c":"構造・材料","q":"床組《ゆかぐみ》や小屋組《こやぐみ》の角《かど》に斜《なな》めに入《い》れて、水平面《すいへいめん》のゆがみを防《ふせ》ぐ材《ざい》はどれですか。","a":"火打《ひう》ち","d":["筋《すじ》かい","方杖《ほうづえ》","間柱《まばしら》"],"e":"火打《ひう》ちは床《ゆか》や屋根《やね》の水平方向《すいへいほうこう》のゆがみを防《ふせ》ぎます。筋《すじ》かいは壁《かべ》の中《なか》（鉛直面《えんちょくめん》）に入《い》れて、横《よこ》からの力《ちから》に抵抗《ていこう》します。"},
+{"id":111,"c":"構造・材料","q":"木造《もくぞう》2階建《かいだ》てで、2階《かい》の床《ゆか》の高《たか》さで外周《がいしゅう》の柱《はしら》をつなぐ横架材《おうかざい》はどれですか。","a":"胴差《どうざ》し","d":["土台《どだい》","軒桁《のきげた》","大引《おおびき》"],"e":"胴差《どうざ》しは2階《かい》の床《ゆか》や壁《かべ》の重《おも》さを受《う》けます。軒桁《のきげた》は屋根《やね》の高《たか》さで柱《はしら》の上《うえ》をつなぎ、垂木《たるき》を受《う》ける材《ざい》です。"},
+{"id":112,"c":"構造・材料","q":"木造《もくぞう》の「N値計算《ちけいさん》」は、何《なに》を決《き》めるために行《おこな》いますか。","a":"柱《はしら》の上下《じょうげ》に使《つか》う接合金物《せつごうかなもの》","d":["基礎《きそ》の鉄筋《てっきん》の太《ふと》さ","屋根《やね》の勾配《こうばい》","床《ゆか》の仕上《しあ》げ材《ざい》"],"e":"地震《じしん》や風《かぜ》のとき、柱《はしら》が土台《どだい》や梁《はり》から抜《ぬ》けないように、必要《ひつよう》な金物《かなもの》（ホールダウン金物《かなもの》など）を計算《けいさん》で選《えら》びます。地盤調査《じばんちょうさ》の「N値《ち》」とは別《べつ》のものです。"},
+{"id":113,"c":"構造・材料","q":"木材《もくざい》の継手《つぎて》や仕口《しぐち》を、工場《こうじょう》の機械《きかい》であらかじめ加工《かこう》しておくことを何《なん》といいますか。","a":"プレカット","d":["手刻《てきざ》み","墨付《すみつ》け","建方《たてかた》"],"e":"プレカットは加工《かこう》が正確《せいかく》で早《はや》く、現場《げんば》の作業《さぎょう》を減《へ》らせます。大工《だいく》が墨付《すみつ》けをして、手《て》で加工《かこう》するのは「手刻《てきざ》み」です。"},
+{"id":114,"c":"構造・材料","q":"丸太《まるた》の中心《ちゅうしん》に近《ちか》い、色《いろ》の濃《こ》い部分《ぶぶん》を何《なん》といいますか。","a":"心材《しんざい》（赤身《あかみ》）","d":["辺材《へんざい》（白太《しらた》）","樹皮《じゅひ》","節《ふし》"],"e":"心材《しんざい》は腐《くさ》りにくく、虫《むし》にも比較的《ひかくてき》強《つよ》いです。外側《そとがわ》の色《いろ》の薄《うす》い辺材《へんざい》は腐《くさ》りやすいので、土台《どだい》などには心材《しんざい》や防腐処理《ぼうふしょり》をした材《ざい》を使《つか》います。"},
+{"id":115,"c":"構造・材料","q":"H形鋼《がたこう》で、上下《じょうげ》にある横《よこ》の板《いた》の部分《ぶぶん》を何《なん》といいますか。","a":"フランジ","d":["ウェブ","スチフナー","ダイアフラム"],"e":"H形鋼《がたこう》の上下《じょうげ》の板《いた》をフランジ、その間《あいだ》をつなぐ縦《たて》の板《いた》をウェブといいます。梁《はり》が曲《ま》げられる力《ちから》には、主《おも》にフランジが抵抗《ていこう》します。"},
+{"id":116,"c":"構造・材料","q":"角形鋼管《かくがたこうかん》の柱《はしら》と梁《はり》の接合部《せつごうぶ》で、梁《はり》のフランジの位置《いち》に入《い》れて力《ちから》を伝《つた》える板《いた》はどれですか。","a":"ダイアフラム","d":["ガセットプレート","ベースプレート","スプライスプレート"],"e":"ダイアフラムには、柱《はしら》を貫《つらぬ》く通《とお》しダイアフラムや、柱《はしら》の中《なか》に入《い》れる内《うち》ダイアフラムがあります。ベースプレートは柱《はしら》のいちばん下《した》で、基礎《きそ》に固定《こてい》する板《いた》です。"},
+{"id":117,"c":"構造・材料","q":"鉄骨《てっこつ》の溶接《ようせつ》で、溶接線《ようせつせん》が交《まじ》わらないように部材《ぶざい》に開《あ》ける、扇形《おうぎがた》の切《き》り欠《か》きを何《なん》といいますか。","a":"スカラップ","d":["エンドタブ","裏当《うらあ》て金《がね》","開先《かいさき》"],"e":"スカラップで溶接《ようせつ》の重《かさ》なりを避《さ》けます。最近《さいきん》は、切《き》り欠《か》きに力《ちから》が集中《しゅうちゅう》するのを防《ふせ》ぐため、スカラップを設《もう》けない「ノンスカラップ工法《こうほう》」も多《おお》く使《つか》われます。"},
+{"id":118,"c":"構造・材料","q":"溶接《ようせつ》の欠陥《けっかん》で、溶接《ようせつ》の端《はし》の母材《ぼざい》が溝《みぞ》のようにえぐれて残《のこ》ったものはどれですか。","a":"アンダーカット","d":["ブローホール","オーバーラップ","スパッタ"],"e":"アンダーカットは、電流《でんりゅう》が大《おお》きすぎたり、溶接《ようせつ》の速度《そくど》が速《はや》すぎたりすると起《お》きます。ブローホールは、溶接部《ようせつぶ》の中《なか》にできる気泡《きほう》（空洞《くうどう》）です。"},
+{"id":119,"c":"構造・材料","q":"直角《ちょっかく》に交《まじ》わる部材《ぶざい》の角《かど》を、開先《かいさき》をとらずに三角形《さんかくけい》の断面《だんめん》で溶接《ようせつ》する方法《ほうほう》はどれですか。","a":"すみ肉《にく》溶接《ようせつ》","d":["完全溶込《かんぜんとけこ》み溶接《ようせつ》","部分溶込《ぶぶんとけこ》み溶接《ようせつ》","スタッド溶接《ようせつ》"],"e":"すみ肉《にく》溶接《ようせつ》は、部材《ぶざい》の角《かど》の部分《ぶぶん》に盛《も》るように溶接《ようせつ》します。完全溶込《かんぜんとけこ》み溶接《ようせつ》は、開先《かいさき》をとって板《いた》の厚《あつ》さ全体《ぜんたい》を溶《と》かし込《こ》む溶接《ようせつ》です。"},
+{"id":120,"c":"構造・材料","q":"鉄骨《てっこつ》に耐火被覆《たいかひふく》をする理由《りゆう》はどれですか。","a":"火事《かじ》の熱《ねつ》で鉄骨《てっこつ》が弱《よわ》くなるのを防《ふせ》ぐため","d":["鉄骨《てっこつ》を軽《かる》くするため","鉄骨《てっこつ》の色《いろ》をそろえるため","溶接《ようせつ》をしやすくするため"],"e":"鉄《てつ》は高《たか》い温度《おんど》になると強《つよ》さが大《おお》きく下《さ》がり、建物《たてもの》が倒《たお》れるおそれがあります。吹付《ふきつ》けロックウールや耐火《たいか》ボードなどで鉄骨《てっこつ》を包《つつ》みます。"},
+{"id":121,"c":"構造・材料","q":"鉄筋《てっきん》コンクリートの柱《はしら》で、主筋《しゅきん》のまわりを巻《ま》くように入《い》れる鉄筋《てっきん》を何《なん》といいますか。","a":"帯筋《おびきん》（フープ）","d":["あばら筋《きん》（スターラップ）","腹筋《はらきん》","配力筋《はいりききん》"],"e":"帯筋《おびきん》は柱《はしら》のせん断破壊《だんはかい》を防《ふせ》ぎ、主筋《しゅきん》が外《そと》へはらみ出《だ》すのも防《ふせ》ぎます。梁《はり》の主筋《しゅきん》を巻《ま》く鉄筋《てっきん》は「あばら筋《きん》（スターラップ）」です。"},
+{"id":122,"c":"構造・材料","q":"梁《はり》の主筋《しゅきん》を柱《はしら》の中《なか》へ決《き》められた長《なが》さだけのばし、抜《ぬ》けないようにすることを何《なん》といいますか。","a":"定着《ていちゃく》","d":["継手《つぎて》","かぶり","あき"],"e":"定着《ていちゃく》の長《なが》さが足《た》りないと、力《ちから》がかかったときに鉄筋《てっきん》が抜《ぬ》けてしまいます。定着《ていちゃく》の長《なが》さは、鉄筋《てっきん》の太《ふと》さやコンクリートの強度《きょうど》などで決《き》まります。"},
+{"id":123,"c":"構造・材料","q":"鉄筋《てっきん》と鉄筋《てっきん》の間《あいだ》のすき間《ま》（あき）が必要《ひつよう》な理由《りゆう》はどれですか。","a":"コンクリートが全体《ぜんたい》にいきわたるように","d":["鉄筋《てっきん》がさびやすくなるように","型枠《かたわく》の重《おも》さを軽《かる》くするために","鉄筋《てっきん》の本数《ほんすう》を減《へ》らすために"],"e":"あきが狭《せま》いと、砂利《じゃり》（粗骨材《そこつざい》）が鉄筋《てっきん》の間《あいだ》につまり、ジャンカの原因《げんいん》になります。あきは、鉄筋《てっきん》の太《ふと》さや粗骨材《そこつざい》の大《おお》きさをもとに決《き》めます。"},
+{"id":124,"c":"構造・材料","q":"梁《はり》やスラブの下《した》の鉄筋《てっきん》を支《ささ》えるスペーサーとして、原則《げんそく》使《つか》うものはどれですか。","a":"鋼製《こうせい》またはコンクリート製《せい》","d":["プラスチック製《せい》","木《き》の切《き》れはし","段《だん》ボール製《せい》"],"e":"梁《はり》やスラブの下《した》のスペーサーには、鉄筋《てっきん》や作業員《さぎょういん》、コンクリートの重《おも》さがかかります。つぶれにくい鋼製《こうせい》やコンクリート製《せい》を使《つか》い、鋼製《こうせい》のものは型枠《かたわく》に接《せっ》する部分《ぶぶん》に防錆処理《ぼうせいしょり》をします。"},
+{"id":125,"c":"構造・材料","q":"コンクリートの表面《ひょうめん》に砂利《じゃり》が集《あつ》まり、すき間《ま》ができてしまった不良《ふりょう》を何《なん》といいますか。","a":"ジャンカ（豆板《まめいた》）","d":["ブリーディング","エフロレッセンス","レイタンス"],"e":"ジャンカは、締《し》め固《かた》め不足《ぶそく》や、型枠《かたわく》のすき間《ま》からのモルタルのもれなどで起《お》きます。振動機《しんどうき》でよく締《し》め固《かた》め、型枠《かたわく》のすき間《ま》をふさいで防《ふせ》ぎます。"},
+{"id":126,"c":"構造・材料","q":"コンクリートを打《う》った後《あと》、水《みず》が表面《ひょうめん》に浮《う》き上《あ》がってくる現象《げんしょう》を何《なん》といいますか。","a":"ブリーディング","d":["ジャンカ","コールドジョイント","ポップアウト"],"e":"ブリーディングが多《おお》いと、表面《ひょうめん》にレイタンスという弱《よわ》い膜《まく》ができます。次《つぎ》のコンクリートを打《う》ち継《つ》ぐ前《まえ》に、レイタンスは取《と》り除《のぞ》きます。"},
+{"id":127,"c":"構造・材料","q":"空気中《くうきちゅう》の二酸化炭素《にさんかたんそ》によって、コンクリートのアルカリ性《せい》が失《うしな》われていく現象《げんしょう》はどれですか。","a":"中性化《ちゅうせいか》","d":["凍害《とうがい》","塩害《えんがい》","アルカリシリカ反応《はんのう》"],"e":"中性化《ちゅうせいか》が鉄筋《てっきん》の位置《いち》まで進《すす》むと、鉄筋《てっきん》がさびやすくなります。かぶり厚《あつ》さをしっかり確保《かくほ》することが、中性化《ちゅうせいか》への対策《たいさく》になります。"},
+{"id":128,"c":"構造・材料","q":"コンクリートの圧縮強度《あっしゅくきょうど》を調《しら》べるために、荷《に》おろしのときに採取《さいしゅ》して作《つく》る円柱形《えんちゅうけい》の試料《しりょう》を何《なん》といいますか。","a":"供試体《きょうしたい》（テストピース）","d":["スランプコーン","エアメーター","スペーサー"],"e":"供試体《きょうしたい》は決《き》められた方法《ほうほう》で養生《ようじょう》し、材齢《ざいれい》28日《にち》などで圧縮《あっしゅく》して強《つよ》さを調《しら》べます。エアメーターは、まだ固《かた》まらないコンクリートの空気量《くうきりょう》を測《はか》る道具《どうぐ》です。"},
+{"id":129,"c":"構造・材料","q":"AE剤《ざい》を使《つか》って、コンクリートに細《こま》かい空気《くうき》の泡《あわ》を入《い》れる主《おも》な目的《もくてき》はどれですか。","a":"凍《こお》っても傷《いた》みにくくするため","d":["重《おも》さを2倍《ばい》にするため","すぐに固《かた》まらせるため","表面《ひょうめん》を白《しろ》くするため"],"e":"細《こま》かい空気《くうき》の泡《あわ》が、中《なか》の水《みず》が凍《こお》ってふくらむ力《ちから》をやわらげます。また、打《う》ちやすさ（ワーカビリティー）も良《よ》くなります。普通《ふつう》コンクリートの空気量《くうきりょう》は4.5%が標準《ひょうじゅん》です。"},
+{"id":130,"c":"構造・材料","q":"コンクリートに含《ふく》まれる塩化物《えんかぶつ》（塩分《えんぶん》）が多《おお》いと、どんな問題《もんだい》が起《お》きますか。","a":"中《なか》の鉄筋《てっきん》がさびやすくなる","d":["コンクリートが軽《かる》くなる","スランプが大《おお》きくなる","色《いろ》が黒《くろ》くなる"],"e":"塩分《えんぶん》は鉄筋《てっきん》のさびの原因《げんいん》になります。そのため、コンクリートの塩化物《えんかぶつ》イオン量《りょう》は、原則《げんそく》0.30kg/m³以下《いか》と決《き》められています。"},
+{"id":131,"c":"仕上げ・作業","q":"溶《と》かしたアスファルトとルーフィングを、何層《なんそう》も重《かさ》ねて作《つく》る防水《ぼうすい》はどれですか。","a":"アスファルト防水《ぼうすい》","d":["シート防水《ぼうすい》","塗膜防水《とまくぼうすい》","モルタル防水《ぼうすい》"],"e":"アスファルト防水《ぼうすい》は層《そう》が厚《あつ》く、信頼性《しんらいせい》の高《たか》い防水《ぼうすい》です。熱工法《ねつこうほう》では高温《こうおん》のアスファルトを使《つか》うので、やけどや火気《かき》に注意《ちゅうい》します。"},
+{"id":132,"c":"仕上げ・作業","q":"防水工事《ぼうすいこうじ》を始《はじ》める前《まえ》の下地《したじ》（コンクリート面《めん》）の状態《じょうたい》として、正《ただ》しいものはどれですか。","a":"よく乾燥《かんそう》していて、でこぼこがない","d":["水《みず》でぬれていて、しめっている","表面《ひょうめん》にでこぼこが残《のこ》っている","ほこりやごみが残《のこ》っている"],"e":"下地《したじ》がぬれていたり汚《よご》れていたりすると、防水層《ぼうすいそう》がふくれたり、はがれたりします。下地《したじ》の角《かど》の部分《ぶぶん》は面取《めんと》りをして、防水層《ぼうすいそう》が鋭《するど》く折《お》れないようにします。"},
+{"id":133,"c":"仕上げ・作業","q":"屋上《おくじょう》の雨水《あまみず》を集《あつ》めて、たて樋《どい》へ流《なが》すための金物《かなもの》はどれですか。","a":"ルーフドレン","d":["笠木《かさぎ》","水切《みずき》り","鼻隠《はなかく》し"],"e":"ドレンのまわりは水《みず》がたまりやすく、雨《あま》もりが起《お》きやすい所《ところ》です。防水層《ぼうすいそう》をドレンにしっかり張《は》りかけ、ごみでつまらないように点検《てんけん》します。"},
+{"id":134,"c":"仕上げ・作業","q":"液状《えきじょう》の材料《ざいりょう》を塗《ぬ》り重《かさ》ねて、継《つ》ぎ目《め》のない防水層《ぼうすいそう》を作《つく》る方法《ほうほう》はどれですか。","a":"塗膜防水《とまくぼうすい》","d":["シート防水《ぼうすい》","アスファルト防水《ぼうすい》","シーリング"],"e":"塗膜防水《とまくぼうすい》はウレタンゴム系《けい》などを使《つか》い、形《かたち》が複雑《ふくざつ》な所《ところ》にも施工《せこう》しやすいです。厚《あつ》さが均一《きんいつ》になるように、決《き》められた量《りょう》をきちんと塗《ぬ》ることが大切《たいせつ》です。"},
+{"id":135,"c":"仕上げ・作業","q":"窓《まど》の下《した》や屋根《やね》と壁《かべ》の取合《とりあ》いに付《つ》けて、雨水《あまみず》を外《そと》へ流《なが》す板金《ばんきん》を何《なん》といいますか。","a":"水切《みずき》り","d":["野地板《のじいた》","破風板《はふいた》","胴縁《どうぶち》"],"e":"水切《みずき》りは、窓《まど》の下《した》や土台《どだい》の上《うえ》、屋根《やね》と壁《かべ》の取合《とりあ》いなどに付《つ》けます。上《うえ》の部材《ぶざい》を下《した》の部材《ぶざい》に重《かさ》ねて、水《みず》が自然《しぜん》に外《そと》へ流《なが》れるようにするのが基本《きほん》です。"},
+{"id":136,"c":"仕上げ・作業","q":"屋根《やね》の野地板《のじいた》の上《うえ》、屋根材《やねざい》の下《した》に敷《し》く防水《ぼうすい》シートを何《なん》といいますか。","a":"下葺《したぶ》き材《ざい》（ルーフィング）","d":["透湿防水《とうしつぼうすい》シート","防湿《ぼうしつ》フィルム","ブルーシート"],"e":"下葺《したぶ》き材《ざい》は、軒先《のきさき》から棟《むね》に向《む》かって、下《した》から上《うえ》へ重《かさ》ねて張《は》ります。上《うえ》の材《ざい》が下《した》の材《ざい》にかぶさるので、水《みず》が入《はい》りにくくなります。"},
+{"id":137,"c":"仕上げ・作業","q":"木造住宅《もくぞうじゅうたく》の外壁通気工法《がいへきつうきこうほう》で、透湿防水《とうしつぼうすい》シートと外壁材《がいへきざい》の間《あいだ》に作《つく》るものはどれですか。","a":"空気《くうき》が流《なが》れる通気層《つうきそう》","d":["雨水《あまみず》をためる層《そう》","モルタルをつめる層《そう》","断熱材《だんねつざい》をつめる層《そう》"],"e":"通気胴縁《つうきどうぶち》ですき間《ま》を作《つく》り、壁《かべ》の中《なか》に入《はい》った湿気《しっけ》や雨水《あまみず》を外《そと》へ出《だ》します。通気層《つうきそう》の下《した》と上《うえ》には、空気《くうき》の入口《いりぐち》と出口《でぐち》が必要《ひつよう》です。"},
+{"id":138,"c":"仕上げ・作業","q":"透湿防水《とうしつぼうすい》シートの性質《せいしつ》として、正《ただ》しいものはどれですか。","a":"水《みず》は通《とお》さないが、湿気《しっけ》は通《とお》す","d":["水《みず》も湿気《しっけ》も通《とお》す","水《みず》は通《とお》すが、湿気《しっけ》は通《とお》さない","水《みず》も湿気《しっけ》も通《とお》さない"],"e":"壁《かべ》の中《なか》の湿気《しっけ》を外《そと》へ逃《に》がし、外《そと》からの雨水《あまみず》は止《と》めます。シートは下《した》から上《うえ》へ重《かさ》ねて張《は》ります。"},
+{"id":139,"c":"仕上げ・作業","q":"セメントモルタル塗《ぬ》りで、下塗《したぬ》りの後《あと》はどうしますか。","a":"ひび割《わ》れが出《で》るまで置《お》いてから次《つぎ》を塗《ぬ》る","d":["すぐに上塗《うわぬ》りまで一気《いっき》に塗《ぬ》る","水《みず》をかけてすぐに削《けず》り取《と》る","表面《ひょうめん》をつるつるに磨《みが》いておく"],"e":"下塗《したぬ》りを十分《じゅうぶん》に乾《かわ》かし、ひび割《わ》れを先《さき》に出《だ》させます（目安《めやす》は14日《にち》以上《いじょう》）。下塗《したぬ》りの表面《ひょうめん》は、次《つぎ》の層《そう》がよくつくように、くし目《め》を付《つ》けて荒《あら》しておきます。"},
+{"id":140,"c":"仕上げ・作業","q":"モルタルを塗《ぬ》る前《まえ》に、コンクリート面《めん》に吸水調整材《きゅうすいちょうせいざい》を塗《ぬ》る目的《もくてき》はどれですか。","a":"下地《したじ》の吸《す》い込《こ》みを少《すく》なくする","d":["下地《したじ》の色《いろ》を白《しろ》くする","下地《したじ》を早《はや》く乾《かわ》かす","モルタルを固《かた》くする"],"e":"下地《したじ》が水《みず》を吸《す》いすぎると、モルタルが乾《かわ》きすぎる「ドライアウト」になり、はがれやひび割《わ》れの原因《げんいん》になります。吸水調整材《きゅうすいちょうせいざい》は薄《うす》く塗《ぬ》り、塗《ぬ》りすぎないようにします。"},
+{"id":141,"c":"仕上げ・作業","q":"下地《したじ》に張付《はりつ》けモルタルを塗《ぬ》り、さらにタイルの裏《うら》にもモルタルを塗《ぬ》って張《は》る方法《ほうほう》はどれですか。","a":"改良圧着張《かいりょうあっちゃくば》り","d":["密着張《みっちゃくば》り","マスク張《ば》り","接着剤張《せっちゃくざいば》り"],"e":"改良圧着張《かいりょうあっちゃくば》りは、下地《したじ》とタイルの両方《りょうほう》にモルタルを塗《ぬ》るので、よく接着《せっちゃく》します。密着張《みっちゃくば》りは、振動工具《しんどうこうぐ》を使《つか》ってタイルを下地《したじ》のモルタルに押《お》し込《こ》む方法《ほうほう》です。"},
+{"id":142,"c":"仕上げ・作業","q":"外壁《がいへき》のタイル張《ば》りで、建物《たてもの》の動《うご》きや温度《おんど》の変化《へんか》によるタイルの割《わ》れやはがれを防《ふせ》ぐ目地《めじ》はどれですか。","a":"伸縮調整目地《しんしゅくちょうせいめじ》","d":["化粧目地《けしょうめじ》","馬目地《うまめじ》","芋目地《いもめじ》"],"e":"伸縮調整目地《しんしゅくちょうせいめじ》には、シーリング材《ざい》を詰《つ》めます。下地《したじ》のコンクリートのひび割《わ》れ誘発目地《ゆうはつめじ》と、位置《いち》をそろえることが大切《たいせつ》です。"},
+{"id":143,"c":"仕上げ・作業","q":"タイル張《ば》りで、張付《はりつ》けモルタルを一度《いちど》に広《ひろ》く塗《ぬ》りすぎてはいけない理由《りゆう》はどれですか。","a":"乾《かわ》いて接着《せっちゃく》が弱《よわ》くなるから","d":["モルタルの色《いろ》が変《か》わるから","タイルの重《おも》さが増《ふ》えるから","目地《めじ》の幅《はば》が広《ひろ》がるから"],"e":"塗《ぬ》ってから時間《じかん》がたったモルタルにタイルを張《は》ると、はがれやすくなります。1回《かい》に塗《ぬ》る面積《めんせき》を決《き》め、決《き》められた時間内《じかんない》に張《は》り終《お》えます。"},
+{"id":144,"c":"仕上げ・作業","q":"塗装《とそう》の前《まえ》に、汚《よご》れ・さび・油《あぶら》などを取《と》り除《のぞ》いて、表面《ひょうめん》を整《ととの》える作業《さぎょう》を何《なん》といいますか。","a":"素地《そじ》ごしらえ","d":["上塗《うわぬ》り","養生《ようじょう》","吹付《ふきつ》け"],"e":"素地《そじ》ごしらえが悪《わる》いと、塗料《とりょう》がよくつかず、はがれやふくれの原因《げんいん》になります。塗装《とそう》は「素地《そじ》ごしらえ→下塗《したぬ》り→中塗《なかぬ》り→上塗《うわぬ》り」の順《じゅん》に行《おこな》います。"},
+{"id":145,"c":"仕上げ・作業","q":"屋外《おくがい》の塗装《とそう》を行《おこな》わないほうがよい天気《てんき》はどれですか。","a":"気温《きおん》が低《ひく》く、雨《あめ》や結露《けつろ》がある","d":["よく晴《は》れて、風《かぜ》が弱《よわ》い","気温《きおん》が20℃くらいで乾《かわ》いている","くもりで、湿度《しつど》が低《ひく》い"],"e":"気温《きおん》が低《ひく》いと塗料《とりょう》が乾《かわ》きにくく、湿度《しつど》が高《たか》いと白《しろ》くにごったり、はがれたりします。目安《めやす》として、気温《きおん》5℃以下《いか》や湿度《しつど》85%以上《いじょう》のときは塗装《とそう》を行《おこな》いません。"},
+{"id":146,"c":"仕上げ・作業","q":"鉄《てつ》の部分《ぶぶん》を塗装《とそう》するとき、最初《さいしょ》の下塗《したぬ》りに使《つか》う塗料《とりょう》はどれですか。","a":"さび止《ど》め塗料《とりょう》","d":["透明《とうめい》のニス","木材保護塗料《もくざいほごとりょう》","床用《ゆかよう》ワックス"],"e":"鉄《てつ》はさびると弱《よわ》くなり、塗膜《とまく》もはがれます。まずさびや油《あぶら》をよく落《お》としてから、さび止《ど》め塗料《とりょう》を塗《ぬ》ります。"},
+{"id":147,"c":"仕上げ・作業","q":"石《せっ》こうボードの継《つ》ぎ目《め》やビスの頭《あたま》を平《たい》らにして、クロスを張《は》る下地《したじ》を整《ととの》える作業《さぎょう》はどれですか。","a":"パテ処理《しょり》","d":["墨出《すみだ》し","面取《めんと》り","目荒《めあら》し"],"e":"パテが乾《かわ》いたら、サンドペーパーで平《たい》らにします。下地《したじ》にでこぼこがあると、クロスを張《は》った後《あと》に目立《めだ》ってしまいます。"},
+{"id":148,"c":"仕上げ・作業","q":"病院《びょういん》や学校《がっこう》の床《ゆか》によく使《つか》われる、ロール状《じょう》の塩化《えんか》ビニル製《せい》の床材《ゆかざい》はどれですか。","a":"長尺《ちょうじゃく》シート","d":["フローリング","カーペットタイル","畳《たたみ》"],"e":"長尺《ちょうじゃく》シートは継《つ》ぎ目《め》が少《すく》なく、水《みず》や汚《よご》れに強《つよ》いです。継《つ》ぎ目《め》は熱溶接《ねつようせつ》などで処理《しょり》し、水《みず》が入《はい》らないようにします。"},
+{"id":149,"c":"仕上げ・作業","q":"フローリングを張《は》るとき、壁際《かべぎわ》に少《すこ》しすき間《ま》をあける理由《りゆう》はどれですか。","a":"木《き》がふくらむ分《ぶん》のよゆうを作《つく》るため","d":["ほこりが外《そと》に出《で》やすくするため","電気《でんき》の配線《はいせん》を通《とお》すため","床《ゆか》の重《おも》さを軽《かる》くするため"],"e":"木《き》は湿気《しっけ》を吸《す》うと伸《の》びます。すき間《ま》がないと、床《ゆか》が持《も》ち上《あ》がったり、きしんだりします。すき間《ま》は幅木《はばき》でかくします。"},
+{"id":150,"c":"仕上げ・作業","q":"床《ゆか》の上《うえ》に脚《あし》の付《つ》いたパネルを並《なら》べ、その下《した》に電気《でんき》やLANの配線《はいせん》を通《とお》せるようにした床《ゆか》はどれですか。","a":"OAフロア（フリーアクセスフロア）","d":["土間《どま》コンクリート","畳床《たたみどこ》","じか張《ば》りフローリング"],"e":"OAフロアはパネルを外《はず》して、あとから配線《はいせん》を変《か》えることができます。事務所《じむしょ》やサーバー室《しつ》によく使《つか》われます。"},
+{"id":151,"c":"仕上げ・作業","q":"RC造《ぞう》でアルミサッシを取《と》り付《つ》けた後《あと》、サッシ枠《わく》と躯体《くたい》のすき間《ま》に詰《つ》めるものはどれですか。","a":"モルタル","d":["石《せっ》こうボード","段《だん》ボール","乾《かわ》いた砂《すな》"],"e":"サッシはくさびで位置《いち》を決《き》め、アンカーを溶接《ようせつ》して固定《こてい》します。その後《ご》、すき間《ま》に防水剤《ぼうすいざい》入《い》りのモルタルをすき間《ま》なく詰《つ》め、外側《そとがわ》にはシーリングをします。"},
+{"id":152,"c":"仕上げ・作業","q":"ドアを取《と》り付《つ》けた後《あと》、開《あ》け閉《し》めがスムーズになるように、すき間《ま》や傾《かたむ》きを直《なお》すことを何《なん》といいますか。","a":"建付《たてつ》け調整《ちょうせい》","d":["墨出《すみだ》し","素地《そじ》ごしらえ","締《し》め固《かた》め"],"e":"丁番《ちょうばん》などを調整《ちょうせい》して扉《とびら》の傾《かたむ》きを直《なお》し、枠《わく》と扉《とびら》のすき間《ま》が同《おな》じになるようにします。ドアクローザーの閉《し》まる速《はや》さも調整《ちょうせい》します。"},
+{"id":153,"c":"仕上げ・作業","q":"グラスウールの説明《せつめい》として、正《ただ》しいものはどれですか。","a":"ガラスを細《ほそ》い繊維《せんい》にした断熱材《だんねつざい》","d":["岩石《がんせき》を細《ほそ》い繊維《せんい》にした断熱材《だんねつざい》","プラスチックを発泡《はっぽう》させた板状《いたじょう》の断熱材《だんねつざい》","木《き》の繊維《せんい》を固《かた》めた板状《いたじょう》の材料《ざいりょう》"],"e":"グラスウールは湿気《しっけ》を含《ふく》むと断熱《だんねつ》の性能《せいのう》が下《さ》がるので、室内側《しつないがわ》に防湿《ぼうしつ》フィルムを張《は》ります。岩石《がんせき》を原料《げんりょう》にした繊維《せんい》の断熱材《だんねつざい》はロックウールです。"},
+{"id":154,"c":"仕上げ・作業","q":"木造住宅《もくぞうじゅうたく》の壁《かべ》に繊維系《せんいけい》の断熱材《だんねつざい》を入《い》れるとき、防湿《ぼうしつ》フィルムを張《は》る位置《いち》はどこですか。","a":"断熱材《だんねつざい》の室内側《しつないがわ》","d":["断熱材《だんねつざい》の屋外側《おくがいがわ》","外壁材《がいへきざい》の外側《そとがわ》","柱《はしら》の中《なか》"],"e":"室内《しつない》の湿気《しっけ》が壁《かべ》の中《なか》に入《はい》ると、冷《つめ》たい所《ところ》で水《みず》になります（内部結露《ないぶけつろ》）。防湿《ぼうしつ》フィルムは室内側《しつないがわ》に、すき間《ま》なく張《は》ります。"},
+{"id":155,"c":"仕上げ・作業","q":"内装《ないそう》の仕上《しあ》げで、一般的《いっぱんてき》な作業《さぎょう》の順番《じゅんばん》はどれですか。","a":"天井《てんじょう》→壁《かべ》→床《ゆか》","d":["床《ゆか》→壁《かべ》→天井《てんじょう》","壁《かべ》→床《ゆか》→天井《てんじょう》","床《ゆか》→天井《てんじょう》→壁《かべ》"],"e":"上《うえ》から下《した》へ仕上《しあ》げると、上《うえ》の作業《さぎょう》のごみや汚《よご》れで、仕上《しあ》がった所《ところ》を汚《よご》しにくくなります。仕上《しあ》がった所《ところ》は養生《ようじょう》して守《まも》ります。"},
+{"id":156,"c":"仕上げ・作業","q":"建物《たてもの》の解体《かいたい》や改修《かいしゅう》の前《まえ》に、必《かなら》ずしなければならない調査《ちょうさ》はどれですか。","a":"石綿《いしわた》（アスベスト）の事前調査《じぜんちょうさ》","d":["周《まわ》りの道路《どうろ》の交通量《こうつうりょう》の調査《ちょうさ》","地盤《じばん》の液状化《えきじょうか》の調査《ちょうさ》","作業員《さぎょういん》の体力《たいりょく》の調査《ちょうさ》"],"e":"石綿《いしわた》は吸《す》い込《こ》むと、肺《はい》の重《おも》い病気《びょうき》の原因《げんいん》になります。解体《かいたい》・改修工事《かいしゅうこうじ》では、工事《こうじ》の大《おお》きさにかかわらず、事前調査《じぜんちょうさ》が必要《ひつよう》です。"},
+{"id":157,"c":"仕上げ・作業","q":"コンクリートの壁《かべ》や梁《はり》に、あとで配管《はいかん》を通《とお》す穴《あな》を作《つく》るため、コンクリートを打《う》つ前《まえ》に入《い》れておく筒《つつ》はどれですか。","a":"スリーブ","d":["インサート","セパレーター","スペーサー"],"e":"スリーブはコンクリートを打《う》つ前《まえ》に、型枠《かたわく》に固定《こてい》します。あとから穴《あな》をあけると鉄筋《てっきん》を切《き》るおそれがあるので、前《まえ》もって入《い》れておきます。"},
+{"id":158,"c":"仕上げ・作業","q":"天井《てんじょう》の吊《つ》りボルトを取《と》り付《つ》けるために、コンクリートのスラブに埋《う》め込《こ》んでおく金物《かなもの》はどれですか。","a":"インサート","d":["スリーブ","セパレーター","ルーフドレン"],"e":"インサートは型枠《かたわく》の上《うえ》に取《と》り付《つ》け、コンクリートを打《う》った後《あと》に、ねじ穴《あな》として使《つか》います。位置《いち》がずれないように、図面《ずめん》で確認《かくにん》してから取《と》り付《つ》けます。"},
+{"id":159,"c":"仕上げ・作業","q":"床《ゆか》や材料《ざいりょう》の上《うえ》に、長《なが》い直線《ちょくせん》を引《ひ》くための道具《どうぐ》はどれですか。","a":"墨《すみ》つぼ","d":["差《さ》し金《がね》","下《さ》げ振《ふ》り","水平器《すいへいき》"],"e":"墨《すみ》つぼの糸《いと》をぴんと張《は》り、指《ゆび》ではじくと直線《ちょくせん》が引《ひ》けます。最近《さいきん》は、レーザー墨出《すみだ》し器《き》もよく使《つか》われます。"},
+{"id":160,"c":"仕上げ・作業","q":"直角《ちょっかく》を出《だ》したり、長《なが》さを測《はか》ったりする、L字形《じがた》の金属《きんぞく》のものさしはどれですか。","a":"差《さ》し金《がね》（曲尺《かねじゃく》）","d":["墨《すみ》つぼ","下《さ》げ振《ふ》り","コンベックス"],"e":"差《さ》し金《がね》は、大工《だいく》が墨付《すみつ》けをするときに使《つか》う基本《きほん》の道具《どうぐ》です。コンベックスは、巻《ま》き取《と》り式《しき》の金属製《きんぞくせい》のメジャーです。"},
+{"id":161,"c":"仕上げ・作業","q":"建物《たてもの》の位置《いち》や基礎《きそ》の高《たか》さの基準《きじゅん》にするため、遣《や》り方《かた》にぴんと張《は》る糸《いと》を何《なん》といいますか。","a":"水糸《みずいと》","d":["結束線《けっそくせん》","親綱《おやづな》","玉掛《たまか》けワイヤ"],"e":"水糸《みずいと》は遣《や》り方《かた》の貫《ぬき》に張《は》り、建物《たてもの》の位置《いち》や高《たか》さの目安《めやす》にします。風《かぜ》などでたるまないように、強《つよ》く張《は》ります。"},
+{"id":162,"c":"仕上げ・作業","q":"携帯用《けいたいよう》の丸《まる》のこを使《つか》うときの注意《ちゅうい》として、正《ただ》しいものはどれですか。","a":"安全《あんぜん》カバーを外《はず》さずに使《つか》う","d":["材料《ざいりょう》は手《て》で持《も》ったまま切《き》る","刃《は》が止《と》まる前《まえ》に床《ゆか》に置《お》く","電源《でんげん》を入《い》れたまま刃《は》を交換《こうかん》する"],"e":"丸《まる》のこの事故《じこ》は、反発《はんぱつ》（キックバック）や、安全《あんぜん》カバーを固定《こてい》して使《つか》ったことで多《おお》く起《お》きています。刃《は》の交換《こうかん》は、必《かなら》ず電源《でんげん》プラグを抜《ぬ》いてから行《おこな》います。"},
+{"id":163,"c":"仕上げ・作業","q":"ビスを締《し》めるときに、回転《かいてん》に打撃《だげき》を加《くわ》えて、強《つよ》い力《ちから》で締《し》められる電動工具《でんどうこうぐ》はどれですか。","a":"インパクトドライバ","d":["ディスクグラインダ","ハンマードリル","ジグソー"],"e":"インパクトドライバは、ボードのビス留《ど》めや木材《もくざい》の締結《ていけつ》などに使《つか》います。ハンマードリルは、コンクリートに穴《あな》をあけるときに使《つか》う工具《こうぐ》です。"},
+{"id":164,"c":"仕上げ・作業","q":"石《せっ》こうボードをビスで留《と》めるとき、ビスの頭《あたま》の正《ただ》しい状態《じょうたい》はどれですか。","a":"ボードの表面《ひょうめん》より少《すこ》しへこむ程度《ていど》","d":["ボードの表面《ひょうめん》から大《おお》きく出《で》ている","ボードの紙《かみ》を破《やぶ》って深《ふか》く入《はい》っている","ボードの表面《ひょうめん》から斜《なな》めに出《で》ている"],"e":"頭《あたま》が出《で》ていると、パテで平《たい》らにできません。深《ふか》く入《はい》りすぎて紙《かみ》が破《やぶ》れると、ボードを留《と》める力《ちから》が弱《よわ》くなります。"},
+{"id":165,"c":"仕上げ・作業","q":"左官工事《さかんこうじ》で、モルタルなどを塗《ぬ》り広《ひろ》げて平《たい》らにする道具《どうぐ》はどれですか。","a":"こて","d":["差《さ》し金《がね》","のみ","かんな"],"e":"こてには金《かな》ごて・木《き》ごて・プラスチックごてなどがあり、仕上《しあ》がりに合《あ》わせて使《つか》い分《わ》けます。のみやかんなは、木材《もくざい》を加工《かこう》する大工道具《だいくどうぐ》です。"},
+{"id":166,"c":"仕上げ・作業","q":"窯業系《ようぎょうけい》サイディングの説明《せつめい》として、正《ただ》しいものはどれですか。","a":"セメントに繊維《せんい》などを混《ま》ぜて板状《いたじょう》にした外壁材《がいへきざい》","d":["鉄板《てっぱん》を折《お》り曲《ま》げて作《つく》った外壁材《がいへきざい》","木《き》の板《いた》をそのまま使《つか》う外壁材《がいへきざい》","ガラスを薄《うす》くした外壁材《がいへきざい》"],"e":"窯業系《ようぎょうけい》サイディングは、日本《にほん》の住宅《じゅうたく》でとても多《おお》く使《つか》われる外壁材《がいへきざい》です。継《つ》ぎ目《め》にはシーリングを打《う》ち、古《ふる》くなったら打《う》ち替《か》えが必要《ひつよう》です。"},
+{"id":167,"c":"仕上げ・作業","q":"屋根《やね》の「4寸勾配《すんこうばい》」とは、どういう意味《いみ》ですか。","a":"水平《すいへい》に10進《すす》むと、高《たか》さが4上《あ》がる","d":["水平《すいへい》に4進《すす》むと、高《たか》さが10上《あ》がる","屋根《やね》の角度《かくど》が4度《ど》である","屋根材《やねざい》の厚《あつ》さが4寸《すん》である"],"e":"日本《にほん》の屋根《やね》の勾配《こうばい》は、水平《すいへい》10に対《たい》する高《たか》さで表《あらわ》します。勾配《こうばい》がゆるい屋根《やね》ほど雨水《あまみず》が流《なが》れにくいので、屋根材《やねざい》ごとに使《つか》える勾配《こうばい》が決《き》まっています。"},
+{"id":168,"c":"仕上げ・作業","q":"仕上《しあ》がったフローリングの上《うえ》で、ほかの職種《しょくしゅ》が作業《さぎょう》をするときに必要《ひつよう》なことはどれですか。","a":"養生材《ようじょうざい》で表面《ひょうめん》をおおって守《まも》る","d":["重《おも》い材料《ざいりょう》をそのまま置《お》く","水《みず》をまいてから作業《さぎょう》する","土足《どそく》のまま歩《ある》いてよい"],"e":"仕上《しあ》がった所《ところ》に傷《きず》や汚《よご》れがつくと、やり直《なお》しになり、工期《こうき》や費用《ひよう》が増《ふ》えます。後《あと》の工程《こうてい》の人《ひと》のことも考《かんが》えて養生《ようじょう》することが大切《たいせつ》です。"},
+{"id":169,"c":"仕上げ・作業","q":"屋上防水《おくじょうぼうすい》で、防水層《ぼうすいそう》をパラペットの立上《たちあ》がり部分《ぶぶん》にも張《は》り上《あ》げる理由《りゆう》はどれですか。","a":"床《ゆか》と壁《かべ》の取合《とりあ》いから水《みず》が入《はい》るのを防《ふせ》ぐため","d":["屋上《おくじょう》の見《み》た目《め》を良《よ》くするため","防水材《ぼうすいざい》の量《りょう》を減《へ》らすため","パラペットを軽《かる》くするため"],"e":"雨水《あまみず》は、床《ゆか》と壁《かべ》の角《かど》からしみ込《こ》みやすいです。防水層《ぼうすいそう》は立上《たちあ》がりの上《うえ》まで張《は》り、端部《たんぶ》は押《お》さえ金物《かなもの》とシーリングで処理《しょり》します。"},
+{"id":201,"c":"土工・基礎","q":"「含水比《がんすいひ》」は、何《なに》を表《あらわ》す値《あたい》ですか。","a":"土《つち》の中《なか》の水《みず》の重《おも》さと、乾《かわ》いた土《つち》の重《おも》さの比《ひ》","d":["土《つち》の粒《つぶ》の大《おお》きさと、すき間《ま》の大《おお》きさの比《ひ》","土《つち》を締《し》め固《かた》める前《まえ》と後《あと》の体積《たいせき》の比《ひ》","土《つち》の中《なか》の空気《くうき》の量《りょう》と、水《みず》の量《りょう》の比《ひ》"],"e":"含水比《がんすいひ》（%）＝水《みず》の重《おも》さ÷乾《かわ》いた土《つち》の重《おも》さ×100です。含水比《がんすいひ》が高《たか》すぎる土《つち》は軟《やわ》らかく、うまく締《し》め固《かた》められません。"},
+{"id":202,"c":"土工・基礎","q":"土《つち》をいちばんよく締《し》め固《かた》めることができる含水比《がんすいひ》を、何《なん》といいますか。","a":"最適含水比《さいてきがんすいひ》","d":["自然含水比《しぜんがんすいひ》","液性限界《えきせいげんかい》","塑性限界《そせいげんかい》"],"e":"締固《しめかた》め試験《しけん》で、乾燥密度《かんそうみつど》がいちばん大《おお》きくなるときの含水比《がんすいひ》です。そのときの乾燥密度《かんそうみつど》を「最大乾燥密度《さいだいかんそうみつど》」といいます。"},
+{"id":203,"c":"土工・基礎","q":"盛土《もりど》の締固《しめかた》め度《ど》（%）を求《もと》めるとき、現場《げんば》で測《はか》った乾燥密度《かんそうみつど》を何《なに》で割《わ》りますか。","a":"試験《しけん》で求《もと》めた最大乾燥密度《さいだいかんそうみつど》","d":["土粒子《どりゅうし》そのものの密度《みつど》","水《みず》の密度《みつど》","現場《げんば》の自然含水比《しぜんがんすいひ》"],"e":"締固《しめかた》め度《ど》＝現場《げんば》の乾燥密度《かんそうみつど》÷最大乾燥密度《さいだいかんそうみつど》×100です。決《き》められた値《あたい》以上《いじょう》になっているかを確《たし》かめて、締固《しめかた》めの品質《ひんしつ》を管理《かんり》します。"},
+{"id":204,"c":"土工・基礎","q":"盛土《もりど》の材料《ざいりょう》として、適《てき》していないものはどれですか。","a":"草《くさ》や木《き》の根《ね》がたくさん混《ま》じった土《つち》","d":["いろいろな大《おお》きさの粒《つぶ》が混《ま》じった砂質土《さしつど》","締《し》め固《かた》めやすい礫混《れきま》じり土《つち》","水《みず》はけのよい砂《すな》まじりの土《つち》"],"e":"草《くさ》や根《ね》などの有機物《ゆうきぶつ》は、あとで腐《くさ》ってすき間《ま》ができ、沈下《ちんか》の原因《げんいん》になります。水《みず》を多《おお》く含《ふく》んだ軟《やわ》らかい粘性土《ねんせいど》も、そのままでは締《し》め固《かた》めにくいです。"},
+{"id":205,"c":"土工・基礎","q":"粘性土《ねんせいど》の締固《しめかた》めや、土《つち》の塊《かたまり》をくだくのに適《てき》している機械《きかい》はどれですか。","a":"タンピングローラ","d":["振動《しんどう》ローラ","モーターグレーダ","ロードスイーパ"],"e":"タンピングローラは、ローラの表面《ひょうめん》に突起《とっき》がたくさん付《つ》いていて、土《つち》を押《お》しこむように締《し》め固《かた》めます。水《みず》を多《おお》く含《ふく》んだ軟《やわ》らかい粘性土《ねんせいど》には、湿地《しっち》ブルドーザなどを使《つか》います。"},
+{"id":206,"c":"土工・基礎","q":"砂《すな》や砂利《じゃり》が多《おお》い土《つち》の締固《しめかた》めに、特《とく》に効果《こうか》が大《おお》きい機械《きかい》はどれですか。","a":"振動《しんどう》ローラ","d":["タンピングローラ","バックホウ","クラムシェル"],"e":"振動《しんどう》を与《あた》えると、砂《すな》や砂利《じゃり》の粒《つぶ》が動《うご》いてすき間《ま》がつまり、よく締《し》まります。バックホウやクラムシェルは、土《つち》を掘《ほ》る機械《きかい》です。"},
+{"id":207,"c":"土工・基礎","q":"構造物《こうぞうぶつ》の裏側《うらがわ》や管《かん》のまわりなど、狭《せま》い場所《ばしょ》の締固《しめかた》めに使《つか》う機械《きかい》はどれですか。","a":"ランマやタンパ","d":["大型《おおがた》のブルドーザ","モーターグレーダ","マカダムローラ"],"e":"大《おお》きな機械《きかい》が入《はい》らない所《ところ》は、ランマや振動《しんどう》コンパクタなどの小型《こがた》の機械《きかい》を使《つか》います。1層《そう》を薄《うす》くして、ていねいに締《し》め固《かた》めます。"},
+{"id":208,"c":"土工・基礎","q":"標準貫入試験《ひょうじゅんかんにゅうしけん》で求《もと》める値《あたい》はどれですか。","a":"N値《ち》","d":["スランプ値《ち》","コーン指数《しすう》","CBR値《ち》"],"e":"63.5kgのハンマーを76cmの高《たか》さから落《お》とし、サンプラーを30cm打《う》ちこむのに必要《ひつよう》な回数《かいすう》がN値《ち》です。N値《ち》が大《おお》きいほど、硬《かた》い（よく締《し》まった）地盤《じばん》です。"},
+{"id":209,"c":"土工・基礎","q":"地盤《じばん》に穴《あな》を掘《ほ》って、深《ふか》さごとの土《つち》の種類《しゅるい》や硬《かた》さ、地下水位《ちかすいい》を調《しら》べる調査《ちょうさ》はどれですか。","a":"ボーリング調査《ちょうさ》","d":["打診検査《だしんけんさ》","スランプ試験《しけん》","平板測量《へいばんそくりょう》"],"e":"ボーリング調査《ちょうさ》と一緒《いっしょ》に標準貫入試験《ひょうじゅんかんにゅうしけん》を行《おこな》い、N値《ち》を測《はか》ることが多《おお》いです。結果《けっか》は「柱状図《ちゅうじょうず》」という図《ず》にまとめます。"},
+{"id":210,"c":"土工・基礎","q":"地震《じしん》のとき、水《みず》を多《おお》く含《ふく》んだゆるい砂《すな》の地盤《じばん》が、液体《えきたい》のようになる現象《げんしょう》を何《なん》といいますか。","a":"液状化《えきじょうか》","d":["ヒービング","圧密沈下《あつみつちんか》","凍上《とうじょう》"],"e":"液状化《えきじょうか》が起《お》きると、建物《たてもの》が傾《かたむ》いたり、マンホールが浮《う》き上《あ》がったりします。地下水位《ちかすいい》が高《たか》く、粒《つぶ》のそろったゆるい砂《すな》の地盤《じばん》で起《お》きやすいです。"},
+{"id":211,"c":"土工・基礎","q":"砂質《さしつ》の地盤《じばん》を掘削《くっさく》したとき、土留《どど》めの内側《うちがわ》の底《そこ》から、水《みず》と砂《すな》がわき上《あ》がる現象《げんしょう》はどれですか。","a":"ボイリング","d":["ヒービング","圧密沈下《あつみつちんか》","凍上《とうじょう》"],"e":"ボイリングは、土留《どど》めの外《そと》と内《うち》の水位《すいい》の差《さ》が大《おお》きいと起《お》きます。土留《どど》め壁《かべ》を深《ふか》く入《い》れる、地下水位《ちかすいい》を下《さ》げるなどの方法《ほうほう》で防《ふせ》ぎます。"},
+{"id":212,"c":"土工・基礎","q":"軟《やわ》らかい粘土《ねんど》の地盤《じばん》を掘削《くっさく》したとき、土留《どど》めの外側《そとがわ》の土《つち》の重《おも》さで、掘削《くっさく》した底《そこ》が盛《も》り上《あ》がる現象《げんしょう》はどれですか。","a":"ヒービング","d":["ボイリング","液状化《えきじょうか》","パイピング"],"e":"ヒービングは、軟弱《なんじゃく》な粘性土《ねんせいど》で起《お》きます。土留《どど》め壁《かべ》を硬《かた》い地盤《じばん》まで入《い》れる、地盤《じばん》を改良《かいりょう》するなどの方法《ほうほう》で防《ふせ》ぎます。"},
+{"id":213,"c":"土工・基礎","q":"粘土《ねんど》の地盤《じばん》に盛土《もりど》などの重《おも》さがかかり、長《なが》い時間《じかん》をかけて水《みず》が抜《ぬ》けて沈《しず》んでいく現象《げんしょう》はどれですか。","a":"圧密沈下《あつみつちんか》","d":["液状化《えきじょうか》","ボイリング","凍上《とうじょう》"],"e":"粘土《ねんど》は水《みず》を通《とお》しにくいので、沈下《ちんか》がゆっくり長《なが》く続《つづ》きます。工事《こうじ》が終《お》わったあとも沈下《ちんか》が続《つづ》くことがあるので、注意《ちゅうい》が必要《ひつよう》です。"},
+{"id":214,"c":"土工・基礎","q":"粘性土《ねんせいど》の特徴《とくちょう》として、正《ただ》しいものはどれですか。","a":"水《みず》を通《とお》しにくく、水《みず》を含《ふく》むと軟《やわ》らかくなる","d":["水《みず》をよく通《とお》し、雨《あめ》のあともすぐに乾《かわ》く","粒《つぶ》が大《おお》きく、さわるとざらざらしている","雨《あめ》が降《ふ》っても強《つよ》さがほとんど変《か》わらない"],"e":"粘性土《ねんせいど》は粒《つぶ》がとても細《こま》かく、水《みず》はけが悪《わる》いです。雨《あめ》のあとは重機《じゅうき》が走《はし》りにくくなるので、排水《はいすい》や作業《さぎょう》の計画《けいかく》に注意《ちゅうい》します。"},
+{"id":215,"c":"土工・基礎","q":"土《つち》の粒《つぶ》を、大《おお》きいものから小《ちい》さいものへ正《ただ》しく並《なら》べたものはどれですか。","a":"礫《れき》→砂《すな》→シルト→粘土《ねんど》","d":["砂《すな》→礫《れき》→粘土《ねんど》→シルト","粘土《ねんど》→シルト→砂《すな》→礫《れき》","シルト→礫《れき》→粘土《ねんど》→砂《すな》"],"e":"礫《れき》は2〜75mm、砂《すな》は0.075〜2mm、それより細《こま》かいものがシルトと粘土《ねんど》です。細《こま》かい粒《つぶ》が多《おお》いほど、水《みず》を通《とお》しにくくなります。"},
+{"id":216,"c":"土工・基礎","q":"土量《どりょう》の変化率《へんかりつ》「L」の求《もと》め方《かた》として、正《ただ》しいものはどれですか。","a":"ほぐした土量《どりょう》÷地山《じやま》の土量《どりょう》","d":["締《し》め固《かた》めた土量《どりょう》÷地山《じやま》の土量《どりょう》","地山《じやま》の土量《どりょう》÷ほぐした土量《どりょう》","締《し》め固《かた》めた土量《どりょう》÷ほぐした土量《どりょう》"],"e":"地山《じやま》とは、掘《ほ》る前《まえ》の自然《しぜん》のままの地盤《じばん》です。掘《ほ》るとほぐれて体積《たいせき》が増《ふ》えるので、Lはふつう1より大《おお》きくなります。ダンプトラックで運《はこ》ぶ量《りょう》を考《かんが》えるときに使《つか》います。"},
+{"id":217,"c":"土工・基礎","q":"地山《じやま》の土《つち》100m³を掘《ほ》ると、ほぐした土《つち》は何《なん》m³になりますか。（L＝1.2とします）","a":"120m³","d":["83m³","100m³","220m³"],"e":"ほぐした土量《どりょう》＝地山《じやま》の土量《どりょう》×L＝100×1.2＝120m³です。ダンプトラックの台数《だいすう》は、このほぐした土量《どりょう》で計算《けいさん》します。"},
+{"id":218,"c":"土工・基礎","q":"地山《じやま》の土《つち》100m³を盛土《もりど》に使《つか》って締《し》め固《かた》めると、何《なん》m³になりますか。（C＝0.9とします）","a":"90m³","d":["111m³","100m³","190m³"],"e":"締《し》め固《かた》めた土量《どりょう》＝地山《じやま》の土量《どりょう》×C＝100×0.9＝90m³です。Cは「締《し》め固《かた》めた土量《どりょう》÷地山《じやま》の土量《どりょう》」で、多《おお》くの土《つち》では1より小《ちい》さくなります。"},
+{"id":219,"c":"土工・基礎","q":"法面《のりめん》の勾配《こうばい》「1：1.5」は、何《なに》を表《あらわ》していますか。","a":"高《たか》さ1に対《たい》して、水平《すいへい》の長《なが》さが1.5","d":["水平《すいへい》の長《なが》さ1に対《たい》して、高《たか》さが1.5","法面《のりめん》の角度《かくど》が15度《ど》","100m進《すす》むごとに1.5m高《たか》くなる"],"e":"法面《のりめん》の勾配《こうばい》は「1：n」と書《か》き、高《たか》さ1に対《たい》する水平距離《すいへいきょり》nを表《あらわ》します。nが大《おお》きいほど、ゆるやかな法面《のりめん》になります。"},
+{"id":220,"c":"土工・基礎","q":"法面《のりめん》のいちばん下《した》の端《はし》の部分《ぶぶん》を、何《なん》といいますか。","a":"法尻《のりじり》","d":["法肩《のりかた》","天端《てんば》","小段《こだん》"],"e":"法面《のりめん》の上《うえ》の端《はし》が法肩《のりかた》、下《した》の端《はし》が法尻《のりじり》です。盛土《もりど》のいちばん上《うえ》の平《たい》らな面《めん》は、天端《てんば》といいます。"},
+{"id":221,"c":"土工・基礎","q":"高《たか》い法面《のりめん》の途中《とちゅう》に作《つく》る、平《たい》らな段《だん》の部分《ぶぶん》を何《なん》といいますか。","a":"小段《こだん》","d":["法尻《のりじり》","丁張《ちょうは》り","床掘《とこぼ》り"],"e":"小段《こだん》は、雨水《あまみず》が法面《のりめん》を一気《いっき》に流《なが》れ落《お》ちるのを防《ふせ》ぎます。点検《てんけん》や補修《ほしゅう》のときの通路《つうろ》にもなります。"},
+{"id":222,"c":"土工・基礎","q":"法面《のりめん》に草《くさ》などの植物《しょくぶつ》を育《そだ》てて、雨《あめ》で土《つち》が流《なが》されるのを防《ふせ》ぐ工法《こうほう》はどれですか。","a":"植生工《しょくせいこう》","d":["吹付《ふきつ》けコンクリート工《こう》","石積《いしづ》み工《こう》","法枠工《のりわくこう》"],"e":"種《たね》をまく種子散布工《しゅしさんぷこう》や、芝《しば》を張《は》る張芝工《はりしばこう》などがあります。植物《しょくぶつ》が育《そだ》ちにくい岩《いわ》の法面《のりめん》では、モルタルやコンクリートの吹付《ふきつ》けなどを使《つか》います。"},
+{"id":223,"c":"土工・基礎","q":"法面《のりめん》にコンクリートの枠《わく》を格子状《こうしじょう》に作《つく》って、法面《のりめん》が崩《くず》れるのを防《ふせ》ぐ工法《こうほう》はどれですか。","a":"法枠工《のりわくこう》","d":["植生工《しょくせいこう》","段切《だんぎ》り","置換工法《ちかんこうほう》"],"e":"枠《わく》の中《なか》には、植物《しょくぶつ》や石《いし》を入《い》れることもあります。崩《くず》れやすい法面《のりめん》では、アンカー工《こう》などと組《く》み合《あ》わせることもあります。"},
+{"id":224,"c":"土工・基礎","q":"盛土《もりど》や切土《きりど》の高《たか》さや法面《のりめん》の勾配《こうばい》を、現場《げんば》で示《しめ》すために設置《せっち》する、木《き》の杭《くい》と板《いた》の目印《めじるし》を何《なん》といいますか。","a":"丁張《ちょうは》り","d":["土留《どど》め","腹起《はらおこ》し","敷鉄板《しきてっぱん》"],"e":"オペレーターや作業員《さぎょういん》は、丁張《ちょうは》りを見《み》ながら正《ただ》しい形《かたち》に仕上《しあ》げます。重機《じゅうき》で壊《こわ》したり動《うご》かしたりしないよう注意《ちゅうい》し、ずれていないか確認《かくにん》します。"},
+{"id":225,"c":"土工・基礎","q":"構造物《こうぞうぶつ》の基礎《きそ》などを作《つく》るために、地面《じめん》を決《き》められた深《ふか》さまで掘《ほ》ることを何《なん》といいますか。","a":"床掘《とこぼ》り","d":["埋《う》め戻《もど》し","段切《だんぎ》り","敷均《しきなら》し"],"e":"床掘《とこぼ》りの底《そこ》は、地盤《じばん》を乱《みだ》さないように仕上《しあ》げます。掘《ほ》りすぎた所《ところ》に、掘《ほ》った土《つち》をただ戻《もど》すのはよくありません。良《よ》い材料《ざいりょう》で埋《う》めて、よく締《し》め固《かた》めます。"},
+{"id":226,"c":"土工・基礎","q":"埋《う》め戻《もど》しの方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"良《よ》い土《つち》を薄《うす》い層《そう》に分《わ》けて、1層《そう》ずつ締《し》め固《かた》める","d":["大《おお》きな石《いし》や木《き》くずが混《ま》じった土《つち》もそのまま入《い》れる","底《そこ》に水《みず》がたまったまま、上《うえ》から土《つち》を入《い》れる","一度《いちど》に全部《ぜんぶ》入《い》れてから、上《うえ》だけ締《し》め固《かた》める"],"e":"一度《いちど》に厚《あつ》く入《い》れると、下《した》の方《ほう》が締《し》め固《かた》まらず、あとで沈下《ちんか》します。管《かん》のまわりは、管《かん》を傷《きず》つけないよう左右《さゆう》均等《きんとう》に入《い》れて締《し》め固《かた》めます。"},
+{"id":227,"c":"土工・基礎","q":"道路《どうろ》の路床《ろしょう》の盛土《もりど》で、1層《そう》の締固《しめかた》め後《ご》の仕上《しあ》がり厚《あつ》さは、何《なん》cm以下《いか》が目安《めやす》ですか。","a":"20cm","d":["50cm","70cm","100cm"],"e":"道路土工《どうろどこう》の指針《ししん》では、路床《ろしょう》は20cm以下《いか》、その下《した》の路体《ろたい》は30cm以下《いか》が目安《めやす》です。路床《ろしょう》は舗装《ほそう》のすぐ下《した》なので、よりていねいに締《し》め固《かた》めます。"},
+{"id":228,"c":"土工・基礎","q":"盛土《もりど》の作業中《さぎょうちゅう》に雨《あめ》が降《ふ》りそうなとき、盛土《もりど》の表面《ひょうめん》をどうしておくのがよいですか。","a":"水《みず》が流《なが》れるように少《すこ》し傾《かたむ》け、平《たい》らに締《し》め固《かた》めておく","d":["でこぼこのままにして、すぐに作業《さぎょう》を終《お》わる","くぼみを作《つく》って、雨水《あまみず》をためておく","ほぐした土《つち》を厚《あつ》く盛《も》っておく"],"e":"表面《ひょうめん》に水《みず》がたまると、土《つち》にしみこんで軟《やわ》らかくなります。表面《ひょうめん》に勾配《こうばい》をつけて平《たい》らにし、ローラで締《し》め固《かた》めておくと、雨水《あまみず》がしみこみにくくなります。"},
+{"id":229,"c":"土工・基礎","q":"傾《かたむ》いた地面《じめん》の上《うえ》に盛土《もりど》をするとき、盛土《もりど》がすべらないように、地面《じめん》を階段《かいだん》のように掘《ほ》ることを何《なん》といいますか。","a":"段切《だんぎ》り","d":["床掘《とこぼ》り","埋《う》め戻《もど》し","敷均《しきなら》し"],"e":"段切《だんぎ》りをすると、もとの地面《じめん》と盛土《もりど》がよくかみ合《あ》い、すべりを防《ふせ》ぎます。地面《じめん》の傾《かたむ》きが1：4程度《ていど》より急《きゅう》なときに行《おこな》うのが目安《めやす》です。"},
+{"id":230,"c":"土工・基礎","q":"盛土《もりど》を始《はじ》める前《まえ》に、地面《じめん》の木《き》や草《くさ》、切株《きりかぶ》、根《ね》を取《と》り除《のぞ》く作業《さぎょう》を何《なん》といいますか。","a":"伐開除根《ばっかいじょこん》","d":["段切《だんぎ》り","敷均《しきなら》し","法面保護《のりめんほご》"],"e":"木《き》や根《ね》が残《のこ》ると、腐《くさ》ってすき間《ま》ができ、盛土《もりど》の沈下《ちんか》やすべりの原因《げんいん》になります。"},
+{"id":231,"c":"土工・基礎","q":"地面《じめん》の下《した》に、穴《あな》のあいた管《かん》や砂利《じゃり》を埋《う》めて地下水《ちかすい》を集《あつ》めて流《なが》す排水《はいすい》はどれですか。","a":"暗渠排水《あんきょはいすい》","d":["明渠排水《めいきょはいすい》","釜場排水《かまばはいすい》","表面排水《ひょうめんはいすい》"],"e":"暗渠《あんきょ》は地下《ちか》にあって見《み》えない排水《はいすい》、明渠《めいきょ》は地面《じめん》に溝《みぞ》を掘《ほ》った、見《み》える排水《はいすい》です。"},
+{"id":232,"c":"土工・基礎","q":"掘削《くっさく》した場所《ばしょ》の底《そこ》に、水《みず》を集《あつ》めるくぼみを作《つく》り、ポンプで水《みず》をくみ出《だ》す方法《ほうほう》はどれですか。","a":"釜場排水《かまばはいすい》","d":["ウェルポイント工法《こうほう》","暗渠排水《あんきょはいすい》","サンドドレーン工法《こうほう》"],"e":"釜場排水《かまばはいすい》は簡単《かんたん》で、費用《ひよう》も安《やす》い方法《ほうほう》です。ただし、砂質土《さしつど》でわき水《みず》が多《おお》いときは、底《そこ》が崩《くず》れたりボイリングが起《お》きたりすることがあります。"},
+{"id":233,"c":"土工・基礎","q":"地盤《じばん》に細《ほそ》い吸水管《きゅうすいかん》をたくさん打《う》ちこみ、真空《しんくう》ポンプで地下水《ちかすい》を吸《す》い上《あ》げて、水位《すいい》を下《さ》げる工法《こうほう》はどれですか。","a":"ウェルポイント工法《こうほう》","d":["釜場排水《かまばはいすい》","深層混合処理工法《しんそうこんごうしょりこうほう》","置換工法《ちかんこうほう》"],"e":"ウェルポイント工法《こうほう》は、砂質《さしつ》の地盤《じばん》で地下水位《ちかすいい》を下《さ》げるときに使《つか》います。地下水位《ちかすいい》が下《さ》がると、まわりの地盤《じばん》が沈下《ちんか》することがあるので注意《ちゅうい》します。"},
+{"id":234,"c":"土工・基礎","q":"H形鋼《がたこう》の杭《くい》を間《あいだ》をあけて打《う》ち、掘《ほ》りながら杭《くい》と杭《くい》の間《あいだ》に板《いた》をはめていく土留《どど》めはどれですか。","a":"親杭横矢板《おやぐいよこやいた》","d":["鋼矢板《こうやいた》","地中連続壁《ちちゅうれんぞくへき》","ソイルセメント壁《へき》"],"e":"親杭横矢板《おやぐいよこやいた》は水《みず》を止《と》められないので、地下水位《ちかすいい》が高《たか》い所《ところ》には向《む》きません。そのような所《ところ》では、鋼矢板《こうやいた》など水《みず》を止《と》められる土留《どど》めを使《つか》います。"},
+{"id":235,"c":"土工・基礎","q":"鋼矢板《こうやいた》（シートパイル）の土留《どど》めの特徴《とくちょう》として、正《ただ》しいものはどれですか。","a":"継手《つぎて》をかみ合《あ》わせて打《う》つので、水《みず》を止《と》めやすい","d":["木《き》の板《いた》なので、1回《かい》しか使《つか》えない","硬《かた》い岩盤《がんばん》にも簡単《かんたん》に打《う》ちこめる","水《みず》をよく通《とお》すので、排水《はいすい》に使《つか》える"],"e":"鋼矢板《こうやいた》は止水性《しすいせい》があり、地下水位《ちかすいい》の高《たか》い地盤《じばん》や軟弱《なんじゃく》な地盤《じばん》でよく使《つか》われます。硬《かた》い地盤《じばん》や、大《おお》きな石《いし》が多《おお》い地盤《じばん》では打《う》ちこみにくいです。"},
+{"id":236,"c":"土工・基礎","q":"土留《どど》め壁《かべ》の内側《うちがわ》に壁《かべ》にそって水平《すいへい》に取《と》り付《つ》け、壁《かべ》が受《う》ける土圧《どあつ》を切梁《きりばり》に伝《つた》える部材《ぶざい》はどれですか。","a":"腹起《はらおこ》し","d":["切梁《きりばり》","中間杭《ちゅうかんぐい》","横矢板《よこやいた》"],"e":"土圧《どあつ》は、土留《どど》め壁《かべ》→腹起《はらおこ》し→切梁《きりばり》の順《じゅん》に伝《つた》わります。角《かど》の部分《ぶぶん》には、火打《ひう》ちを入《い》れて補強《ほきょう》します。"},
+{"id":237,"c":"土工・基礎","q":"向《む》かい合《あ》う土留《どど》め壁《かべ》の間《あいだ》に水平《すいへい》に渡《わた》して、両側《りょうがわ》からの土圧《どあつ》を支《ささ》える部材《ぶざい》はどれですか。","a":"切梁《きりばり》","d":["腹起《はらおこ》し","横矢板《よこやいた》","敷鉄板《しきてっぱん》"],"e":"切梁《きりばり》には大《おお》きな力《ちから》がかかっています。切梁《きりばり》の上《うえ》に材料《ざいりょう》を置《お》いたり、つり荷《に》や重機《じゅうき》をぶつけたりしてはいけません。"},
+{"id":238,"c":"土工・基礎","q":"土留《どど》め支保工《しほこう》の切梁《きりばり》を外《はず》すときの方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"下《した》から順《じゅん》に埋《う》め戻《もど》しながら外《はず》していく","d":["上《うえ》の段《だん》の切梁《きりばり》から先《さき》に全部《ぜんぶ》外《はず》す","埋《う》め戻《もど》す前《まえ》に、すべての切梁《きりばり》を外《はず》す","土留《どど》め壁《かべ》を先《さき》に抜《ぬ》いてから外《はず》す"],"e":"埋《う》め戻《もど》した土《つち》が土圧《どあつ》を受《う》けられるようになってから、その上《うえ》の段《だん》の切梁《きりばり》を外《はず》します。順番《じゅんばん》をまちがえると、土留《どど》めが倒《たお》れるおそれがあります。"},
+{"id":239,"c":"土工・基礎","q":"軟弱《なんじゃく》な土《つち》を掘《ほ》り取《と》って、砂《すな》や良《よ》い土《つち》に入《い》れ替《か》える地盤改良《じばんかいりょう》の工法《こうほう》はどれですか。","a":"置換工法《ちかんこうほう》","d":["サンドドレーン工法《こうほう》","深層混合処理工法《しんそうこんごうしょりこうほう》","ウェルポイント工法《こうほう》"],"e":"置換工法《ちかんこうほう》は、軟弱《なんじゃく》な層《そう》が浅《あさ》い所《ところ》にあるときに向《む》いています。軟弱《なんじゃく》な層《そう》が深《ふか》いときは、ほかの工法《こうほう》を考《かんが》えます。"},
+{"id":240,"c":"土工・基礎","q":"軟弱《なんじゃく》な粘土《ねんど》の地盤《じばん》に砂《すな》の柱《はしら》をたくさん作《つく》り、水《みず》を早《はや》く抜《ぬ》いて沈下《ちんか》を早《はや》く終《お》わらせる工法《こうほう》はどれですか。","a":"サンドドレーン工法《こうほう》","d":["置換工法《ちかんこうほう》","親杭横矢板工法《おやぐいよこやいたこうほう》","釜場排水《かまばはいすい》"],"e":"砂《すな》の柱《はしら》が水《みず》の通《とお》り道《みち》になり、水《みず》が抜《ぬ》ける距離《きょり》が短《みじか》くなります。砂《すな》の代《か》わりに、プラスチックの板《いた》を使《つか》う工法《こうほう》もあります。"},
+{"id":241,"c":"土工・基礎","q":"セメント系《けい》の固化材《こかざい》を、地盤《じばん》の中《なか》で土《つち》とかき混《ま》ぜて、柱《はしら》のように固《かた》める工法《こうほう》はどれですか。","a":"深層混合処理工法《しんそうこんごうしょりこうほう》","d":["サンドドレーン工法《こうほう》","置換工法《ちかんこうほう》","ウェルポイント工法《こうほう》"],"e":"深層混合処理工法《しんそうこんごうしょりこうほう》は、深《ふか》い所《ところ》まで地盤《じばん》を固《かた》めて強《つよ》くします。地表《ちひょう》に近《ちか》い浅《あさ》い所《ところ》だけを混《ま》ぜて固《かた》めるのは、表層混合処理工法《ひょうそうこんごうしょりこうほう》です。"},
+{"id":242,"c":"土工・基礎","q":"構造物《こうぞうぶつ》を造《つく》る前《まえ》に、盛土《もりど》などで重《おも》さをかけて先《さき》に地盤《じばん》を沈下《ちんか》させ、あとでその盛土《もりど》を取《と》り除《のぞ》く工法《こうほう》はどれですか。","a":"プレローディング工法《こうほう》","d":["置換工法《ちかんこうほう》","深層混合処理工法《しんそうこんごうしょりこうほう》","薬液注入工法《やくえきちゅうにゅうこうほう》"],"e":"先《さき》に沈下《ちんか》を終《お》わらせておくので、構造物《こうぞうぶつ》を造《つく》ったあとの沈下《ちんか》を小《ちい》さくできます。沈下《ちんか》に時間《じかん》がかかるので、工期《こうき》に余裕《よゆう》があるときに向《む》いています。"},
+{"id":243,"c":"土工・基礎","q":"軟弱地盤《なんじゃくじばん》の上《うえ》に盛土《もりど》をするとき、沈下《ちんか》の量《りょう》を測《はか》るために盛土《もりど》の下《した》に置《お》くものはどれですか。","a":"沈下板《ちんかばん》","d":["敷鉄板《しきてっぱん》","丁張《ちょうは》り","横矢板《よこやいた》"],"e":"沈下板《ちんかばん》の高《たか》さを定期的《ていきてき》に測《はか》り、沈下《ちんか》の速《はや》さを見《み》ながら盛土《もりど》を進《すす》めます。急《いそ》いで高《たか》く盛《も》ると、地盤《じばん》が壊《こわ》れて盛土《もりど》がすべることがあります。"},
+{"id":244,"c":"土工・基礎","q":"建設機械《けんせつきかい》が、その地盤《じばん》の上《うえ》を走《はし》れるかどうかを表《あらわ》す言葉《ことば》はどれですか。","a":"トラフィカビリティ","d":["ワーカビリティ","リッパビリティ","ポンパビリティ"],"e":"トラフィカビリティは、コーン貫入試験《かんにゅうしけん》で求《もと》める「コーン指数《しすう》」で判断《はんだん》します。コーン指数《しすう》が大《おお》きいほど地盤《じばん》が硬《かた》く、重《おも》い機械《きかい》でも走《はし》れます。"},
+{"id":245,"c":"土工・基礎","q":"走《はし》るために必要《ひつよう》なコーン指数《しすう》がいちばん大《おお》きい（いちばん硬《かた》い地盤《じばん》が必要《ひつよう》な）機械《きかい》はどれですか。","a":"ダンプトラック","d":["湿地《しっち》ブルドーザ","超湿地《ちょうしっち》ブルドーザ","普通《ふつう》ブルドーザ"],"e":"タイヤで走《はし》るダンプトラックは、軟《やわ》らかい地盤《じばん》では動《うご》けなくなりやすく、コーン指数《しすう》1200kN/m²以上《いじょう》が目安《めやす》です。クローラ（履帯《りたい》）で走《はし》る湿地《しっち》ブルドーザは、軟《やわ》らかい地盤《じばん》でも走《はし》れます。"},
+{"id":246,"c":"土工・基礎","q":"構造物《こうぞうぶつ》を支《ささ》える硬《かた》い地盤《じばん》が浅《あさ》い所《ところ》にあるとき、ふつう使《つか》われる基礎《きそ》はどれですか。","a":"直接基礎《ちょくせつきそ》","d":["杭基礎《くいきそ》","ケーソン基礎《きそ》","鋼管矢板基礎《こうかんやいたきそ》"],"e":"良《よ》い地盤《じばん》が浅《あさ》ければ、その地盤《じばん》の上《うえ》に直接《ちょくせつ》基礎《きそ》をのせます。良《よ》い地盤《じばん》が深《ふか》いときは、杭基礎《くいきそ》などを使《つか》います。"},
+{"id":247,"c":"土工・基礎","q":"杭《くい》の先《さき》を硬《かた》い支持層《しじそう》まで届《とど》かせて、主《おも》に先端《せんたん》で重《おも》さを支《ささ》える杭《くい》を何《なん》といいますか。","a":"支持杭《しじぐい》","d":["摩擦杭《まさつぐい》","親杭《おやぐい》","中間杭《ちゅうかんぐい》"],"e":"摩擦杭《まさつぐい》は、杭《くい》のまわりの土《つち》との摩擦《まさつ》で重《おも》さを支《ささ》えます。支持層《しじそう》が深《ふか》すぎて届《とど》かないときなどに使《つか》われます。"},
+{"id":248,"c":"土工・基礎","q":"現場《げんば》で地盤《じばん》に穴《あな》を掘《ほ》り、鉄筋《てっきん》かごを入《い》れてコンクリートを打《う》って造《つく》る杭《くい》を何《なん》といいますか。","a":"場所打《ばしょう》ち杭《ぐい》","d":["既製杭《きせいぐい》","鋼矢板《こうやいた》","親杭《おやぐい》"],"e":"場所打《ばしょう》ち杭《ぐい》は、太《ふと》い杭《くい》を造《つく》ることができ、打《う》ちこむときのような大《おお》きな騒音《そうおん》や振動《しんどう》が出《で》ません。工場《こうじょう》で作《つく》った杭《くい》を現場《げんば》に運《はこ》んで使《つか》うものは、既製杭《きせいぐい》といいます。"},
+{"id":249,"c":"土工・基礎","q":"場所打《ばしょう》ち杭《ぐい》で、水《みず》や安定液《あんていえき》の入《はい》った穴《あな》の中《なか》にコンクリートを打《う》つときに使《つか》う管《かん》はどれですか。","a":"トレミー管《かん》","d":["ケーシング","ドレーン管《かん》","塩《えん》ビ管《かん》"],"e":"トレミー管《かん》の先《さき》は、いつもコンクリートの中《なか》に2m以上《いじょう》入《い》れておきます。管《かん》の先《さき》がコンクリートから抜《ぬ》けると、水《みず》や泥《どろ》が混《ま》ざって、品質《ひんしつ》が悪《わる》くなります。"},
+{"id":250,"c":"土工・基礎","q":"場所打《ばしょう》ち杭《ぐい》で、コンクリートを設計《せっけい》の高《たか》さより高《たか》く打《う》ち、あとで上《うえ》の部分《ぶぶん》を取《と》り除《のぞ》くのはなぜですか。","a":"上《うえ》の部分《ぶぶん》は泥《どろ》が混《ま》ざって弱《よわ》いから","d":["杭《くい》の重《おも》さを増《ふ》やしたいから","コンクリートが余《あま》っているから","雨水《あまみず》が入《はい》らないようにするから"],"e":"杭《くい》の頭《あたま》の部分《ぶぶん》には、スライム（泥《どろ》）などが混《ま》ざった品質《ひんしつ》の悪《わる》いコンクリートが上《あ》がってきます。そのため余盛《よも》りをして、あとではつり取《と》ります（杭頭処理《くいとうしょり》）。"},
+{"id":251,"c":"土工・基礎","q":"たくさんの杭《くい》をまとめて打《う》つとき、打《う》つ順番《じゅんばん》として正《ただ》しいものはどれですか。","a":"中央《ちゅうおう》から外側《そとがわ》へ向《む》かって打《う》つ","d":["外側《そとがわ》から中央《ちゅうおう》へ向《む》かって打《う》つ","打《う》ちやすい所《ところ》から自由《じゆう》に打《う》つ","いちばん端《はし》の1列《れつ》だけ先《さき》に全部《ぜんぶ》打《う》つ"],"e":"外側《そとがわ》から打《う》つと、中央《ちゅうおう》の土《つち》がぎゅっと締《し》まり、あとの杭《くい》が入《はい》りにくくなります。そのため、中央《ちゅうおう》から外側《そとがわ》へ打《う》つのが基本《きほん》です。"},
+{"id":252,"c":"土工・基礎","q":"工事《こうじ》で出《で》た土《つち》（建設発生土《けんせつはっせいど》）の扱《あつか》いとして、正《ただ》しいものはどれですか。","a":"できるだけ、ほかの工事《こうじ》の盛土《もりど》などに再利用《さいりよう》する","d":["空《あ》いている土地《とち》があれば、自由《じゆう》に捨《す》ててよい","川《かわ》や海《うみ》の近《ちか》くに捨《す》ててよい","夜《よる》のうちに、近《ちか》くの山《やま》に捨《す》てればよい"],"e":"建設発生土《けんせつはっせいど》は、大切《たいせつ》な資源《しげん》です。決《き》められた場所《ばしょ》以外《いがい》に勝手《かって》に捨《す》てたり盛《も》ったりすることは、盛土規制法《もりどきせいほう》や条例《じょうれい》で規制《きせい》されています。"},
+{"id":253,"c":"土工・基礎","q":"盛土《もりど》の現場《げんば》で、締《し》め固《かた》めた土《つち》の密度《みつど》を測《はか》る方法《ほうほう》はどれですか。","a":"砂置換法《すなちかんほう》","d":["スランプ試験《しけん》","標準貫入試験《ひょうじゅんかんにゅうしけん》","圧縮強度試験《あっしゅくきょうどしけん》"],"e":"土《つち》を掘《ほ》った穴《あな》に乾《かわ》いた砂《すな》を入《い》れて穴《あな》の体積《たいせき》を求《もと》め、密度《みつど》を計算《けいさん》します。放射線《ほうしゃせん》を使《つか》うRI計器《けいき》で測《はか》る方法《ほうほう》もあります。"},
+{"id":254,"c":"土工・基礎","q":"締固《しめかた》めの管理《かんり》で、使《つか》う機械《きかい》の種類《しゅるい》、まき出《だ》し厚《あつ》さ、締固《しめかた》めの回数《かいすう》を決《き》めて管理《かんり》する方式《ほうしき》はどれですか。","a":"工法規定方式《こうほうきていほうしき》","d":["品質規定方式《ひんしつきていほうしき》","性能発注方式《せいのうはっちゅうほうしき》","単価契約方式《たんかけいやくほうしき》"],"e":"品質規定方式《ひんしつきていほうしき》は、締固《しめかた》め度《ど》などの品質《ひんしつ》の値《あたい》で管理《かんり》します。最近《さいきん》は、TSやGNSSでローラの走《はし》った回数《かいすう》を記録《きろく》して管理《かんり》する方法《ほうほう》も使《つか》われています。"},
+{"id":255,"c":"土工・基礎","q":"切土《きりど》の法面《のりめん》から急《きゅう》に水《みず》がわき出《で》て、小《ちい》さな崩《くず》れが見《み》えました。班長《はんちょう》としてまずすることはどれですか。","a":"作業《さぎょう》を止《と》めて人《ひと》を離《はな》し、すぐ上司《じょうし》に報告《ほうこく》する","d":["そのまま作業《さぎょう》を続《つづ》けさせる","水《みず》が出《で》ている所《ところ》を重機《じゅうき》でたたく","だれにも言《い》わずに土《つち》をかぶせる"],"e":"わき水《みず》や小《ちい》さな崩《くず》れ、ひび割《わ》れは、大《おお》きな崩壊《ほうかい》の前《まえ》ぶれのことがあります。作業員《さぎょういん》を安全《あんぜん》な所《ところ》に避難《ひなん》させてから、上司《じょうし》と対策《たいさく》を決《き》めます。"},
+{"id":256,"c":"土工・基礎","q":"寒《さむ》い地域《ちいき》で、地盤《じばん》の中《なか》の水《みず》が凍《こお》り、地面《じめん》が持《も》ち上《あ》がる現象《げんしょう》はどれですか。","a":"凍上《とうじょう》","d":["液状化《えきじょうか》","ヒービング","圧密沈下《あつみつちんか》"],"e":"凍上《とうじょう》は、シルトなど細《こま》かい粒《つぶ》の土《つち》で起《お》きやすいです。道路《どうろ》では、凍《こお》りにくい砂利《じゃり》などの材料《ざいりょう》に入《い》れ替《か》えて防《ふせ》ぎます。"},
+{"id":258,"c":"土工・基礎","q":"擁壁《ようへき》や橋台《きょうだい》の裏込《うらご》めの材料《ざいりょう》として、適《てき》しているものはどれですか。","a":"水《みず》はけがよく、締《し》め固《かた》めやすい砂《すな》や礫《れき》","d":["水《みず》を多《おお》く含《ふく》んだ軟《やわ》らかい粘土《ねんど》","草《くさ》の根《ね》がたくさん混《ま》じった表土《ひょうど》","木《き》くずやごみが混《ま》じった土《つち》"],"e":"裏込《うらご》めの土《つち》が沈下《ちんか》すると、道路《どうろ》と橋《はし》の境目《さかいめ》に段差《だんさ》ができます。薄《うす》い層《そう》に分《わ》けて、ていねいに締《し》め固《かた》めます。"},
+{"id":260,"c":"土工・基礎","q":"盛土《もりど》の法面《のりめん》の近《ちか》くまで、しっかり締《し》め固《かた》めるための方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"少《すこ》し広《ひろ》めに盛《も》って締《し》め固《かた》め、あとで削《けず》って仕上《しあ》げる","d":["法面《のりめん》の近《ちか》くは締《し》め固《かた》めないでおく","法面《のりめん》に水《みず》をまいて、軟《やわ》らかくしておく","仕上《しあ》がりの線《せん》より、内側《うちがわ》に小《ちい》さく盛《も》る"],"e":"盛土《もりど》の端《はし》はローラが近《ちか》づきにくく、締《し》め固《かた》めが足《た》りなくなりがちです。広《ひろ》めに盛《も》って締《し》め固《かた》めてから削《けず》ると、しっかりした法面《のりめん》になります。"},
+{"id":301,"c":"コンクリート・構造物","q":"レディーミクストコンクリートの受入検査《うけいれけんさ》で、荷《に》おろしの場所《ばしょ》で確《たし》かめる項目《こうもく》として、正《ただ》しくないものはどれですか。","a":"鉄筋《てっきん》の本数《ほんすう》","d":["スランプ","空気量《くうきりょう》","塩化物含有量《えんかぶつがんゆうりょう》"],"e":"受入検査《うけいれけんさ》では、スランプ・空気量《くうきりょう》・塩化物含有量《えんかぶつがんゆうりょう》・コンクリートの温度《おんど》を調《しら》べます。強度《きょうど》を調《しら》べるための供試体《きょうしたい》も、このとき作《つく》ります。"},
+{"id":302,"c":"コンクリート・構造物","q":"普通《ふつう》コンクリートの空気量《くうきりょう》の標準《ひょうじゅん》の値《あたい》はどれですか。","a":"4.5%","d":["1.0%","10%","15%"],"e":"普通《ふつう》コンクリートの空気量《くうきりょう》は4.5%、許《ゆる》される差《さ》は±1.5%です。小《ちい》さな空気《くうき》のあわは、凍《こお》ったりとけたりするくり返《かえ》しに強《つよ》くします。"},
+{"id":303,"c":"コンクリート・構造物","q":"指定《してい》されたスランプが12cmのとき、受入検査《うけいれけんさ》で認《みと》められる差《さ》（許容差《きょようさ》）はどれですか。","a":"±2.5cm","d":["±0.5cm","±5cm","±10cm"],"e":"スランプ8cm以上《いじょう》18cm以下《いか》のときの許容差《きょようさ》は±2.5cmです。範囲《はんい》をこえたコンクリートは受《う》け入《い》れません。"},
+{"id":304,"c":"コンクリート・構造物","q":"コンクリートにふくまれる塩化物《えんかぶつ》イオンの量《りょう》は、原則《げんそく》として1m³あたり何《なん》kg以下《いか》ですか。","a":"0.30kg","d":["3.0kg","5.0kg","10kg"],"e":"塩化物《えんかぶつ》が多《おお》いと、中《なか》の鉄筋《てっきん》がさびやすくなります。塩化物《えんかぶつ》イオン量《りょう》は原則《げんそく》0.30kg/m³以下《いか》です。"},
+{"id":305,"c":"コンクリート・構造物","q":"コンクリートの強度《きょうど》を判定《はんてい》するとき、ふつう供試体《きょうしたい》は材齢《ざいれい》何日《なんにち》で圧縮試験《あっしゅくしけん》をしますか。","a":"28日《にち》","d":["1日《にち》","3日《か》","1年《ねん》"],"e":"供試体《きょうしたい》は荷《に》おろしの場所《ばしょ》で採取《さいしゅ》して作《つく》り、標準養生《ひょうじゅんようじょう》をして材齢《ざいれい》28日《にち》で試験《しけん》するのが基本《きほん》です。"},
+{"id":306,"c":"コンクリート・構造物","q":"コンクリートを打《う》ったあと、水《みず》が表面《ひょうめん》に浮《う》き出《で》てくる現象《げんしょう》を何《なん》といいますか。","a":"ブリーディング","d":["レイタンス","ポップアウト","エフロレッセンス"],"e":"ブリーディングが多《おお》いと、表面《ひょうめん》に弱《よわ》い層《そう》（レイタンス）ができたり、鉄筋《てっきん》の下《した》にすき間《ま》ができたりします。単位水量《たんいすいりょう》を少《すく》なくすると減《へ》らせます。"},
+{"id":307,"c":"コンクリート・構造物","q":"固《かた》まった古《ふる》いコンクリートに、新《あたら》しいコンクリートを打《う》ち継《つ》ぐときの正《ただ》しい準備《じゅんび》はどれですか。","a":"レイタンスを取《と》り、表面《ひょうめん》をぬらす","d":["表面《ひょうめん》をよく乾《かわ》かす","表面《ひょうめん》に油《あぶら》を塗《ぬ》る","何《なに》もせずにすぐ打《う》つ"],"e":"打継《うちつ》ぎ面《めん》は、もろい層《そう》（レイタンス）やゆるんだ骨材《こつざい》を取《と》り除《のぞ》き、吸水《きゅうすい》させてから打《う》ちます。打継目《うちつぎめ》は、なるべくせん断力《だんりょく》の小《ちい》さい位置《いち》に設《もう》けます。"},
+{"id":308,"c":"コンクリート・構造物","q":"型枠《かたわく》をはずしたら、砂利《じゃり》が集《あつ》まってすき間《ま》だらけの部分《ぶぶん》がありました。この不良《ふりょう》を何《なん》といいますか。","a":"豆板《まめいた》（ジャンカ）","d":["レイタンス","ブリーディング","コールドジョイント"],"e":"豆板《まめいた》は、締固《しめかた》め不足《ぶそく》や材料《ざいりょう》の分離《ぶんり》で起《お》こります。高《たか》い所《ところ》から落《お》とさない、振動機《しんどうき》でよく締《し》め固《かた》めることで防《ふせ》ぎます。"},
+{"id":309,"c":"コンクリート・構造物","q":"コンクリートを打《う》ち込《こ》むとき、吐出口《としゅつこう》から打込《うちこ》み面《めん》までの高《たか》さは、何《なん》m以下《いか》が標準《ひょうじゅん》ですか。","a":"1.5m以下《いか》","d":["3m以下《いか》","5m以下《いか》","10m以下《いか》"],"e":"高《たか》い所《ところ》から落《お》とすと、砂利《じゃり》とモルタルが分《わ》かれてしまいます（材料分離《ざいりょうぶんり》）。シュートやホースの先《さき》を打込《うちこ》み面《めん》に近《ちか》づけます。"},
+{"id":310,"c":"コンクリート・構造物","q":"上《うえ》の層《そう》を締《し》め固《かた》めるとき、内部振動機《ないぶしんどうき》の正《ただ》しい使《つか》い方《かた》はどれですか。","a":"下《した》の層《そう》に10cmくらい差《さ》し込《こ》む","d":["上《うえ》の層《そう》の表面《ひょうめん》だけにかける","鉄筋《てっきん》に当《あ》てて振動《しんどう》させる","横《よこ》に動《うご》かしてコンクリートを流《なが》す"],"e":"下《した》の層《そう》に10cmくらい入《い》れると、上《うえ》と下《した》の層《そう》が一体《いったい》になります。振動機《しんどうき》でコンクリートを横《よこ》に流《なが》すと、材料分離《ざいりょうぶんり》の原因《げんいん》になります。引《ひ》き抜《ぬ》きはゆっくり行《おこな》います。"},
+{"id":311,"c":"コンクリート・構造物","q":"日平均気温《にちへいきんきおん》が15℃以上《いじょう》のとき、普通《ふつう》ポルトランドセメントを使《つか》ったコンクリートの湿潤養生《しつじゅんようじょう》期間《きかん》の標準《ひょうじゅん》はどれですか。","a":"5日《か》","d":["1日《にち》","3日《か》","14日《か》"],"e":"土木学会《どぼくがっかい》の示方書《しほうしょ》では、15℃以上《いじょう》で普通《ふつう》セメントは5日《か》、早強《そうきょう》セメントは3日《か》、高炉《こうろ》セメントB種《しゅ》は7日《か》が標準《ひょうじゅん》です。気温《きおん》が低《ひく》いときは、もっと長《なが》くします。"},
+{"id":312,"c":"コンクリート・構造物","q":"暑中《しょちゅう》コンクリートとして施工《せこう》するのは、日平均気温《にちへいきんきおん》が何《なん》℃をこえるときですか。","a":"25℃","d":["15℃","20℃","35℃"],"e":"日平均気温《にちへいきんきおん》が25℃をこえるときは暑中《しょちゅう》コンクリートとします。打込《うちこ》み時《じ》のコンクリート温度《おんど》は35℃以下《いか》にし、早《はや》く乾《かわ》かないように養生《ようじょう》します。"},
+{"id":313,"c":"コンクリート・構造物","q":"寒中《かんちゅう》コンクリートとして施工《せこう》するのは、日平均気温《にちへいきんきおん》が何《なん》℃以下《いか》になるときですか。","a":"4℃以下《いか》","d":["10℃以下《いか》","15℃以下《いか》","−10℃以下《いか》"],"e":"日平均気温《にちへいきんきおん》が4℃以下《いか》になりそうなときは寒中《かんちゅう》コンクリートとします。固《かた》まる前《まえ》に凍《こお》ると強度《きょうど》が出《で》なくなる（初期凍害《しょきとうがい》）ので、シートで囲《かこ》って保温《ほおん》や給熱《きゅうねつ》をします。"},
+{"id":314,"c":"コンクリート・構造物","q":"大《おお》きな橋脚《きょうきゃく》などのマスコンクリートで、温度《おんど》ひび割《わ》れが起《お》こる主《おも》な原因《げんいん》はどれですか。","a":"セメントの水和熱《すいわねつ》","d":["鉄筋《てっきん》のさび","型枠《かたわく》のはく離剤《りざい》","骨材《こつざい》の不足《ふそく》"],"e":"セメントが水《みず》と反応《はんのう》するときの熱《ねつ》で内部《ないぶ》の温度《おんど》が上《あ》がり、表面《ひょうめん》との温度差《おんどさ》でひび割《わ》れます。発熱《はつねつ》の少《すく》ないセメントを使《つか》う、パイプクーリングをするなどで防《ふせ》ぎます。"},
+{"id":315,"c":"コンクリート・構造物","q":"空気中《くうきちゅう》の二酸化炭素《にさんかたんそ》によって、コンクリートのアルカリ性《せい》が失《うしな》われていく現象《げんしょう》を何《なん》といいますか。","a":"中性化《ちゅうせいか》","d":["塩害《えんがい》","凍害《とうがい》","アルカリシリカ反応《はんのう》"],"e":"中性化《ちゅうせいか》が鉄筋《てっきん》まで進《すす》むと、鉄筋《てっきん》がさびやすくなります。かぶりを十分《じゅうぶん》にとり、密《みつ》なコンクリートにすることが対策《たいさく》です。"},
+{"id":316,"c":"コンクリート・構造物","q":"海《うみ》の近《ちか》くの構造物《こうぞうぶつ》で、塩分《えんぶん》が入《はい》りこんで鉄筋《てっきん》がさびる劣化《れっか》を何《なん》といいますか。","a":"塩害《えんがい》","d":["中性化《ちゅうせいか》","凍害《とうがい》","化学的侵食《かがくてきしんしょく》"],"e":"塩害《えんがい》を防《ふせ》ぐには、かぶりを大《おお》きくする、水《みず》セメント比《ひ》を小《ちい》さくする、エポキシ樹脂塗装鉄筋《じゅしとそうてっきん》を使《つか》うなどの方法《ほうほう》があります。"},
+{"id":317,"c":"コンクリート・構造物","q":"骨材《こつざい》の成分《せいぶん》とセメントのアルカリが反応《はんのう》してふくらみ、亀《かめ》の甲《こう》のようなひび割《わ》れができる現象《げんしょう》はどれですか。","a":"アルカリシリカ反応《はんのう》","d":["中性化《ちゅうせいか》","ブリーディング","乾燥収縮《かんそうしゅうしゅく》"],"e":"対策《たいさく》は、無害《むがい》と判定《はんてい》された骨材《こつざい》を使《つか》う、高炉《こうろ》セメントB種《しゅ》などの混合《こんごう》セメントを使《つか》う、アルカリの総量《そうりょう》を3.0kg/m³以下《いか》にする、などです。"},
+{"id":318,"c":"コンクリート・構造物","q":"鉄筋《てっきん》の曲《ま》げ加工《かこう》のしかたとして、正《ただ》しいものはどれですか。","a":"常温《じょうおん》で、機械《きかい》を使《つか》って曲《ま》げる","d":["バーナーで熱《ねっ》してから曲《ま》げる","一度《いちど》曲《ま》げた所《ところ》を戻《もど》して使《つか》う","ハンマーでたたいて曲《ま》げる"],"e":"鉄筋《てっきん》は常温《じょうおん》で加工《かこう》するのが原則《げんそく》です。熱《ねつ》を加《くわ》えたり、曲《ま》げ戻《もど》したりすると、鉄筋《てっきん》の性質《せいしつ》が悪《わる》くなります。"},
+{"id":319,"c":"コンクリート・構造物","q":"土木《どぼく》の工事《こうじ》で、型枠《かたわく》に接《せっ》する鉄筋《てっきん》のスペーサーに使《つか》う材料《ざいりょう》として、正《ただ》しいものはどれですか。","a":"モルタル製《せい》やコンクリート製《せい》","d":["木《き》の切《き》れ端《はし》","れんがのかけら","鉄筋《てっきん》の切《き》れ端《はし》"],"e":"型枠《かたわく》に接《せっ》するスペーサーは、モルタル製《せい》かコンクリート製《せい》が原則《げんそく》です。木《き》は腐《くさ》り、鉄《てつ》はさびるので、かぶりの部分《ぶぶん》が弱《よわ》くなります。"},
+{"id":320,"c":"コンクリート・構造物","q":"鉄筋《てっきん》の継手《つぎて》の位置《いち》について、正《ただ》しいものはどれですか。","a":"同《おな》じ断面《だんめん》に集《あつ》めず、ずらして配置《はいち》する","d":["すべて同《おな》じ断面《だんめん》にそろえる","力《ちから》が最《もっと》も大《おお》きい所《ところ》に集《あつ》める","継手《つぎて》は1か所《しょ》にまとめる"],"e":"継手《つぎて》は弱点《じゃくてん》になりやすいので、同《おな》じ断面《だんめん》に集《あつ》めず、ずらします。また、なるべく大《おお》きな力《ちから》がかからない位置《いち》に設《もう》けます。"},
+{"id":321,"c":"コンクリート・構造物","q":"型枠《かたわく》を取《と》りはずすとき、先《さき》にはずしてよいものはどれですか。","a":"壁《かべ》や柱《はしら》の側面《そくめん》の型枠《かたわく》","d":["スラブの下《した》の支保工《しほこう》","梁《はり》の底《そこ》の型枠《かたわく》","長《なが》い梁《はり》の中央《ちゅうおう》の支柱《しちゅう》"],"e":"型枠《かたわく》は、重《おも》さを受《う》けない部分《ぶぶん》から先《さき》にはずします。スラブや梁《はり》の底《そこ》の型枠《かたわく》・支保工《しほこう》は、必要《ひつよう》な強度《きょうど》になってからはずします。"},
+{"id":322,"c":"コンクリート・構造物","q":"工場《こうじょう》で前《まえ》もって作《つく》り、現場《げんば》に運《はこ》んで据《す》え付《つ》けるコンクリート製品《せいひん》を何《なん》といいますか。","a":"プレキャストコンクリート","d":["レディーミクストコンクリート","吹付《ふきつ》けコンクリート","水中《すいちゅう》コンクリート"],"e":"プレキャスト製品《せいひん》（U字溝《じこう》、ボックスカルバートなど）は、品質《ひんしつ》が安定《あんてい》し、現場《げんば》の工期《こうき》を短《みじか》くできます。現場《げんば》で型枠《かたわく》を組《く》んで打《う》つものは、場所打《ばしょう》ちコンクリートといいます。"},
+{"id":323,"c":"コンクリート・構造物","q":"自分《じぶん》の重《おも》さで土圧《どあつ》に抵抗《ていこう》する擁壁《ようへき》はどれですか。","a":"重力式擁壁《じゅうりょくしきようへき》","d":["L型擁壁《がたようへき》","もたれ式擁壁《しきようへき》","補強土壁《ほきょうどへき》"],"e":"重力式《じゅうりょくしき》は、コンクリートの重《おも》さで土《つち》を支《ささ》えます。L型《がた》は、底版《ていばん》の上《うえ》にのる土《つち》の重《おも》さも利用《りよう》します。もたれ式《しき》は、地山《じやま》にもたれかかる形《かたち》の擁壁《ようへき》です。"},
+{"id":324,"c":"コンクリート・構造物","q":"擁壁《ようへき》に水抜《みずぬ》き穴《あな》を設《もう》ける目的《もくてき》はどれですか。","a":"背面《はいめん》の水《みず》を抜《ぬ》き、水圧《すいあつ》を下《さ》げる","d":["擁壁《ようへき》全体《ぜんたい》を軽《かる》くする","型枠《かたわく》を固定《こてい》するため","鉄筋《てっきん》を外《そと》に通《とお》すため"],"e":"雨水《あまみず》が擁壁《ようへき》の裏《うら》にたまると、水圧《すいあつ》が加《くわ》わって擁壁《ようへき》が倒《たお》れる原因《げんいん》になります。水抜《みずぬ》き穴《あな》の裏《うら》には、土《つち》が流《なが》れ出《で》ないよう透水《とうすい》マットや砕石《さいせき》を置《お》きます。"},
+{"id":325,"c":"コンクリート・構造物","q":"橋《はし》の両端《りょうたん》にあって桁《けた》を支《ささ》え、背面《はいめん》の土《つち》の圧力《あつりょく》も受《う》ける下部構造《かぶこうぞう》はどれですか。","a":"橋台《きょうだい》","d":["橋脚《きょうきゃく》","主桁《しゅげた》","床版《しょうばん》"],"e":"橋《はし》の両端《りょうたん》にあるのが橋台《きょうだい》、途中《とちゅう》で桁《けた》を支《ささ》える柱《はしら》のようなものが橋脚《きょうきゃく》です。どちらも下部構造《かぶこうぞう》です。"},
+{"id":326,"c":"コンクリート・構造物","q":"橋《はし》で、車《くるま》や人《ひと》の重《おも》さを直接《ちょくせつ》受《う》けて、主桁《しゅげた》に伝《つた》える板《いた》の部分《ぶぶん》はどれですか。","a":"床版《しょうばん》","d":["橋台《きょうだい》","支承《ししょう》","フーチング"],"e":"床版《しょうばん》の上《うえ》に舗装《ほそう》をします。床版《しょうばん》・主桁《しゅげた》などを上部構造《じょうぶこうぞう》、橋台《きょうだい》・橋脚《きょうきゃく》などを下部構造《かぶこうぞう》といいます。"},
+{"id":327,"c":"コンクリート・構造物","q":"橋《はし》で、上部構造《じょうぶこうぞう》の重《おも》さを下部構造《かぶこうぞう》に伝《つた》え、温度《おんど》による伸《の》び縮《ちぢ》みにも対応《たいおう》する部材《ぶざい》はどれですか。","a":"支承《ししょう》","d":["床版《しょうばん》","高欄《こうらん》","地覆《じふく》"],"e":"支承《ししょう》は、桁《けた》と橋台《きょうだい》・橋脚《きょうきゃく》の間《あいだ》に置《お》きます。ゴム支承《ししょう》や鋼製支承《こうせいししょう》があります。"},
+{"id":328,"c":"コンクリート・構造物","q":"橋《はし》の桁《けた》の端《はし》の継《つ》ぎ目《め》に付《つ》け、温度《おんど》による伸《の》び縮《ちぢ》みを吸収《きゅうしゅう》しながら車《くるま》を通《とお》す装置《そうち》はどれですか。","a":"伸縮装置《しんしゅくそうち》","d":["支承《ししょう》","落橋防止装置《らっきょうぼうしそうち》","排水《はいすい》ます"],"e":"伸縮装置《しんしゅくそうち》（ジョイント）は、路面《ろめん》のすき間《ま》をつなぎます。すき間《ま》に土砂《どしゃ》がつまると動《うご》けなくなるので、清掃《せいそう》も大切《たいせつ》です。"},
+{"id":329,"c":"コンクリート・構造物","q":"道路《どうろ》や鉄道《てつどう》の下《した》を横切《よこぎ》って、水路《すいろ》や通路《つうろ》にする箱形《はこがた》のコンクリート構造物《こうぞうぶつ》はどれですか。","a":"ボックスカルバート","d":["U字溝《じこう》","ヒューム管《かん》","L型擁壁《がたようへき》"],"e":"ボックスカルバートは四角《しかく》い箱《はこ》の形《かたち》をしています。現場《げんば》で打《う》つものと、プレキャスト製品《せいひん》をつなぐものがあります。"},
+{"id":330,"c":"コンクリート・構造物","q":"山岳《さんがく》トンネルで、掘《ほ》った直後《ちょくご》に吹付《ふきつ》けコンクリートとロックボルトで地山《じやま》を支《ささ》え、地山《じやま》自身《じしん》の強《つよ》さを生《い》かす工法《こうほう》はどれですか。","a":"NATM","d":["シールド工法《こうほう》","開削工法《かいさくこうほう》","推進工法《すいしんこうほう》"],"e":"NATMの主《おも》な流《なが》れは、掘削《くっさく》→吹付《ふきつ》けコンクリート→ロックボルト→覆工《ふっこう》コンクリートです。トンネルの変形《へんけい》を計測《けいそく》して、安全《あんぜん》を確《たし》かめながら掘《ほ》り進《すす》めます。"},
+{"id":331,"c":"舗装・測量・機械","q":"アスファルト舗装《ほそう》の構成《こうせい》を、上《うえ》から順《じゅん》に並《なら》べたものはどれですか。","a":"表層《ひょうそう》→基層《きそう》→路盤《ろばん》→路床《ろしょう》","d":["路床《ろしょう》→路盤《ろばん》→基層《きそう》→表層《ひょうそう》","基層《きそう》→表層《ひょうそう》→路床《ろしょう》→路盤《ろばん》","表層《ひょうそう》→路床《ろしょう》→基層《きそう》→路盤《ろばん》"],"e":"表層《ひょうそう》と基層《きそう》はアスファルト混合物《こんごうぶつ》、路盤《ろばん》は砕石《さいせき》などで、上層路盤《じょうそうろばん》と下層路盤《かそうろばん》に分《わ》かれます。路床《ろしょう》は舗装《ほそう》を支《ささ》える土《つち》の部分《ぶぶん》です。"},
+{"id":332,"c":"舗装・測量・機械","q":"舗装《ほそう》の下《した》にあって、舗装《ほそう》を支《ささ》える厚《あつ》さ約《やく》1mの土《つち》の部分《ぶぶん》を何《なん》といいますか。","a":"路床《ろしょう》","d":["路盤《ろばん》","基層《きそう》","路肩《ろかた》"],"e":"路床《ろしょう》の下《した》を路体《ろたい》といいます。路床《ろしょう》の支持力《しじりょく》が弱《よわ》いときは、セメントや石灰《せっかい》を混《ま》ぜて改良《かいりょう》します。"},
+{"id":333,"c":"舗装・測量・機械","q":"路床土《ろしょうど》の支持力《しじりょく》（強《つよ》さ）を調《しら》べるための試験《しけん》はどれですか。","a":"CBR試験《しけん》","d":["スランプ試験《しけん》","空気量試験《くうきりょうしけん》","塩化物試験《えんかぶつしけん》"],"e":"CBR試験《しけん》の結果《けっか》をもとに、舗装《ほそう》の厚《あつ》さを決《き》めます。現場《げんば》では、平板載荷試験《へいばんさいかしけん》で支持力《しじりょく》を調《しら》べることもあります。"},
+{"id":334,"c":"舗装・測量・機械","q":"上層路盤《じょうそうろばん》の材料《ざいりょう》として、よく使《つか》われるものはどれですか。","a":"粒度調整砕石《りゅうどちょうせいさいせき》","d":["密粒度《みつりゅうど》アスコン","タックコート","シーリング材《ざい》"],"e":"粒度調整砕石《りゅうどちょうせいさいせき》は、大小《だいしょう》の砕石《さいせき》をうまく混《ま》ぜて、よく締《し》まるようにした材料《ざいりょう》です。下層路盤《かそうろばん》にはクラッシャランなどが使《つか》われます。"},
+{"id":335,"c":"舗装・測量・機械","q":"路盤材《ろばんざい》にセメントを混《ま》ぜて、強《つよ》さと耐久性《たいきゅうせい》を高《たか》める工法《こうほう》はどれですか。","a":"セメント安定処理《あんていしょり》","d":["プライムコート","タックコート","シールコート"],"e":"安定処理《あんていしょり》には、セメントのほかに石灰《せっかい》やアスファルトを使《つか》うものもあります。路盤《ろばん》が強《つよ》くなると、舗装《ほそう》が長持《ながも》ちします。"},
+{"id":336,"c":"舗装・測量・機械","q":"路盤《ろばん》の上《うえ》に散布《さんぷ》して、路盤《ろばん》とアスファルト混合物《こんごうぶつ》のなじみをよくするものはどれですか。","a":"プライムコート","d":["タックコート","シールコート","はく離剤《りざい》"],"e":"プライムコートは路盤《ろばん》の表面《ひょうめん》を安定《あんてい》させ、雨水《あまみず》がしみこむのも防《ふせ》ぎます。アスファルト乳剤《にゅうざい》（PK-3）がよく使《つか》われます。"},
+{"id":337,"c":"舗装・測量・機械","q":"基層《きそう》と表層《ひょうそう》のように、アスファルト混合物《こんごうぶつ》の層《そう》と層《そう》をよくくっつけるために散布《さんぷ》するものはどれですか。","a":"タックコート","d":["プライムコート","シールコート","フォグシール"],"e":"タックコートには、アスファルト乳剤《にゅうざい》（PK-4）がよく使《つか》われます。散布《さんぷ》したら、乳剤《にゅうざい》が分解《ぶんかい》してから混合物《こんごうぶつ》を敷《し》きます。"},
+{"id":338,"c":"舗装・測量・機械","q":"アスファルト混合物《こんごうぶつ》を、決《き》められた厚《あつ》さと幅《はば》に敷《し》き均《なら》す機械《きかい》はどれですか。","a":"アスファルトフィニッシャ","d":["モーターグレーダ","タイヤローラ","ディストリビュータ"],"e":"アスファルトフィニッシャは、ダンプトラックから受《う》け取《と》った混合物《こんごうぶつ》を、スクリードで平《たい》らに敷《し》き均《なら》します。ディストリビュータは乳剤《にゅうざい》を散布《さんぷ》する機械《きかい》です。"},
+{"id":339,"c":"舗装・測量・機械","q":"アスファルト混合物《こんごうぶつ》の締固《しめかた》め（転圧《てんあつ》）の順番《じゅんばん》として、正《ただ》しいものはどれですか。","a":"初転圧《しょてんあつ》→二次転圧《にじてんあつ》→仕上《しあ》げ転圧《てんあつ》","d":["仕上《しあ》げ転圧《てんあつ》→初転圧《しょてんあつ》→二次転圧《にじてんあつ》","二次転圧《にじてんあつ》→初転圧《しょてんあつ》→仕上《しあ》げ転圧《てんあつ》","初転圧《しょてんあつ》→仕上《しあ》げ転圧《てんあつ》→二次転圧《にじてんあつ》"],"e":"初転圧《しょてんあつ》はロードローラ（マカダムローラやタンデムローラ）、二次転圧《にじてんあつ》はタイヤローラや振動《しんどう》ローラ、仕上《しあ》げ転圧《てんあつ》はタイヤローラやロードローラで行《おこな》います。"},
+{"id":340,"c":"舗装・測量・機械","q":"アスファルト混合物《こんごうぶつ》の初転圧《しょてんあつ》は、一般《いっぱん》にどのくらいの温度《おんど》で行《おこな》いますか。","a":"110〜140℃","d":["20〜30℃","50〜60℃","200〜250℃"],"e":"温度《おんど》が下《さ》がると混合物《こんごうぶつ》がかたくなり、十分《じゅうぶん》に締《し》め固《かた》められません。二次転圧《にじてんあつ》は70〜90℃くらいで終《お》わらせます。"},
+{"id":341,"c":"舗装・測量・機械","q":"アスファルト舗装《ほそう》の二次転圧《にじてんあつ》によく使《つか》われる、ゴムタイヤで締《し》め固《かた》めるローラはどれですか。","a":"タイヤローラ","d":["マカダムローラ","タンパ","ブルドーザ"],"e":"タイヤローラは、タイヤの空気圧《くうきあつ》やおもりで重《おも》さを調整《ちょうせい》でき、混合物《こんごうぶつ》をこねるように締《し》め固《かた》めます。路盤《ろばん》や土《つち》の締固《しめかた》めにも使《つか》います。"},
+{"id":342,"c":"舗装・測量・機械","q":"ローラでアスファルト混合物《こんごうぶつ》を転圧《てんあつ》するとき、正《ただ》しい方法《ほうほう》はどれですか。","a":"駆動輪《くどうりん》をフィニッシャ側《がわ》に向《む》けて転圧《てんあつ》する","d":["案内輪《あんないりん》をフィニッシャ側《がわ》に向《む》けて転圧《てんあつ》する","横断勾配《おうだんこうばい》の高《たか》い方《ほう》から転圧《てんあつ》する","ローラを混合物《こんごうぶつ》の上《うえ》で長《なが》く止《と》めておく"],"e":"駆動輪《くどうりん》を前《まえ》にすると、混合物《こんごうぶつ》が押《お》されてずれたり、ひび割《わ》れたりしにくくなります。転圧《てんあつ》は、横断勾配《おうだんこうばい》の低《ひく》い方《ほう》から高《たか》い方《ほう》へ進《すす》めます。"},
+{"id":343,"c":"舗装・測量・機械","q":"アスファルト舗装《ほそう》の工事《こうじ》のあと、交通開放《こうつうかいほう》してよいのは、舗装《ほそう》の表面温度《ひょうめんおんど》がおおむね何《なん》℃以下《いか》になってからですか。","a":"50℃以下《いか》","d":["80℃以下《いか》","100℃以下《いか》","120℃以下《いか》"],"e":"熱《あつ》いうちに車《くるま》を通《とお》すと、わだち掘《ぼ》れなどの変形《へんけい》が起《お》きやすくなります。急《いそ》ぐときは、散水《さんすい》などで舗装《ほそう》を冷《ひ》やします。"},
+{"id":344,"c":"舗装・測量・機械","q":"車《くるま》のタイヤが通《とお》る所《ところ》が、帯《おび》のようにへこむ舗装《ほそう》の傷《いた》み方《かた》はどれですか。","a":"わだち掘《ぼ》れ","d":["亀甲状《きっこうじょう》ひび割《わ》れ","ポットホール","段差《だんさ》"],"e":"わだち掘《ぼ》れは、大型車《おおがたしゃ》が多《おお》い道路《どうろ》や、夏《なつ》の暑《あつ》い時期《じき》に起《お》こりやすいです。流動《りゅうどう》しにくい混合物《こんごうぶつ》を使《つか》うなどの対策《たいさく》があります。"},
+{"id":345,"c":"舗装・測量・機械","q":"舗装《ほそう》の表面《ひょうめん》に、亀《かめ》の甲羅《こうら》のような細《こま》かいひび割《わ》れが広《ひろ》がっていました。主《おも》な原因《げんいん》として考《かんが》えられるものはどれですか。","a":"路盤《ろばん》や路床《ろしょう》の支持力不足《しじりょくぶそく》","d":["タックコートの量《りょう》が多《おお》すぎた","アスファルトの色《いろ》が黒《くろ》すぎた","目地《めじ》の数《かず》が多《おお》すぎた"],"e":"亀甲状《きっこうじょう》ひび割《わ》れは、舗装《ほそう》の下《した》の支《ささ》える力《ちから》が足《た》りなかったり、くり返《かえ》しの荷重《かじゅう》で舗装《ほそう》が疲《つか》れたりして起《お》こります。ひどいときは路盤《ろばん》からやり直《なお》します。"},
+{"id":346,"c":"舗装・測量・機械","q":"すき間《ま》の多《おお》い混合物《こんごうぶつ》を使《つか》い、雨水《あまみず》を舗装《ほそう》の中《なか》に通《とお》して流《なが》す舗装《ほそう》はどれですか。","a":"排水性舗装《はいすいせいほそう》","d":["コンクリート舗装《ほそう》","密粒度《みつりゅうど》アスファルト舗装《ほそう》","半《はん》たわみ性舗装《せいほそう》"],"e":"排水性舗装《はいすいせいほそう》は、雨《あめ》の日《ひ》の水《みず》はねやスリップを減《へ》らし、車《くるま》の走行音《そうこうおん》も小《ちい》さくなります。下《した》の層《そう》は水《みず》を通《とお》さないようにして、水《みず》を横《よこ》に流《なが》します。"},
+{"id":347,"c":"舗装・測量・機械","q":"コンクリート舗装《ほそう》に目地《めじ》を設《もう》ける主《おも》な目的《もくてき》はどれですか。","a":"温度変化《おんどへんか》によるひび割《わ》れを防《ふせ》ぐ","d":["雨水《あまみず》を舗装《ほそう》の下《した》に流《なが》す","車《くるま》がすべらないようにする","コンクリートを早《はや》く固《かた》める"],"e":"コンクリートは温度《おんど》で伸《の》び縮《ちぢ》みします。目地《めじ》（収縮目地《しゅうしゅくめじ》・膨張目地《ぼうちょうめじ》）を作《つく》って、ひび割《わ》れが勝手《かって》に入《はい》らないようにします。目地《めじ》には注入目地材《ちゅうにゅうめじざい》をつめて、水《みず》が入《はい》らないようにします。"},
+{"id":348,"c":"舗装・測量・機械","q":"水準測量《すいじゅんそくりょう》で、A点《てん》の後視《こうし》が1.5m、B点《てん》の前視《ぜんし》が1.2mでした。B点《てん》はA点《てん》と比《くら》べてどうですか。","a":"0.3m高《たか》い","d":["0.3m低《ひく》い","2.7m高《たか》い","1.2m低《ひく》い"],"e":"高低差《こうていさ》＝後視《こうし》−前視《ぜんし》＝1.5−1.2＝0.3mです。答《こた》えがプラスなので、B点《てん》のほうが高《たか》くなります。前視《ぜんし》の読《よ》みが小《ちい》さいほど、その点《てん》は高《たか》いです。"},
+{"id":349,"c":"舗装・測量・機械","q":"標高《ひょうこう》10.0mのBMで後視《こうし》1.5m、C点《てん》で前視《ぜんし》0.8mを読《よ》みました。C点《てん》の標高《ひょうこう》はどれですか。","a":"10.7m","d":["9.3m","11.5m","12.3m"],"e":"まず器械高《きかいだか》＝10.0＋1.5＝11.5mです。C点《てん》の標高《ひょうこう》＝器械高《きかいだか》−前視《ぜんし》＝11.5−0.8＝10.7mになります。"},
+{"id":350,"c":"舗装・測量・機械","q":"水準測量《すいじゅんそくりょう》の「器械高《きかいだか》」の求《もと》め方《かた》として、正《ただ》しいものはどれですか。","a":"既知点《きちてん》の標高《ひょうこう》＋後視《こうし》","d":["既知点《きちてん》の標高《ひょうこう》−後視《こうし》","後視《こうし》＋前視《ぜんし》","前視《ぜんし》−後視《こうし》"],"e":"器械高《きかいだか》は、レベルの視準線《しじゅんせん》の高《たか》さのことです。求《もと》めたい点《てん》の標高《ひょうこう》は「器械高《きかいだか》−前視《ぜんし》」で計算《けいさん》します。"},
+{"id":351,"c":"舗装・測量・機械","q":"工事現場《こうじげんば》の近《ちか》くに、高《たか》さの基準《きじゅん》として仮《かり》に設《もう》ける点《てん》を何《なん》といいますか。","a":"TBM（仮《かり》ベンチマーク）","d":["BM（水準点《すいじゅんてん》）","トラバース点《てん》","逃《に》げ杭《ぐい》"],"e":"国《くに》が設置《せっち》した水準点《すいじゅんてん》（BM）から高《たか》さを移《うつ》して、現場《げんば》の近《ちか》くにTBMを作《つく》ります。工事《こうじ》で動《うご》かない場所《ばしょ》に設《もう》け、ときどき確認《かくにん》します。"},
+{"id":352,"c":"舗装・測量・機械","q":"水準測量《すいじゅんそくりょう》でレベルを据《す》える場所《ばしょ》として、正《ただ》しいものはどれですか。","a":"後視《こうし》と前視《ぜんし》の距離《きょり》がほぼ等《ひと》しい所《ところ》","d":["後視《こうし》の標尺《ひょうしゃく》のすぐ横《よこ》","前視《ぜんし》の標尺《ひょうしゃく》のすぐ横《よこ》","どちらの標尺《ひょうしゃく》からもできるだけ遠《とお》い所《ところ》"],"e":"後視《こうし》と前視《ぜんし》の距離《きょり》を等《ひと》しくすると、レベルの視準軸《しじゅんじく》の誤差《ごさ》などを消《け》すことができます。レベルは三脚《さんきゃく》をしっかり固定《こてい》して据《す》えます。"},
+{"id":353,"c":"舗装・測量・機械","q":"水準測量《すいじゅんそくりょう》で標尺《ひょうしゃく》を読《よ》むときの正《ただ》しい方法《ほうほう》はどれですか。","a":"標尺《ひょうしゃく》を前後《ぜんご》にゆっくり傾《かたむ》け、最小《さいしょう》の読《よ》みを取《と》る","d":["標尺《ひょうしゃく》を前《まえ》に傾《かたむ》け、いちばん大《おお》きい読《よ》みを取《と》る","標尺《ひょうしゃく》を横《よこ》に寝《ね》かせて読《よ》む","標尺《ひょうしゃく》を斜《なな》めに立《た》てたまま読《よ》む"],"e":"標尺《ひょうしゃく》が傾《かたむ》くと読《よ》みが大《おお》きくなります。いちばん小《ちい》さい値《あたい》のとき、標尺《ひょうしゃく》が鉛直《えんちょく》に立《た》っています。"},
+{"id":354,"c":"舗装・測量・機械","q":"1台《だい》で角度《かくど》と距離《きょり》を同時《どうじ》に測《はか》れる測量機器《そくりょうきき》はどれですか。","a":"トータルステーション","d":["オートレベル","標尺《ひょうしゃく》","下《さ》げ振《ふ》り"],"e":"トータルステーション（TS）は、角度《かくど》を測《はか》る機能《きのう》と距離《きょり》を測《はか》る機能《きのう》を合《あ》わせた機器《きき》です。座標《ざひょう》を計算《けいさん》して、杭《くい》の位置《いち》を出《だ》すこともできます。"},
+{"id":355,"c":"舗装・測量・機械","q":"人工衛星《じんこうえいせい》からの電波《でんぱ》を受《う》けて、位置《いち》を測《はか》る測量《そくりょう》はどれですか。","a":"GNSS測量《そくりょう》","d":["水準測量《すいじゅんそくりょう》","平板測量《へいばんそくりょう》","トラバース測量《そくりょう》"],"e":"GNSSは、GPSなどの衛星《えいせい》を使《つか》うしくみをまとめた呼《よ》び方《かた》です。上空《じょうくう》が開《ひら》けた場所《ばしょ》で使《つか》い、高《たか》い建物《たてもの》や木《き》の近《ちか》くでは精度《せいど》が落《お》ちます。"},
+{"id":356,"c":"舗装・測量・機械","q":"いくつかの測点《そくてん》を折《お》れ線《せん》で結《むす》び、その角度《かくど》と距離《きょり》を測《はか》って各点《かくてん》の位置《いち》を決《き》める測量《そくりょう》はどれですか。","a":"トラバース測量《そくりょう》","d":["水準測量《すいじゅんそくりょう》","GNSS測量《そくりょう》","写真測量《しゃしんそくりょう》"],"e":"トラバース測量《そくりょう》は多角測量《たかくそくりょう》ともいいます。出発点《しゅっぱつてん》に戻《もど》る閉合《へいごう》トラバースなどで行《おこな》い、誤差《ごさ》を確《たし》かめて調整《ちょうせい》します。"},
+{"id":358,"c":"舗装・測量・機械","q":"ICT施工《せこう》で、建設機械《けんせつきかい》の位置《いち》と設計《せっけい》の高《たか》さの差《さ》を、運転席《うんてんせき》のモニターでオペレーターに知《し》らせる技術《ぎじゅつ》はどれですか。","a":"マシンガイダンス","d":["マシンコントロール","トラバース測量《そくりょう》","丁張《ちょうは》り"],"e":"マシンガイダンス（MG）は、3次元《じげん》の設計《せっけい》データと機械《きかい》の位置《いち》を比《くら》べて、オペレーターに表示《ひょうじ》します。マシンコントロール（MC）は、排土板《はいどばん》などを自動《じどう》で動《うご》かす技術《ぎじゅつ》です。"},
+{"id":359,"c":"舗装・測量・機械","q":"ドローンで空《そら》から写真《しゃしん》をたくさん撮《と》り、地形《ちけい》の3次元《じげん》データを作《つく》る測量《そくりょう》はどれですか。","a":"UAV写真測量《しゃしんそくりょう》","d":["水準測量《すいじゅんそくりょう》","トラバース測量《そくりょう》","平板測量《へいばんそくりょう》"],"e":"UAV写真測量《しゃしんそくりょう》では、点群《てんぐん》データという、たくさんの点《てん》の集《あつ》まりで地形《ちけい》を表《あらわ》します。土量《どりょう》の計算《けいさん》や出来形《できがた》の確認《かくにん》にも使《つか》います。"},
+{"id":360,"c":"舗装・測量・機械","q":"機械《きかい》が置《お》かれた地面《じめん》より低《ひく》い所《ところ》を掘《ほ》るのに適《てき》している建設機械《けんせつきかい》はどれですか。","a":"バックホウ","d":["ローディングショベル","モーターグレーダ","タイヤローラ"],"e":"バックホウはバケットを手前《てまえ》に引《ひ》いて掘《ほ》るので、溝掘《みぞほ》りや床掘《とこぼ》りに向《む》いています。ローディングショベルは、機械《きかい》より高《たか》い所《ところ》の掘削《くっさく》や積込《つみこ》みに向《む》いています。"},
+{"id":361,"c":"舗装・測量・機械","q":"土《つち》を掘《ほ》りながら押《お》して、短《みじか》い距離《きょり》を運《はこ》ぶのに適《てき》している機械《きかい》はどれですか。","a":"ブルドーザ","d":["クラムシェル","タイヤローラ","アスファルトフィニッシャ"],"e":"ブルドーザは排土板《はいどばん》（ブレード）で掘削《くっさく》・押土《おしど》・敷均《しきなら》しをします。運搬距離《うんぱんきょり》はおおむね60m以下《いか》が目安《めやす》です。"},
+{"id":362,"c":"舗装・測量・機械","q":"ブルドーザの後《うし》ろに付《つ》けて、かたい地盤《じばん》や軟《やわ》らかい岩《いわ》を掘《ほ》り起《お》こす、爪《つめ》のような装置《そうち》はどれですか。","a":"リッパ","d":["バケット","スクリード","アウトリガー"],"e":"リッパで岩《いわ》を砕《くだ》いてから、ブルドーザで押《お》して運《はこ》びます。これをリッパ作業《さぎょう》といいます。"},
+{"id":363,"c":"舗装・測量・機械","q":"長《なが》いブレードで、路盤《ろばん》や道路《どうろ》の表面《ひょうめん》を平《たい》らに仕上《しあ》げる機械《きかい》はどれですか。","a":"モーターグレーダ","d":["バックホウ","クラムシェル","ダンプトラック"],"e":"モーターグレーダは、ブレードの角度《かくど》や高《たか》さを細《こま》かく調整《ちょうせい》できるので、路盤《ろばん》の敷均《しきなら》しや整形《せいけい》に使《つか》います。砂利道《じゃりみち》の補修《ほしゅう》や除雪《じょせつ》にも使《つか》います。"},
+{"id":364,"c":"舗装・測量・機械","q":"ワイヤでつったバケットを開《ひら》いて落《お》とし、閉《と》じながら土《つち》をつかんで、深《ふか》い所《ところ》を掘《ほ》る機械《きかい》はどれですか。","a":"クラムシェル","d":["モーターグレーダ","スクレーパ","振動《しんどう》ローラ"],"e":"クラムシェルは、立坑《たてこう》や基礎《きそ》の深《ふか》い掘削《くっさく》、水中《すいちゅう》の掘削《くっさく》に向《む》いています。狭《せま》い場所《ばしょ》で垂直《すいちょく》に深《ふか》く掘《ほ》れます。"},
+{"id":365,"c":"舗装・測量・機械","q":"1台《だい》で掘削《くっさく》・積込《つみこ》み・運搬《うんぱん》・敷均《しきなら》しまでできる機械《きかい》はどれですか。","a":"スクレーパ","d":["タンパ","クラムシェル","タイヤローラ"],"e":"スクレーパは、ボウルという入《い》れ物《もの》に土《つち》を削《けず》り取《と》って運《はこ》び、まき出《だ》します。広《ひろ》い造成地《ぞうせいち》など、中《ちゅう》〜長距離《ちょうきょり》の運搬《うんぱん》に向《む》いています。"},
+{"id":368,"c":"舗装・測量・機械","q":"車両系建設機械《しゃりょうけいけんせつきかい》で、その日《ひ》の作業開始前《さぎょうかいしまえ》に必《かなら》ず点検《てんけん》するものはどれですか。","a":"ブレーキやクラッチの機能《きのう》","d":["エンジンの分解整備《ぶんかいせいび》","車体《しゃたい》の塗装《とそう》の色《いろ》","前回《ぜんかい》の燃料代《ねんりょうだい》"],"e":"労働安全衛生規則《ろうどうあんぜんえいせいきそく》で、その日《ひ》の作業《さぎょう》を始《はじ》める前《まえ》に、ブレーキとクラッチの機能《きのう》を点検《てんけん》することが決《き》められています。異常《いじょう》があれば、直《なお》してから使《つか》います。"},
+{"id":370,"c":"舗装・測量・機械","q":"移動式《いどうしき》クレーンで作業《さぎょう》する前《まえ》に、転倒《てんとう》を防《ふせ》ぐためにすることとして、正《ただ》しいものはどれですか。","a":"アウトリガーを最大《さいだい》に張《は》り出《だ》し、敷板《しきいた》の上《うえ》に設置《せっち》する","d":["アウトリガーは使《つか》わず、タイヤだけで支《ささ》える","やわらかい地面《じめん》に、そのまま設置《せっち》する","つり荷《に》の重《おも》さは確《たし》かめずに作業《さぎょう》する"],"e":"アウトリガーを張《は》り出《だ》すと安定《あんてい》がよくなります。地盤《じばん》が弱《よわ》いときは、鉄板《てっぱん》や敷板《しきいた》を敷《し》いて沈《しず》まないようにします。定格荷重《ていかくかじゅう》をこえる荷《に》をつってはいけません。"},
+{"id":401,"c":"安全管理","q":"機体重量《きたいじゅうりょう》が3t以上《いじょう》のバックホウ（車両系建設機械《しゃりょうけいけんせつきかい》）を運転《うんてん》するのに必要《ひつよう》な資格《しかく》はどれですか。","a":"技能講習《ぎのうこうしゅう》の修了《しゅうりょう》","d":["特別教育《とくべつきょういく》の修了《しゅうりょう》","職長教育《しょくちょうきょういく》の修了《しゅうりょう》","普通自動車《ふつうじどうしゃ》の運転免許《うんてんめんきょ》だけ"],"e":"機体重量《きたいじゅうりょう》3t以上《いじょう》は技能講習《ぎのうこうしゅう》、3t未満《みまん》は特別教育《とくべつきょういく》が必要《ひつよう》です。公道《こうどう》を走《はし》るときは、別《べつ》に自動車《じどうしゃ》の運転免許《うんてんめんきょ》もいります。"},
+{"id":402,"c":"安全管理","q":"パワーショベル（バックホウ）の使《つか》い方《かた》で、してはいけないことはどれですか。","a":"バケットに人《ひと》を乗《の》せて高《たか》い所《ところ》へ上《あ》げる","d":["作業《さぎょう》の前《まえ》に機械《きかい》を点検《てんけん》する","誘導員《ゆうどういん》の合図《あいず》に従《したが》って動《うご》かす","運転席《うんてんせき》を離《はな》れる前《まえ》にバケットを下《お》ろす"],"e":"車両系建設機械《しゃりょうけいけんせつきかい》を、決《き》められた用途《ようと》以外《いがい》に使《つか》うこと（用途外使用《ようとがいしよう》）は原則《げんそく》禁止《きんし》です。バケットに人《ひと》を乗《の》せるのは、とても危険《きけん》です。"},
+{"id":403,"c":"安全管理","q":"車両系建設機械《しゃりょうけいけんせつきかい》の運転者《うんてんしゃ》が運転席《うんてんせき》を離《はな》れるとき、正《ただ》しいものはどれですか。","a":"バケットを地面《じめん》に下《お》ろし、エンジンを止《と》める","d":["バケットを高《たか》く上《あ》げたままにする","すぐ戻《もど》るならエンジンはかけたままにする","キーを差《さ》したまま、ブレーキはかけない"],"e":"バケットなどの作業装置《さぎょうそうち》を地面《じめん》に下《お》ろし、エンジンを止《と》めてブレーキをかけます。キーも抜《ぬ》いて、ほかの人《ひと》が勝手《かって》に動《うご》かせないようにします。"},
+{"id":404,"c":"安全管理","q":"バックホウが作業《さぎょう》しているとき、旋回《せんかい》する範囲《はんい》について正《ただ》しいものはどれですか。","a":"作業中《さぎょうちゅう》は人《ひと》が入《はい》らないようにする","d":["手《て》で合図《あいず》をすれば入《はい》ってよい","急《いそ》いでいるときは入《はい》ってよい","運転者《うんてんしゃ》に声《こえ》をかければ入《はい》ってよい"],"e":"バックホウの後《うし》ろや横《よこ》は運転者《うんてんしゃ》から見《み》えにくく、旋回《せんかい》したときにはさまれる事故《じこ》が多《おお》いです。カラーコーンなどで立入禁止《たちいりきんし》の区域《くいき》をはっきり示《しめ》します。"},
+{"id":405,"c":"安全管理","q":"路肩《ろかた》や傾斜地《けいしゃち》で車両系建設機械《しゃりょうけいけんせつきかい》を使《つか》い、機械《きかい》が転倒《てんとう》・転落《てんらく》するおそれがあるとき、どうしますか。","a":"誘導員《ゆうどういん》を置《お》いて、機械《きかい》を誘導《ゆうどう》させる","d":["スピードを上《あ》げて早《はや》く通《とお》りすぎる","運転者《うんてんしゃ》1人《ひとり》の判断《はんだん》で進《すす》む","路肩《ろかた》ぎりぎりを走《はし》って道《みち》を広《ひろ》く使《つか》う"],"e":"転倒《てんとう》・転落《てんらく》を防《ふせ》ぐため、誘導員《ゆうどういん》を置《お》き、決《き》められた合図《あいず》で誘導《ゆうどう》します。路肩《ろかた》が崩《くず》れないようにし、通路《つうろ》の幅《はば》も十分《じゅうぶん》にとります。"},
+{"id":406,"c":"安全管理","q":"車両系建設機械《しゃりょうけいけんせつきかい》を使《つか》う作業《さぎょう》の前《まえ》に作《つく》る「作業計画《さぎょうけいかく》」に書《か》く内容《ないよう》はどれですか。","a":"機械《きかい》の種類《しゅるい》・運行経路《うんこうけいろ》・作業方法《さぎょうほうほう》","d":["機械《きかい》を買《か》った日《ひ》と値段《ねだん》","運転者《うんてんしゃ》の年齢《ねんれい》と出身地《しゅっしんち》","工事《こうじ》の請負金額《うけおいきんがく》と支払日《しはらいび》"],"e":"作業計画《さぎょうけいかく》には、使《つか》う機械《きかい》の種類《しゅるい》と能力《のうりょく》、運行経路《うんこうけいろ》、作業《さぎょう》の方法《ほうほう》を書《か》きます。作業員《さぎょういん》にも内容《ないよう》を知《し》らせます。"},
+{"id":407,"c":"安全管理","q":"手掘《てぼ》りで砂《すな》の地山《じやま》を掘《ほ》るとき、掘削面《くっさくめん》の勾配《こうばい》は何度《なんど》以下《いか》にしますか（または高《たか》さ5m未満《みまん》にします）。","a":"35度《ど》以下《いか》","d":["45度《ど》以下《いか》","60度《ど》以下《いか》","75度《ど》以下《いか》"],"e":"砂《すな》は崩《くず》れやすいので、勾配《こうばい》35度《ど》以下《いか》、または高《たか》さ5m未満《みまん》にします。発破《はっぱ》などで崩《くず》れやすくなった地山《じやま》は、45度《ど》以下《いか》または高《たか》さ2m未満《みまん》です。"},
+{"id":408,"c":"安全管理","q":"手掘《てぼ》りで、岩盤《がんばん》や堅《かた》い粘土《ねんど》ではない「その他《た》の地山《じやま》」を、高《たか》さ2m以上《いじょう》5m未満《みまん》で掘《ほ》るとき、掘削面《くっさくめん》の勾配《こうばい》は何度《なんど》以下《いか》ですか。","a":"75度《ど》以下《いか》","d":["35度《ど》以下《いか》","60度《ど》以下《いか》","90度《ど》以下《いか》"],"e":"その他《た》の地山《じやま》は、高《たか》さ2m未満《みまん》なら90度《ど》以下《いか》、2m以上《いじょう》5m未満《みまん》なら75度《ど》以下《いか》、5m以上《いじょう》なら60度《ど》以下《いか》です。"},
+{"id":409,"c":"安全管理","q":"土止《どど》め支保工《しほこう》を点検《てんけん》しなければならないのは、いつですか。","a":"7日《か》をこえない期間《きかん》ごとと、大《おお》きな地震《じしん》や大雨《おおあめ》のあと","d":["1か月《げつ》に1回《かい》、決《き》めた日《ひ》だけ","工事《こうじ》がすべて終《お》わったときだけ","作業員《さぎょういん》が「おかしい」と気《き》づいたときだけ"],"e":"土止《どど》め支保工《しほこう》は、7日《か》をこえない期間《きかん》ごと、中震《ちゅうしん》以上《いじょう》の地震《じしん》のあと、大雨《おおあめ》などで地山《じやま》が急《きゅう》に弱《よわ》くなるおそれがあったあとに点検《てんけん》します。矢板《やいた》・腹《はら》おこし・切《き》りばりのゆるみや変形《へんけい》を見《み》ます。"},
+{"id":410,"c":"安全管理","q":"道路《どうろ》を掘《ほ》る前《まえ》に、地下《ちか》のガス管《かん》や電線《でんせん》などの埋設物《まいせつぶつ》を確《たし》かめる方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"管理者《かんりしゃ》の図面《ずめん》で確認《かくにん》し、試掘《しくつ》して位置《いち》を確《たし》かめる","d":["機械《きかい》で一気《いっき》に深《ふか》く掘《ほ》って確《たし》かめる","図面《ずめん》だけ見《み》て、すぐ機械《きかい》で掘《ほ》る","埋設物《まいせつぶつ》はないものと考《かんが》えて掘《ほ》る"],"e":"埋設物《まいせつぶつ》を壊《こわ》すと、ガスもれや停電《ていでん》など大《おお》きな事故《じこ》になります。埋設物《まいせつぶつ》の近《ちか》くは機械《きかい》を使《つか》わず、手掘《てぼ》りで慎重《しんちょう》に掘《ほ》ります。必要《ひつよう》なときは管理者《かんりしゃ》に立会《たちあ》ってもらいます。"},
+{"id":411,"c":"安全管理","q":"道路工事《どうろこうじ》で、工事区域《こうじくいき》を囲《かこ》んで、車《くるま》や人《ひと》が入《はい》らないようにするために置《お》くものはどれですか。","a":"バリケードやセーフティコーン","d":["スランプコーンや型枠《かたわく》","トランシットやレベル","バイブレーターやランマー"],"e":"工事区域《こうじくいき》はバリケードやコーンで囲《かこ》み、夜間《やかん》は保安灯《ほあんとう》をつけます。交通誘導員《こうつうゆうどういん》を置《お》いて、車《くるま》や歩行者《ほこうしゃ》を安全《あんぜん》に誘導《ゆうどう》します。"},
+{"id":412,"c":"安全管理","q":"硫化水素《りゅうかすいそ》中毒《ちゅうどく》を防《ふせ》ぐため、作業場所《さぎょうばしょ》の空気中《くうきちゅう》の硫化水素《りゅうかすいそ》の濃度《のうど》は何《なん》ppm以下《いか》に保《たも》ちますか。","a":"10ppm","d":["50ppm","100ppm","500ppm"],"e":"硫化水素《りゅうかすいそ》は、下水道《げすいどう》や汚泥《おでい》がたまる所《ところ》などで発生《はっせい》します。酸素《さんそ》18%以上《いじょう》、硫化水素《りゅうかすいそ》10ppm以下《いか》を保《たも》つように換気《かんき》し、濃度《のうど》を測《はか》ってから入《はい》ります。"},
+{"id":413,"c":"安全管理","q":"マンホールの中《なか》など、酸素欠乏《さんそけつぼう》の危険《きけん》がある場所《ばしょ》に入《はい》るとき、正《ただ》しいものはどれですか。","a":"入《はい》る前《まえ》に酸素濃度《さんそのうど》を測《はか》り、換気《かんき》をする","d":["においがなければ、すぐに入《はい》ってよい","換気《かんき》のために純酸素《じゅんさんそ》を送《おく》りこむ","まず1人《ひとり》で入《はい》って、中《なか》を確《たし》かめる"],"e":"酸素《さんそ》が少《すく》ない空気《くうき》は、においも色《いろ》もありません。換気《かんき》には空気《くうき》を使《つか》い、純酸素《じゅんさんそ》は火災《かさい》の危険《きけん》があるので使《つか》ってはいけません。外《そと》には監視人《かんしにん》を置《お》きます。"},
+{"id":414,"c":"安全管理","q":"マンホールの中《なか》で作業員《さぎょういん》が倒《たお》れているのを見《み》つけました。正《ただ》しい行動《こうどう》はどれですか。","a":"すぐに入《はい》らず人《ひと》を呼《よ》び、空気呼吸器《くうきこきゅうき》を着《つ》けて助《たす》ける","d":["息《いき》を止《と》めて、すぐに中《なか》へ助《たす》けに入《はい》る","防《ぼう》じんマスクを着《つ》けて、中《なか》へ入《はい》る","1人《ひとり》で中《なか》に入《はい》って、急《いそ》いで運《はこ》び出《だ》す"],"e":"あわてて助《たす》けに入《はい》った人《ひと》も倒《たお》れる事故《じこ》がとても多《おお》いです。防《ぼう》じんマスクや防毒《ぼうどく》マスクでは酸素不足《さんそぶそく》は防《ふせ》げません。空気呼吸器《くうきこきゅうき》などを使《つか》って救出《きゅうしゅつ》します。"},
+{"id":415,"c":"安全管理","q":"コンクリートのはつりなど、粉《ふん》じんが多《おお》く出《で》る作業《さぎょう》で使《つか》う保護具《ほごぐ》はどれですか。","a":"防《ぼう》じんマスク","d":["耳栓《みみせん》","安全靴《あんぜんぐつ》","溶接用《ようせつよう》の面《めん》"],"e":"粉《ふん》じんを長《なが》い間《あいだ》吸《す》いこむと、じん肺《ぱい》という肺《はい》の病気《びょうき》になります。散水《さんすい》して粉《ふん》じんを減《へ》らし、防《ぼう》じんマスクを顔《かお》にすき間《ま》なく着《つ》けます。"},
+{"id":416,"c":"安全管理","q":"大《おお》きな音《おと》が出《で》る作業《さぎょう》を長《なが》い時間《じかん》するとき、耳《みみ》を守《まも》るために使《つか》うものはどれですか。","a":"耳栓《みみせん》やイヤーマフ","d":["防《ぼう》じんメガネ","墜落制止用器具《ついらくせいしようきぐ》","皮《かわ》の手袋《てぶくろ》"],"e":"強《つよ》い騒音《そうおん》の中《なか》で長《なが》く働《はたら》くと、耳《みみ》が聞《き》こえにくくなる騒音性難聴《そうおんせいなんちょう》になります。一度《いちど》悪《わる》くなると、治《なお》りにくいです。"},
+{"id":417,"c":"安全管理","q":"チェーンソーやハンドブレーカーなど、振動《しんどう》する工具《こうぐ》を長《なが》い時間《じかん》使《つか》うと起《お》きやすい病気《びょうき》はどれですか。","a":"振動障害《しんどうしょうがい》（白《はく》ろう病《びょう》）","d":["熱中症《ねっちゅうしょう》","じん肺《ぱい》","酸素欠乏症《さんそけつぼうしょう》"],"e":"手《て》や指《ゆび》が白《しろ》くなったり、しびれたりします。1日《にち》の使用時間《しようじかん》を守《まも》り、休《やす》けいをとり、防振手袋《ぼうしんてぶくろ》を使《つか》います。"},
+{"id":418,"c":"安全管理","q":"作業床《さぎょうゆか》の高《たか》さが10m以上《いじょう》の高所作業車《こうしょさぎょうしゃ》を運転《うんてん》するのに必要《ひつよう》な資格《しかく》はどれですか。","a":"高所作業車運転技能講習《こうしょさぎょうしゃうんてんぎのうこうしゅう》の修了《しゅうりょう》","d":["高所作業車《こうしょさぎょうしゃ》の特別教育《とくべつきょういく》だけ","足場《あしば》の組立《くみた》て等《とう》作業主任者《さぎょうしゅにんしゃ》","資格《しかく》はいらない"],"e":"作業床《さぎょうゆか》の高《たか》さ10m以上《いじょう》は技能講習《ぎのうこうしゅう》、10m未満《みまん》は特別教育《とくべつきょういく》が必要《ひつよう》です。作業床《さぎょうゆか》の上《うえ》では、原則《げんそく》として墜落制止用器具《ついらくせいしようきぐ》を使《つか》います。"},
+{"id":419,"c":"安全管理","q":"ローリングタワー（移動式足場《いどうしきあしば》）を動《うご》かすとき、正《ただ》しいものはどれですか。","a":"上《うえ》に人《ひと》を乗《の》せたまま動《うご》かさない","d":["上《うえ》の人《ひと》が乗《の》ったまま押《お》して動《うご》かす","上《うえ》の人《ひと》が壁《かべ》を押《お》して自分《じぶん》で動《うご》かす","急《いそ》ぐときは乗《の》ったまま動《うご》かしてよい"],"e":"動《うご》かすときは、上《うえ》の人《ひと》を必《かなら》ず降《お》ろします。作業中《さぎょうちゅう》は車輪《しゃりん》のブレーキ（ストッパー）をかけて固定《こてい》します。"},
+{"id":420,"c":"安全管理","q":"床《ゆか》の開口部《かいこうぶ》（穴《あな》）から人《ひと》が落《お》ちないようにする方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"手《て》すりで囲《かこ》うか、丈夫《じょうぶ》なふたをして固定《こてい》する","d":["ブルーシートを上《うえ》にかけておくだけにする","「注意《ちゅうい》」と書《か》いた紙《かみ》をはるだけにする","穴《あな》の近《ちか》くを暗《くら》くして、人《ひと》を通《とお》さない"],"e":"シートをかけるだけでは穴《あな》が見《み》えず、かえって踏《ふ》み抜《ぬ》いて落《お》ちる危険《きけん》があります。ふたは動《うご》かないように固定《こてい》し、「開口部《かいこうぶ》注意《ちゅうい》」と表示《ひょうじ》します。"},
+{"id":421,"c":"安全管理","q":"玉掛《たまか》け用《よう》ワイヤロープで、使《つか》ってはいけないものはどれですか。","a":"キンク（よじれて折《お》れ曲《ま》がった跡《あと》）があるもの","d":["表面《ひょうめん》にうすく油《あぶら》が付《つ》いているもの","使《つか》う前《まえ》の点検《てんけん》で異常《いじょう》がなかったもの","つり荷《に》に合《あ》った太《ふと》さのもの"],"e":"キンクしたもの、1よりの間《あいだ》で素線《そせん》の10%以上《いじょう》が切《き》れているもの、直径《ちょっけい》が7%をこえて細《ほそ》くなったもの、形《かたち》がひどく崩《くず》れたりさびたりしたものは使《つか》えません。"},
+{"id":422,"c":"安全管理","q":"クレーンでつり荷《に》を少《すこ》しだけ持《も》ち上《あ》げた（地切《じぎ》りした）とき、することはどれですか。","a":"いったん止《と》めて、荷《に》のバランスや掛《か》け方《かた》を確《たし》かめる","d":["止《と》めずに、そのまま一気《いっき》に高《たか》く上《あ》げる","荷《に》の下《した》に入《はい》って、底《そこ》を確《たし》かめる","手《て》で荷《に》を押《お》して、早《はや》く回《まわ》す"],"e":"地切《じぎ》りでいったん止《と》め、荷《に》がかたむいていないか、ワイヤーがずれていないかを確《たし》かめてから巻《ま》き上《あ》げます。おかしいときは荷《に》を下《お》ろして掛《か》け直《なお》します。"},
+{"id":423,"c":"安全管理","q":"移動式《いどうしき》クレーンやバックホウを使《つか》う場所《ばしょ》の上《うえ》に電線《でんせん》があるとき、正《ただ》しい対策《たいさく》はどれですか。","a":"電線《でんせん》に防護管《ぼうごかん》を付《つ》けてもらい、監視人《かんしにん》を置《お》く","d":["ブームで電線《でんせん》を少《すこ》し持《も》ち上《あ》げて作業《さぎょう》する","電線《でんせん》にさわらなければ、いくら近《ちか》づいてもよい","雨《あめ》の日《ひ》だけ注意《ちゅうい》すればよい"],"e":"電線《でんせん》に近《ちか》づくだけで、電気《でんき》が飛《と》んで感電《かんでん》することがあります。電力会社《でんりょくがいしゃ》に相談《そうだん》して防護管《ぼうごかん》を付《つ》け、離《はな》れる距離《きょり》を決《き》めて監視人《かんしにん》を置《お》きます。"},
+{"id":424,"c":"安全管理","q":"熱中症《ねっちゅうしょう》のようすの作業員《さぎょういん》が、呼《よ》びかけに正《ただ》しく答《こた》えられないとき、正《ただ》しい対応《たいおう》はどれですか。","a":"すぐに救急車《きゅうきゅうしゃ》を呼《よ》び、涼《すず》しい所《ところ》で体《からだ》を冷《ひ》やす","d":["水《みず》を無理《むり》に飲《の》ませて、作業《さぎょう》に戻《もど》す","日《ひ》なたで横《よこ》にして、様子《ようす》を見《み》る","1人《ひとり》で休《やす》ませて、だれも付《つ》かない"],"e":"意識《いしき》がおかしいときは重《おも》い熱中症《ねっちゅうしょう》です。首《くび》・わきの下《した》・足《あし》の付《つ》け根《ね》を冷《ひ》やします。意識《いしき》がはっきりしない人《ひと》に、無理《むり》に水《みず》を飲《の》ませてはいけません。"},
+{"id":425,"c":"安全管理","q":"けがで血《ち》がたくさん出《で》ているとき、まずする応急手当《おうきゅうてあて》はどれですか。","a":"きれいな布《ぬの》で傷口《きずぐち》を強《つよ》く押《お》さえる","d":["傷口《きずぐち》を温《あたた》めて、血《ち》を流《なが》す","傷口《きずぐち》に土《つち》をかけて、血《ち》を止《と》める","何《なに》もしないで、血《ち》が止《と》まるのを待《ま》つ"],"e":"傷口《きずぐち》を直接《ちょくせつ》強《つよ》く押《お》さえる「直接圧迫止血《ちょくせつあっぱくしけつ》」が基本《きほん》です。血《ち》にふれないよう、ビニール手袋《てぶくろ》などを使《つか》います。"},
+{"id":426,"c":"安全管理","q":"倒《たお》れた人《ひと》に反応《はんのう》がなく、ふだんどおりの呼吸《こきゅう》もないとき、まずすることはどれですか。","a":"119番《ばん》に通報《つうほう》し、AEDを頼《たの》み、胸骨圧迫《きょうこつあっぱく》を始《はじ》める","d":["顔《かお》に水《みず》をかけて、目《め》をさまさせようとする","体《からだ》を起《お》こして、歩《ある》けるかどうか試《ため》す","そのまま寝《ね》かせて、しばらく様子《ようす》を見《み》る"],"e":"胸骨圧迫《きょうこつあっぱく》（心臓《しんぞう》マッサージ）は、胸《むね》の真《ま》ん中《なか》を強《つよ》く、速《はや》く、絶《た》え間《ま》なく押《お》します。AEDが来《き》たら、音声《おんせい》の指示《しじ》に従《したが》って使《つか》います。"},
+{"id":427,"c":"安全管理","q":"会社《かいしゃ》が労働者《ろうどうしゃ》に行《おこな》う定期健康診断《ていきけんこうしんだん》は、何年《なんねん》以内《いない》ごとに1回《かい》行《おこな》いますか。","a":"1年《ねん》以内《いない》ごと","d":["2年《ねん》以内《いない》ごと","3年《ねん》以内《いない》ごと","5年《ねん》以内《いない》ごと"],"e":"定期健康診断《ていきけんこうしんだん》は1年《ねん》以内《いない》ごとに1回《かい》です。雇《やと》い入《い》れのときにも健康診断《けんこうしんだん》を行《おこな》います。深夜《しんや》の仕事《しごと》など特定《とくてい》の業務《ぎょうむ》では、6か月《げつ》以内《いない》ごとに1回《かい》です。"},
+{"id":428,"c":"安全管理","q":"リスクアセスメントの正《ただ》しい順番《じゅんばん》はどれですか。","a":"危険《きけん》を見《み》つける→リスクを見積《みつ》もる→対策《たいさく》を実施《じっし》する","d":["対策《たいさく》を実施《じっし》する→危険《きけん》を見《み》つける→リスクを見積《みつ》もる","リスクを見積《みつ》もる→対策《たいさく》を実施《じっし》する→危険《きけん》を見《み》つける","危険《きけん》を見《み》つける→対策《たいさく》を実施《じっし》する→リスクを見積《みつ》もる"],"e":"まず作業《さぎょう》の中《なか》の危険《きけん》を見《み》つけ、けがの重《おも》さと起《お》こりやすさでリスクを見積《みつ》もります。リスクの大《おお》きいものから対策《たいさく》を決《き》めて実施《じっし》し、記録《きろく》します。"},
+{"id":429,"c":"安全管理","q":"リスクを下《さ》げる対策《たいさく》で、いちばん先《さき》に考《かんが》えるものはどれですか。","a":"危険《きけん》な作業《さぎょう》そのものをなくす、または変《か》える","d":["保護具《ほごぐ》を使《つか》うように指示《しじ》する","「注意《ちゅうい》」の看板《かんばん》を立《た》てる","作業員《さぎょういん》に気《き》を付《つ》けるよう言《い》う"],"e":"順番《じゅんばん》は、①危険《きけん》をなくす・減《へ》らす（本質的対策《ほんしつてきたいさく》）、②設備《せつび》の対策《たいさく》、③ルールや教育《きょういく》、④保護具《ほごぐ》、です。保護具《ほごぐ》は最後《さいご》の手段《しゅだん》です。"},
+{"id":430,"c":"安全管理","q":"ヒューマンエラー（人《ひと》のミス）を減《へ》らす方法《ほうほう》として、正《ただ》しくないものはどれですか。","a":"作業《さぎょう》を急《いそ》がせて、時間《じかん》を短《みじか》くする","d":["指差《ゆびさ》し呼称《こしょう》をする","作業手順書《さぎょうてじゅんしょ》をわかりやすくする","2人《ふたり》でダブルチェックをする"],"e":"急《いそ》ぐと、確認《かくにん》をとばしたり、思《おも》いこみで作業《さぎょう》したりして、ミスが増《ふ》えます。疲《つか》れや睡眠不足《すいみんぶそく》もミスの原因《げんいん》になります。"},
+{"id":431,"c":"施工管理","q":"工事《こうじ》を始《はじ》める前《まえ》に、工事《こうじ》の進《すす》め方《かた》・使《つか》う機械《きかい》・安全対策《あんぜんたいさく》などをまとめた書類《しょるい》はどれですか。","a":"施工計画書《せこうけいかくしょ》","d":["竣工図《しゅんこうず》","作業日報《さぎょうにっぽう》","請求書《せいきゅうしょ》"],"e":"施工計画書《せこうけいかくしょ》には、工法《こうほう》・工程《こうてい》・品質管理《ひんしつかんり》・安全管理《あんぜんかんり》・環境対策《かんきょうたいさく》などを書《か》きます。竣工図《しゅんこうず》は、でき上《あ》がった後《あと》の状態《じょうたい》をかいた図面《ずめん》です。"},
+{"id":432,"c":"施工管理","q":"下請《したうけ》の会社《かいしゃ》も含《ふく》めて、どの会社《かいしゃ》が工事《こうじ》のどの部分《ぶぶん》を担当《たんとう》しているかを表《あらわ》し、現場《げんば》に掲示《けいじ》する図《ず》はどれですか。","a":"施工体系図《せこうたいけいず》","d":["工程表《こうていひょう》","配筋図《はいきんず》","平面図《へいめんず》"],"e":"施工体系図《せこうたいけいず》を見《み》ると、元請《もとうけ》・下請《したうけ》の関係《かんけい》や技術者《ぎじゅつしゃ》の名前《なまえ》がわかります。くわしい内容《ないよう》は施工体制台帳《せこうたいせいだいちょう》にまとめます。"},
+{"id":433,"c":"施工管理","q":"工事《こうじ》がどれだけ進《すす》んだかを、金額《きんがく》や量《りょう》で表《あらわ》したものを何《なん》といいますか。","a":"出来高《できだか》","d":["工期《こうき》","予算《よさん》","歩掛《ぶがかり》"],"e":"計画《けいかく》の出来高《できだか》と実際《じっさい》の出来高《できだか》を比《くら》べて、工事《こうじ》が遅《おく》れていないかを確《たし》かめます。歩掛《ぶがかり》は、ある作業《さぎょう》に必要《ひつよう》な人《ひと》や時間《じかん》の目安《めやす》です。"},
+{"id":434,"c":"施工管理","q":"工程管理曲線《こうていかんりきょくせん》（バナナ曲線《きょくせん》）で、実際《じっさい》の出来高《できだか》の線《せん》が上《うえ》と下《した》の許容限界《きょようげんかい》の線《せん》の間《あいだ》にあるとき、どう判断《はんだん》しますか。","a":"工程《こうてい》はおおむね計画《けいかく》どおり進《すす》んでいる","d":["工程《こうてい》が大《おお》きく遅《おく》れている","工程《こうてい》が進《すす》みすぎて危険《きけん》である","品質《ひんしつ》が悪《わる》くなっている"],"e":"線《せん》が下《した》の限界《げんかい》より下《した》なら遅《おく》れ、上《うえ》の限界《げんかい》より上《うえ》なら進《すす》みすぎです。進《すす》みすぎも、むだや品質《ひんしつ》の低下《ていか》につながることがあります。"},
+{"id":435,"c":"施工管理","q":"工事《こうじ》の出来高《できだか》を累計《るいけい》でグラフにすると、初《はじ》めと終《お》わりがゆるやかで、中《なか》ごろが急《きゅう》な線《せん》になります。この曲線《きょくせん》を何《なん》といいますか。","a":"Sカーブ（S字曲線《じきょくせん》）","d":["バーチャート","ヒストグラム","管理図《かんりず》"],"e":"工事《こうじ》の初《はじ》めは準備《じゅんび》が多《おお》く、終《お》わりは片付《かたづ》けや仕上《しあ》げが多《おお》いので、出来高《できだか》の増《ふ》え方《かた》がゆるやかになります。予定《よてい》のSカーブと実際《じっさい》を比《くら》べて進《すす》み具合《ぐあい》を見《み》ます。"},
+{"id":436,"c":"施工管理","q":"たくさんの製品《せいひん》の中《なか》からいくつかを取《と》り出《だ》して検査《けんさ》し、全体《ぜんたい》の合格《ごうかく》・不合格《ふごうかく》を判断《はんだん》する方法《ほうほう》はどれですか。","a":"抜取検査《ぬきとりけんさ》","d":["全数検査《ぜんすうけんさ》","打診検査《だしんけんさ》","竣工検査《しゅんこうけんさ》"],"e":"抜取検査《ぬきとりけんさ》は、全部《ぜんぶ》を調《しら》べるのがむずかしいときに使《つか》います。コンクリートの圧縮強度試験《あっしゅくきょうどしけん》も、試験用《しけんよう》の供試体《きょうしたい》を取《と》って調《しら》べる抜取検査《ぬきとりけんさ》です。"},
+{"id":437,"c":"施工管理","q":"でき上《あ》がった構造物《こうぞうぶつ》の寸法《すんぽう》・高《たか》さ・位置《いち》が、設計図《せっけいず》どおりかを確《たし》かめる管理《かんり》を何《なん》といいますか。","a":"出来形管理《できがたかんり》","d":["原価管理《げんかかんり》","労務管理《ろうむかんり》","工程管理《こうていかんり》"],"e":"出来形管理《できがたかんり》では、長《なが》さ・幅《はば》・厚《あつ》さ・高《たか》さなどを測《はか》り、決《き》められた範囲《はんい》（規格値《きかくち》）に入《はい》っているかを確《たし》かめ、記録《きろく》します。"},
+{"id":438,"c":"施工管理","q":"工事写真《こうじしゃしん》を特《とく》に忘《わす》れずに撮《と》っておかなければならないのは、どんな部分《ぶぶん》ですか。","a":"あとで埋《う》まって見《み》えなくなる部分《ぶぶん》","d":["完成後《かんせいご》もいつでも見《み》られる部分《ぶぶん》","工事《こうじ》に関係《かんけい》のない場所《ばしょ》","現場事務所《げんばじむしょ》の中《なか》のようす"],"e":"鉄筋《てっきん》・基礎《きそ》・埋設管《まいせつかん》などは、完成後《かんせいご》は見《み》えなくなります。小黒板《しょうこくばん》に工事名《こうじめい》・場所《ばしょ》・内容《ないよう》・寸法《すんぽう》などを書《か》いて、一緒《いっしょ》に写《うつ》します。"},
+{"id":439,"c":"施工管理","q":"工事費《こうじひ》のうち、材料費《ざいりょうひ》・労務費《ろうむひ》・機械《きかい》の費用《ひよう》など、工事《こうじ》の目的物《もくてきぶつ》を作《つく》るために直接《ちょくせつ》かかる費用《ひよう》はどれですか。","a":"直接工事費《ちょくせつこうじひ》","d":["現場管理費《げんばかんりひ》","一般管理費《いっぱんかんりひ》","共通仮設費《きょうつうかせつひ》"],"e":"共通仮設費《きょうつうかせつひ》と現場管理費《げんばかんりひ》をあわせて間接工事費《かんせつこうじひ》といいます。一般管理費《いっぱんかんりひ》は、本社《ほんしゃ》の運営《うんえい》などにかかる費用《ひよう》です。"},
+{"id":440,"c":"施工管理","q":"作業手順書《さぎょうてじゅんしょ》を作《つく》る目的《もくてき》として、正《ただ》しいものはどれですか。","a":"だれが作業《さぎょう》しても、安全《あんぜん》に同《おな》じ品質《ひんしつ》でできるようにする","d":["作業《さぎょう》の時間《じかん》をできるだけ長《なが》くする","作業員《さぎょういん》の給料《きゅうりょう》の金額《きんがく》を決《き》める","ベテランの作業員《さぎょういん》だけが仕事《しごと》を覚《おぼ》える"],"e":"作業手順書《さぎょうてじゅんしょ》には、作業《さぎょう》の順番《じゅんばん》・急所《きゅうしょ》（ポイント）・危険《きけん》と対策《たいさく》を書《か》きます。新《あたら》しい作業員《さぎょういん》の教育《きょういく》にも使《つか》えます。"},
+{"id":441,"c":"施工管理","q":"現場《げんば》で実際《じっさい》に仕事《しごと》をしながら、先輩《せんぱい》や班長《はんちょう》が後輩《こうはい》に仕事《しごと》を教《おし》える方法《ほうほう》を何《なん》といいますか。","a":"OJT","d":["Off-JT","KYT","QC"],"e":"OJTは「On the Job Training」の略《りゃく》です。職場《しょくば》を離《はな》れて講習会《こうしゅうかい》などで学《まな》ぶことはOff-JTといいます。"},
+{"id":442,"c":"施工管理","q":"作業《さぎょう》の指示《しじ》は「5W1H」で伝《つた》えるとよいといわれます。「1H」は何《なに》を表《あらわ》していますか。","a":"どのように（How）","d":["だれが（Who）","なぜ（Why）","どこで（Where）"],"e":"5Wは、いつ（When）・どこで（Where）・だれが（Who）・何《なに》を（What）・なぜ（Why）です。これに「どのように（How）」を加《くわ》えると、指示《しじ》がはっきり伝《つた》わります。"},
+{"id":443,"c":"施工管理","q":"仕事《しごと》で大切《たいせつ》な「ホウ・レン・ソウ」とは何《なん》のことですか。","a":"報告《ほうこく》・連絡《れんらく》・相談《そうだん》","d":["放送《ほうそう》・練習《れんしゅう》・掃除《そうじ》","報告《ほうこく》・練習《れんしゅう》・相談《そうだん》","放送《ほうそう》・連絡《れんらく》・掃除《そうじ》"],"e":"ミスや事故《じこ》、悪《わる》い知《し》らせほど、早《はや》く報告《ほうこく》することが大切《たいせつ》です。わからないことは、自分《じぶん》で判断《はんだん》せずに相談《そうだん》します。"},
+{"id":444,"c":"施工管理","q":"日本語《にほんご》がまだ得意《とくい》でない作業員《さぎょういん》に指示《しじ》を出《だ》すとき、よい方法《ほうほう》はどれですか。","a":"短《みじか》い文《ぶん》で、実物《じつぶつ》や図《ず》を見《み》せながら伝《つた》える","d":["専門用語《せんもんようご》をたくさん使《つか》って速《はや》く話《はな》す","1回《かい》だけ言《い》って、わかったか確認《かくにん》しない","大《おお》きな声《こえ》でどなって伝《つた》える"],"e":"やさしい日本語《にほんご》で、1つの文《ぶん》に1つの内容《ないよう》にします。最後《さいご》に指示《しじ》を復唱《ふくしょう》してもらい、正《ただ》しく伝《つた》わったか確《たし》かめます。"},
+{"id":445,"c":"施工管理","q":"「手戻《てもど》り」を防《ふせ》ぐ方法《ほうほう》として、正《ただ》しいものはどれですか。","a":"作業前《さぎょうまえ》に図面《ずめん》を確認《かくにん》し、途中《とちゅう》でも検査《けんさ》をする","d":["図面《ずめん》を見《み》ないで、経験《けいけん》だけで作《つく》る","検査《けんさ》は全部《ぜんぶ》終《お》わってから1回《かい》だけする","問題《もんだい》があっても、次《つぎ》の工程《こうてい》に進《すす》む"],"e":"手戻《てもど》りとは、やり直《なお》しのことです。手戻《てもど》りがあると、工期《こうき》も費用《ひよう》も増《ふ》えます。工程《こうてい》ごとに確認《かくにん》してから次《つぎ》に進《すす》みます。"},
+{"id":446,"c":"施工管理","q":"ドローンやGNSSなどを使《つか》う「ICT施工《せこう》」の目的《もくてき》として、正《ただ》しいものはどれですか。","a":"測量《そくりょう》や施工《せこう》を早《はや》く正確《せいかく》にし、人手不足《ひとでぶそく》を補《おぎな》う","d":["作業員《さぎょういん》の安全教育《あんぜんきょういく》をなくす","設計図《せっけいず》を使《つか》わないで工事《こうじ》をする","でき上《あ》がりの検査《けんさ》をしなくてよくする"],"e":"ドローンで地形《ちけい》を3次元《じげん》で測《はか》ったり、ICT建設機械《けんせつきかい》で自動《じどう》で整地《せいち》したりします。国土交通省《こくどこうつうしょう》は「i-Construction」として進《すす》めています。"},
+{"id":447,"c":"施工管理","q":"建物《たてもの》や構造物《こうぞうぶつ》を3次元《じげん》のデジタルモデルで作《つく》り、設計《せっけい》から施工《せこう》・維持管理《いじかんり》まで情報《じょうほう》を共有《きょうゆう》するしくみはどれですか。","a":"BIM／CIM","d":["TBM","PDCA","4S"],"e":"主《おも》に建築《けんちく》ではBIM、土木《どぼく》ではCIMと呼《よ》ばれてきました。今《いま》はまとめてBIM／CIMともいいます。図面《ずめん》の食《く》い違《ちが》いを前《まえ》もって見《み》つけるのに役立《やくだ》ちます。"},
+{"id":448,"c":"施工管理","q":"コンクリートや鉄筋《てっきん》などの材料《ざいりょう》が現場《げんば》に届《とど》いたとき、まずすることはどれですか。","a":"注文《ちゅうもん》どおりか、規格《きかく》や数量《すうりょう》を確《たし》かめる","d":["確《たし》かめないで、すぐに使《つか》い始《はじ》める","雨《あめ》の当《あ》たる所《ところ》に置《お》いたままにする","数《かず》だけ数《かぞ》えて、規格《きかく》は見《み》ない"],"e":"これを受入検査《うけいれけんさ》といいます。納品書《のうひんしょ》や鉄筋《てっきん》のミルシート（品質《ひんしつ》の証明書《しょうめいしょ》）を確認《かくにん》し、コンクリートはスランプなどを試験《しけん》します。"},
+{"id":449,"c":"施工管理","q":"その日《ひ》の作業内容《さぎょうないよう》・人数《にんずう》・天気《てんき》などを毎日《まいにち》記録《きろく》するものはどれですか。","a":"作業日報《さぎょうにっぽう》","d":["施工体系図《せこうたいけいず》","工程表《こうていひょう》","竣工図《しゅんこうず》"],"e":"作業日報《さぎょうにっぽう》は、工程《こうてい》の管理《かんり》や原価《げんか》の計算《けいさん》、トラブルがあったときの確認《かくにん》に使《つか》う大切《たいせつ》な記録《きろく》です。"},
+{"id":450,"c":"施工管理","q":"工程《こうてい》が遅《おく》れたときの対策《たいさく》として、正《ただ》しくないものはどれですか。","a":"安全確認《あんぜんかくにん》を省《はぶ》いて、作業《さぎょう》を急《いそ》ぐ","d":["作業《さぎょう》の順番《じゅんばん》や方法《ほうほう》を見直《みなお》す","人《ひと》や機械《きかい》を増《ふ》やす","同時《どうじ》にできる作業《さぎょう》を並行《へいこう》して進《すす》める"],"e":"遅《おく》れを取《と》り戻《もど》すときも、安全《あんぜん》と品質《ひんしつ》は守《まも》らなければなりません。無理《むり》に急《いそ》ぐと事故《じこ》や手戻《てもど》りが起《お》き、かえって遅《おく》れます。"},
+{"id":451,"c":"法規・環境","q":"建設業《けんせつぎょう》の許可《きょか》について、正《ただ》しいものはどれですか。","a":"軽微《けいび》な工事《こうじ》だけをするなら、許可《きょか》はなくてもよい","d":["どんなに小《ちい》さな工事《こうじ》でも、必《かなら》ず許可《きょか》がいる","許可《きょか》は一度《いちど》取《と》れば、更新《こうしん》はいらない","許可《きょか》は作業員《さぎょういん》1人《ひとり》ずつが取《と》る"],"e":"建設業《けんせつぎょう》の許可《きょか》は会社《かいしゃ》（または個人事業主《こじんじぎょうぬし》）が取《と》り、有効期間《ゆうこうきかん》は5年《ねん》です。続《つづ》けるには更新《こうしん》が必要《ひつよう》です。"},
+{"id":452,"c":"法規・環境","q":"建設業者《けんせつぎょうしゃ》が工事現場《こうじげんば》に置《お》き、施工計画《せこうけいかく》・工程《こうてい》・品質《ひんしつ》の管理《かんり》や、技術上《ぎじゅつじょう》の指導監督《しどうかんとく》をする技術者《ぎじゅつしゃ》はどれですか。","a":"主任技術者《しゅにんぎじゅつしゃ》","d":["交通誘導員《こうつうゆうどういん》","火元責任者《ひもとせきにんしゃ》","玉掛《たまか》け者《しゃ》"],"e":"建設業者《けんせつぎょうしゃ》は、請《う》け負《お》った工事現場《こうじげんば》に主任技術者《しゅにんぎじゅつしゃ》を置《お》きます。大《おお》きな工事《こうじ》で多《おお》くの下請《したうけ》を使《つか》う元請《もとうけ》は、監理技術者《かんりぎじゅつしゃ》を置《お》きます。"},
+{"id":453,"c":"法規・環境","q":"請《う》け負《お》った工事《こうじ》を、そのまま全部《ぜんぶ》ほかの会社《かいしゃ》に請《う》け負《お》わせることを何《なん》といい、どうなっていますか。","a":"一括下請負《いっかつしたうけおい》といい、原則《げんそく》禁止《きんし》","d":["共同企業体《きょうどうきぎょうたい》といい、自由《じゆう》にできる","一括下請負《いっかつしたうけおい》といい、自由《じゆう》にできる","元請負《もとうけおい》といい、必《かなら》ずしなければならない"],"e":"いわゆる「丸投《まるな》げ」です。発注者《はっちゅうしゃ》の信頼《しんらい》を裏切《うらぎ》り、責任《せきにん》もあいまいになるので禁止《きんし》されています。公共工事《こうきょうこうじ》では例外《れいがい》なく禁止《きんし》です。"},
+{"id":454,"c":"法規・環境","q":"労働基準法《ろうどうきじゅんほう》の法定労働時間《ほうていろうどうじかん》は、原則《げんそく》として何時間《なんじかん》ですか。","a":"1日《にち》8時間《じかん》・1週《しゅう》40時間《じかん》","d":["1日《にち》10時間《じかん》・1週《しゅう》50時間《じかん》","1日《にち》8時間《じかん》・1週《しゅう》48時間《じかん》","1日《にち》6時間《じかん》・1週《しゅう》30時間《じかん》"],"e":"これをこえて働《はたら》かせるには、36協定《きょうてい》を結《むす》んで届《とど》け出《で》て、割増賃金《わりましちんぎん》（残業代《ざんぎょうだい》）を払《はら》う必要《ひつよう》があります。"},
+{"id":455,"c":"法規・環境","q":"労働時間《ろうどうじかん》が6時間《じかん》をこえて8時間《じかん》以下《いか》のとき、休憩《きゅうけい》は少《すく》なくとも何分《なんぷん》必要《ひつよう》ですか。","a":"45分《ふん》","d":["15分《ふん》","30分《ぷん》","60分《ぷん》"],"e":"6時間《じかん》をこえると45分《ふん》以上《いじょう》、8時間《じかん》をこえると60分《ぷん》以上《いじょう》の休憩《きゅうけい》が必要《ひつよう》です。休憩《きゅうけい》は労働時間《ろうどうじかん》の途中《とちゅう》に与《あた》えます。"},
+{"id":456,"c":"法規・環境","q":"法定労働時間《ほうていろうどうじかん》をこえて残業《ざんぎょう》をさせるために、会社《かいしゃ》と労働者《ろうどうしゃ》の代表《だいひょう》が結《むす》び、労働基準監督署《ろうどうきじゅんかんとくしょ》に届《とど》け出《で》る協定《きょうてい》はどれですか。","a":"36（サブロク）協定《きょうてい》","d":["下請契約《したうけけいやく》","請負契約《うけおいけいやく》","雇用契約書《こようけいやくしょ》"],"e":"労働基準法《ろうどうきじゅんほう》の第《だい》36条《じょう》に決《き》められているので、36協定《きょうてい》と呼《よ》びます。協定《きょうてい》があっても、残業《ざんぎょう》には上限《じょうげん》があります。"},
+{"id":457,"c":"法規・環境","q":"時間外労働《じかんがいろうどう》（残業《ざんぎょう》）の上限規制《じょうげんきせい》が、建設業《けんせつぎょう》にも適用《てきよう》されるようになったのはいつからですか。","a":"2024年《ねん》4月《がつ》","d":["2010年《ねん》4月《がつ》","2019年《ねん》4月《がつ》","2030年《ねん》4月《がつ》"],"e":"建設業《けんせつぎょう》は5年間《ねんかん》猶予《ゆうよ》されていましたが、2024年《ねん》4月《がつ》から適用《てきよう》されました。残業《ざんぎょう》は原則《げんそく》として月《つき》45時間《じかん》・年《ねん》360時間《じかん》までです。"},
+{"id":458,"c":"法規・環境","q":"労働基準法《ろうどうきじゅんほう》で、会社《かいしゃ》が労働者《ろうどうしゃ》に与《あた》えなければならない休日《きゅうじつ》はどれですか。","a":"毎週《まいしゅう》少《すく》なくとも1回《かい》","d":["毎月《まいつき》少《すく》なくとも1回《かい》","2週間《しゅうかん》に少《すく》なくとも1回《かい》","1年《ねん》に少《すく》なくとも30日《にち》"],"e":"休日《きゅうじつ》は毎週《まいしゅう》少《すく》なくとも1回《かい》与《あた》えます（4週間《しゅうかん》で4日《か》以上《いじょう》とする方法《ほうほう》もあります）。建設業界《けんせつぎょうかい》では「週休《しゅうきゅう》2日《か》」を進《すす》めています。"},
+{"id":459,"c":"法規・環境","q":"「技能講習《ぎのうこうしゅう》」「特別教育《とくべつきょういく》」「免許《めんきょ》」について、正《ただ》しいものはどれですか。","a":"技能講習《ぎのうこうしゅう》は登録《とうろく》された機関《きかん》で受《う》け、修了証《しゅうりょうしょう》をもらう","d":["特別教育《とくべつきょういく》は、国《くに》の試験《しけん》に合格《ごうかく》しないと受《う》けられない","免許《めんきょ》は、会社《かいしゃ》が社内《しゃない》で自由《じゆう》に出《だ》せる","技能講習《ぎのうこうしゅう》は、だれも受《う》けなくてよい"],"e":"特別教育《とくべつきょういく》は事業者《じぎょうしゃ》（会社《かいしゃ》）が行《おこな》います。免許《めんきょ》はクレーン運転士《うんてんし》などで、国《くに》の試験《しけん》に合格《ごうかく》して取《と》ります。危険《きけん》な作業《さぎょう》ほど、必要《ひつよう》な資格《しかく》が重《おも》くなります。"},
+{"id":460,"c":"法規・環境","q":"6か月《げつ》続《つづ》けて働《はたら》き、決《き》められた日《ひ》の8割《わり》以上《いじょう》出勤《しゅっきん》した労働者《ろうどうしゃ》に与《あた》える年次有給休暇《ねんじゆうきゅうきゅうか》は何日《なんにち》ですか。","a":"10日《か》","d":["5日《か》","15日《にち》","20日《か》"],"e":"年次有給休暇《ねんじゆうきゅうきゅうか》は、休《やす》んでも給料《きゅうりょう》が払《はら》われる休暇《きゅうか》です。働《はたら》く年数《ねんすう》が増《ふ》えると日数《にっすう》も増《ふ》えます。10日《か》以上《いじょう》ある人《ひと》には、年《ねん》5日《か》を必《かなら》ず取《と》らせることになっています。"},
+{"id":461,"c":"法規・環境","q":"建設《けんせつ》リサイクル法《ほう》の「特定建設資材《とくていけんせつしざい》」に入《はい》らないものはどれですか。","a":"石《せっ》こうボード","d":["コンクリート","木材《もくざい》","アスファルト・コンクリート"],"e":"特定建設資材《とくていけんせつしざい》は、コンクリート、コンクリートと鉄《てつ》からできた資材《しざい》、木材《もくざい》、アスファルト・コンクリートの4つです。分別《ぶんべつ》して再資源化《さいしげんか》します。"},
+{"id":462,"c":"法規・環境","q":"建設《けんせつ》リサイクル法《ほう》で、一定《いってい》の規模《きぼ》以上《いじょう》の工事《こうじ》で行《おこな》わなければならないことはどれですか。","a":"分別解体《ぶんべつかいたい》と再資源化《さいしげんか》","d":["すべてまとめて埋《う》め立《た》てる","現場《げんば》で燃《も》やして処分《しょぶん》する","解体材《かいたいざい》を近《ちか》くの空《あ》き地《ち》に置《お》く"],"e":"たとえば建物《たてもの》の解体《かいたい》では、床面積《ゆかめんせき》の合計《ごうけい》が80㎡以上《いじょう》だと対象《たいしょう》になります。資材《しざい》の種類《しゅるい》ごとに分《わ》けて解体《かいたい》し、リサイクルします。"},
+{"id":463,"c":"法規・環境","q":"産業廃棄物《さんぎょうはいきぶつ》を処理業者《しょりぎょうしゃ》に渡《わた》すとき、正《ただ》しく処理《しょり》されたかを確《たし》かめるために使《つか》う伝票《でんぴょう》はどれですか。","a":"マニフェスト","d":["ミルシート","納品書《のうひんしょ》","作業日報《さぎょうにっぽう》"],"e":"マニフェスト（産業廃棄物管理票《さんぎょうはいきぶつかんりひょう》）で、運搬《うんぱん》から最終処分《さいしゅうしょぶん》までの流《なが》れを確認《かくにん》し、不法投棄《ふほうとうき》を防《ふせ》ぎます。電子《でんし》マニフェストもあります。"},
+{"id":464,"c":"法規・環境","q":"建設工事《けんせつこうじ》で出《で》た産業廃棄物《さんぎょうはいきぶつ》について、処理《しょり》の責任《せきにん》をもつ「排出事業者《はいしゅつじぎょうしゃ》」はだれですか。","a":"元請業者《もとうけぎょうしゃ》","d":["下請業者《したうけぎょうしゃ》","発注者《はっちゅうしゃ》","作業員《さぎょういん》本人《ほんにん》"],"e":"建設工事《けんせつこうじ》の廃棄物《はいきぶつ》は、元請業者《もとうけぎょうしゃ》が排出事業者《はいしゅつじぎょうしゃ》になります。元請《もとうけ》は、許可《きょか》をもつ処理業者《しょりぎょうしゃ》と契約《けいやく》して処理《しょり》をまかせます。"},
+{"id":465,"c":"法規・環境","q":"現場《げんば》で出《で》た木《き》くずや段《だん》ボールの処理《しょり》として、正《ただ》しいものはどれですか。","a":"分別《ぶんべつ》して、許可《きょか》のある業者《ぎょうしゃ》に処理《しょり》を頼《たの》む","d":["現場《げんば》で燃《も》やして処分《しょぶん》する","現場《げんば》の土《つち》の中《なか》に埋《う》める","近《ちか》くの川《かわ》に流《なが》す"],"e":"廃棄物《はいきぶつ》を現場《げんば》で燃《も》やすこと（野焼《のや》き）や、勝手《かって》に捨《す》てること（不法投棄《ふほうとうき》）は、法律《ほうりつ》で禁止《きんし》されています。"},
+{"id":466,"c":"法規・環境","q":"騒音規制法《そうおんきせいほう》・振動規制法《しんどうきせいほう》の「特定建設作業《とくていけんせつさぎょう》」をするとき、市町村長《しちょうそんちょう》への届出《とどけで》は、作業《さぎょう》を始《はじ》める何日《なんにち》前《まえ》までですか。","a":"7日《か》前《まえ》","d":["前日《ぜんじつ》","3日《か》前《まえ》","30日《にち》前《まえ》"],"e":"くい打機《うちき》やさく岩機《がんき》などを使《つか》う作業《さぎょう》が特定建設作業《とくていけんせつさぎょう》です。7日《か》前《まえ》までに届《とど》け出《で》ます。災害《さいがい》などの緊急《きんきゅう》の場合《ばあい》は、できるだけ早《はや》く届《とど》け出《で》ます。"},
+{"id":467,"c":"法規・環境","q":"工事《こうじ》の騒音《そうおん》を少《すく》なくするための対策《たいさく》として、正《ただ》しいものはどれですか。","a":"低騒音型《ていそうおんがた》の建設機械《けんせつきかい》を使《つか》う","d":["夜《よる》おそくや早朝《そうちょう》に作業《さぎょう》する","エンジンを全開《ぜんかい》にして早《はや》く終《お》わらせる","防音《ぼうおん》シートを外《はず》して風通《かぜとお》しをよくする"],"e":"低騒音型《ていそうおんがた》・低振動型《ていしんどうがた》の機械《きかい》を使《つか》い、防音《ぼうおん》シートや防音壁《ぼうおんへき》を設《もう》けます。アイドリングをやめることも効果《こうか》があります。"},
+{"id":468,"c":"法規・環境","q":"建物《たてもの》の解体《かいたい》や改修《かいしゅう》の工事《こうじ》を始《はじ》める前《まえ》に、必《かなら》ずしなければならないことはどれですか。","a":"石綿《いしわた》（アスベスト）の事前調査《じぜんちょうさ》","d":["近所《きんじょ》の人《ひと》へのあいさつだけ","外壁《がいへき》の色《いろ》を調《しら》べること","建物《たてもの》の写真《しゃしん》を1枚《まい》とるだけ"],"e":"解体《かいたい》・改修《かいしゅう》の工事《こうじ》では、原則《げんそく》として工事《こうじ》の大《おお》きさにかかわらず石綿《いしわた》の事前調査《じぜんちょうさ》が必要《ひつよう》です。建物《たてもの》の調査《ちょうさ》は、決《き》められた資格《しかく》をもつ人《ひと》が行《おこな》います。石綿《いしわた》を吸《す》うと、何十年《なんじゅうねん》もたってから肺《はい》の病気《びょうき》になることがあります。"},
+{"id":469,"c":"法規・環境","q":"建設《けんせつ》キャリアアップシステム（CCUS）の目的《もくてき》として、正《ただ》しいものはどれですか。","a":"技能者《ぎのうしゃ》の資格《しかく》や経験《けいけん》を記録《きろく》し、処遇《しょぐう》の改善《かいぜん》につなげる","d":["現場《げんば》の天気《てんき》や気温《きおん》を毎日《まいにち》記録《きろく》する","建設機械《けんせつきかい》の燃料《ねんりょう》の量《りょう》を管理《かんり》する","工事《こうじ》の設計図《せっけいず》を自動《じどう》で作《つく》る"],"e":"技能者《ぎのうしゃ》はカードを持《も》ち、現場《げんば》に入《はい》るときに記録《きろく》します。経験《けいけん》や資格《しかく》によってレベル1〜4に分《わ》けられ、能力《のうりょく》が正《ただ》しく評価《ひょうか》されます。"},
+{"id":470,"c":"法規・環境","q":"特定技能《とくていぎのう》2号《ごう》について、正《ただ》しいものはどれですか。","a":"要件《ようけん》を満《み》たせば、家族《かぞく》（配偶者《はいぐうしゃ》と子《こ》）と一緒《いっしょ》に住《す》める","d":["在留期間《ざいりゅうきかん》は通算《つうさん》5年《ねん》までと決《き》まっている","家族《かぞく》を日本《にほん》に呼《よ》ぶことはできない","技能《ぎのう》の試験《しけん》に合格《ごうかく》しなくてもなれる"],"e":"特定技能《とくていぎのう》1号《ごう》は家族《かぞく》を呼《よ》べませんが、2号《ごう》は要件《ようけん》を満《み》たせば配偶者《はいぐうしゃ》と子《こ》を呼《よ》んで一緒《いっしょ》に暮《く》らせます。"},
+{"id":471,"c":"法規・環境","q":"特定技能《とくていぎのう》1号《ごう》と2号《ごう》の違《ちが》いとして、正《ただ》しいものはどれですか。","a":"2号《ごう》は在留期間《ざいりゅうきかん》の更新《こうしん》に上限《じょうげん》がない","d":["1号《ごう》は在留期間《ざいりゅうきかん》の更新《こうしん》に上限《じょうげん》がない","2号《ごう》は通算《つうさん》5年《ねん》までしか日本《にほん》にいられない","1号《ごう》は家族《かぞく》を呼《よ》んで一緒《いっしょ》に住《す》める"],"e":"1号《ごう》は通算《つうさん》5年《ねん》までですが、2号《ごう》は更新《こうしん》を続《つづ》ければ上限《じょうげん》なく働《はたら》けます。条件《じょうけん》を満《み》たせば、永住《えいじゅう》の申請《しんせい》につながる可能性《かのうせい》もあります。"},
+{"id":472,"c":"法規・環境","q":"建設分野《けんせつぶんや》で特定技能《とくていぎのう》2号《ごう》になるには、試験《しけん》の合格《ごうかく》のほかに、どんな経験《けいけん》が必要《ひつよう》ですか。","a":"班長《はんちょう》として、作業員《さぎょういん》を指導《しどう》した実務経験《じつむけいけん》","d":["設計事務所《せっけいじむしょ》で図面《ずめん》をかいた経験《けいけん》","建設会社《けんせつがいしゃ》で事務《じむ》をした経験《けいけん》","建設機械《けんせつきかい》を販売《はんばい》した経験《けいけん》"],"e":"建設分野《けんせつぶんや》の特定技能《とくていぎのう》2号《ごう》は、2号《ごう》評価試験《ひょうかしけん》（または技能検定《ぎのうけんてい》1級《きゅう》）の合格《ごうかく》と、複数《ふくすう》の作業員《さぎょういん》を指導《しどう》しながら工程《こうてい》を管理《かんり》する班長《はんちょう》としての実務経験《じつむけいけん》が必要《ひつよう》です。"},
+{"id":473,"c":"法規・環境","q":"特定技能外国人《とくていぎのうがいこくじん》の給料《きゅうりょう》について、正《ただ》しいものはどれですか。","a":"同《おな》じ仕事《しごと》をする日本人《にほんじん》と同等《どうとう》以上《いじょう》にする","d":["日本人《にほんじん》より低《ひく》くしてよい","最低賃金《さいていちんぎん》より低《ひく》くてもよい","給料《きゅうりょう》は払《はら》わず、食事《しょくじ》だけ出《だ》す"],"e":"外国人《がいこくじん》だという理由《りゆう》で給料《きゅうりょう》を低《ひく》くすることはできません。経験《けいけん》や技能《ぎのう》が上《あ》がったら、給料《きゅうりょう》も上《あ》げていくことが求《もと》められます。"},
+{"id":474,"c":"法規・環境","q":"建設業《けんせつぎょう》の会社《かいしゃ》と作業員《さぎょういん》の社会保険《しゃかいほけん》について、正《ただ》しいものはどれですか。","a":"決《き》められた社会保険《しゃかいほけん》に加入《かにゅう》しなければならない","d":["外国人《がいこくじん》は社会保険《しゃかいほけん》に入《はい》れない","入《はい》っても入《はい》らなくても自由《じゆう》である","元請《もとうけ》の社員《しゃいん》だけが入《はい》ればよい"],"e":"健康保険《けんこうほけん》・厚生年金保険《こうせいねんきんほけん》・雇用保険《こようほけん》などに加入《かにゅう》します。今《いま》は社会保険《しゃかいほけん》への加入《かにゅう》が建設業許可《けんせつぎょうきょか》の要件《ようけん》にもなっています。"},
+{"id":475,"c":"法規・環境","q":"仕事中《しごとちゅう》や通勤中《つうきんちゅう》のけがや病気《びょうき》のときに、治療費《ちりょうひ》や休業中《きゅうぎょうちゅう》の補償《ほしょう》を受《う》けられる保険《ほけん》はどれですか。","a":"労災保険《ろうさいほけん》","d":["火災保険《かさいほけん》","自動車保険《じどうしゃほけん》","生命保険《せいめいほけん》"],"e":"労災保険《ろうさいほけん》（労働者災害補償保険《ろうどうしゃさいがいほしょうほけん》）の保険料《ほけんりょう》は、会社《かいしゃ》が全額《ぜんがく》払《はら》います。外国人《がいこくじん》も日本人《にほんじん》と同《おな》じように使《つか》えます。けがをしたら、すぐに会社《かいしゃ》に報告《ほうこく》します。"}
+]);
+}
+</script>
+</body>
+</html>
